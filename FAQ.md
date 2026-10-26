@@ -22,7 +22,7 @@ Shift + right-click it with an empty hand. It goes into your inventory with its 
 No. The [Robot Revolving Door](Robot-Revolving-Door.md) is a wall for everything but robots, and lets no light through.
 
 ### Does it work with other mods' pipes and cables?
-Yes. Generators, batteries, the Charging Station and the Robot Workshop all use standard FE, and the machines accept hoppers and item pipes through their sides.
+Yes. Generators, batteries, the Charging Station and the Robot Workshop all use standard FE, and the machines accept hoppers and item pipes through their sides. The [Glass Tank](Glass-Tank.md) works with fluid pipes, and the [Fluid Porter](Fluid-Porter.md) carries fluids to and from other mods' tanks and machines.
 
 ### Is there a version for an older Minecraft version, or for Fabric?
 Not yet. The mod is made for Minecraft 26.3 on NeoForge. Older versions may come if many people ask.

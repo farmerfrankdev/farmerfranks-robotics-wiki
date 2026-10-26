@@ -17,6 +17,7 @@ FarmerFrank's Robotics has two config files in the `config` folder. Both are cre
 	breeder = true
 	butcher = true
 	power_porter = true
+	fluid_porter = true
 ```
 When a robot is set to `false`:
 - its Neural Chip has no recipe;
@@ -40,5 +41,6 @@ The server sends these values to every player, so only the server's file counts.
 | `robots.breeder_max_animals_per_kind` | 16 | 2 – 256 | A Breeder stops feeding a kind of animal at this many |
 | `robots.butcher_default_keep` | 8 | 1 – 256 | Animals of each kind a Butcher keeps, until changed with the Inspector |
 | `robots.porter_cargo` | 25000 | 1 000 – 10 000 000 | FE a Power Porter carries at a time (twice with a Capacity Upgrade) |
+| `robots.fluid_porter_cargo` | 4000 | 100 – 1 000 000 | mB a Fluid Porter carries at a time; 1000 is a bucket (twice with a Capacity Upgrade) |
 
 The numbers in the [Robotics Manual](Robotics-Manual.md) and the item tooltips are the defaults, so they do not change with the config.

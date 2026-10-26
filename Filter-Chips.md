@@ -26,6 +26,7 @@ A Filter Chip decides what a robot works with.
 | [Breeder](Breeder.md) | which food it uses, or which animals it breeds, by spawn egg |
 | [Butcher](Butcher.md) | which animals it butchers, by spawn egg |
 | [Fluid Porter](Fluid-Porter.md) | which fluids it carries, by bucket (a lava bucket for lava) |
+| [Miner](Miner.md) | which of the blocks it digs it keeps; the rest are thrown away |
 
 ## Recipes
 ![White Filter Chip recipe](images/recipes/white_filter_chip.png)

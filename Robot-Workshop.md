@@ -46,3 +46,4 @@ The robot stays in its slot the whole time. Use the **Sides** button to let hopp
 | Butcher | ![](images/recipes/butcher_chip.png) |
 | Power Porter | ![](images/recipes/courier_chip.png) |
 | Fluid Porter | ![](images/recipes/fluid_porter_chip.png) |
+| Miner | ![](images/recipes/miner_chip.png) |

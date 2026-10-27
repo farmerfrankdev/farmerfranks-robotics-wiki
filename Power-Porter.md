@@ -24,6 +24,8 @@ With the [Robot Linker](Robot-Linker.md), click:
 2. the battery to bring energy to;
 3. its charging station.
 
+More than one battery works the same way as [more than one chest](Robot-Linker.md#more-than-one-chest): Shift + click the first ones, and click the last one without Shift. It fetches from the first battery that has energy, and shares out to the ones it delivers to one at a time or round robin.
+
 ## Tips
 - A [Capacity Upgrade](Upgrades.md) doubles its cargo to 50 000 FE.
 - A [Speed Upgrade](Upgrades.md) helps it carry the heavy batteries faster.

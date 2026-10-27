@@ -26,6 +26,8 @@ With the [Robot Linker](Robot-Linker.md), click:
 
 A machine from another mod counts as a tank if it holds fluids, even if it also holds items.
 
+More than one tank works the same way as [more than one chest](Robot-Linker.md#more-than-one-chest): Shift + click the first ones, and click the last one without Shift. It fetches from the first tank that has fluid for it, and shares out to the ones it delivers to one at a time or round robin.
+
 ## Tips
 - A [Capacity Upgrade](Upgrades.md) doubles its cargo to 8 buckets.
 - A [Filter](Filter-Chips.md) with buckets picks which fluids it carries, for example a lava bucket for lava.

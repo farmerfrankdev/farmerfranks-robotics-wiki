@@ -20,5 +20,5 @@ With the [Robot Linker](Robot-Linker.md), click:
 ## Tips
 - Pair it with a [Harvester](Harvester.md), and give the Planter the Harvester's delivery chest as its seed chest. Then the farm runs by itself.
 - Tilled [Fertilized Dirt](Fertilized-Dirt.md) becomes Fertilized Farmland, where crops grow four times as fast.
-- A [Filter Chip](Filter-Chips.md) decides which seeds it sows.
+- A [Filter](Filter-Chips.md) decides which seeds it sows.
 - Uses the normal amount of energy (1×).

@@ -39,6 +39,6 @@ Put the chest and the charging station on the ground next to the area, not insid
 
 ## Tips
 - Its battery holds **four times as much** as other robots', so it does not have to climb up to charge often.
-- A **Black Filter Chip** with stone, cobblestone, deepslate and dirt keeps the chest from filling up with them. What the filter does not let through is thrown away.
+- A **Blacklist Filter** with stone, cobblestone, deepslate and dirt keeps the chest from filling up with them. What the filter does not let through is thrown away.
 - Uses twice the normal amount of energy (2×), plus a little for every block it digs.
 - Servers can change the biggest area in the [config](Configuration.md).

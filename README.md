@@ -19,7 +19,7 @@ This wiki is for FarmerFrank's Robotics for **Minecraft 26.3 (NeoForge)**. The m
 | [![Fluid Porter](images/robot_fluid_porter.png)](Fluid-Porter.md)<br>[Fluid Porter](Fluid-Porter.md) | [![Miner](images/robot_miner.png)](Miner.md)<br>[Miner](Miner.md) | | | |
 
 ## Machines and blocks
-- [Coppersteel and the Alloy Furnace](Coppersteel.md)
+- [Coppersteel and the Robotics Foundry](Coppersteel.md)
 - [Energy: Generators and the Battery](Energy.md)
 - [Charging Station](Charging-Station.md)
 - [Robot Workshop](Robot-Workshop.md)
@@ -32,7 +32,7 @@ This wiki is for FarmerFrank's Robotics for **Minecraft 26.3 (NeoForge)**. The m
 - [Inspector](Inspector.md)
 - [Battery Modules](Battery-Modules.md)
 - [Upgrades](Upgrades.md)
-- [Filter Chips](Filter-Chips.md)
+- [Filters](Filter-Chips.md)
 - [Robotics Manual](Robotics-Manual.md)
 
 ## For servers and modpacks

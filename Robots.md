@@ -34,5 +34,5 @@ Every robot is a [Robot Frame](Robot-Workshop.md) with a **Neural Chip** in it, 
 - **Animal farm:** a Breeder breeds and a Butcher keeps the numbers down.
 - **Mob farm:** a Killerbot in a dark room, with a Collector for the drops.
 - **Remote base:** a Power Porter carries energy from your generators to a battery far away.
-- **Quarry:** a Miner digs a shaft down to bedrock and fills its chest with ores. Give it a Black Filter Chip for stone and dirt.
+- **Quarry:** a Miner digs a shaft down to bedrock and fills its chest with ores. Give it a Blacklist Filter for stone and dirt.
 - **Fluids without pipes:** a Fluid Porter carries water, lava or other mods' fluids between [Glass Tanks](Glass-Tank.md) and machines.

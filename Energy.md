@@ -27,7 +27,7 @@ The Battery stores **100 000 FE**, and moves up to 200 FE/t in and out. It takes
 ![Battery recipe](images/recipes/battery.png)
 
 ## Sides
-The generators, the Battery, the [Alloy Furnace](Coppersteel.md) and the [Robot Workshop](Robot-Workshop.md) all have a **Sides** button in their screen. For each side (front, back, left, right, top, bottom) choose **Input**, **Output**, **Input + Output** or **Disabled**. Output sides push energy into blocks right next to them.
+The generators, the Battery, the [Robotics Foundry](Coppersteel.md) and the [Robot Workshop](Robot-Workshop.md) all have a **Sides** button in their screen. For each side (front, back, left, right, top, bottom) choose **Input**, **Output**, **Input + Output** or **Disabled**. Output sides push energy into blocks right next to them.
 
 ## Moving energy without cables
 The [Power Porter](Power-Porter.md) carries 25 000 FE at a time from one battery to another.

@@ -20,5 +20,5 @@ With the [Robot Linker](Robot-Linker.md), click:
 ## Tips
 - It delivers its basket (4 stacks, or 8 with a [Capacity Upgrade](Upgrades.md)) when it is full, or after a minute.
 - A [Speed Upgrade](Upgrades.md) also makes it get bites sooner.
-- A [Filter Chip](Filter-Chips.md) decides which catches it keeps. The rest go back into the water.
+- A [Filter](Filter-Chips.md) decides which catches it keeps. The rest go back into the water.
 - Uses the normal amount of energy (1×).

@@ -23,5 +23,5 @@ With the [Robot Linker](Robot-Linker.md), click:
 
 ## Tips
 - With a [Breeder](Breeder.md) in the same pen, the farm runs by itself.
-- A [Filter Chip](Filter-Chips.md) with spawn eggs picks which animals it butchers.
+- A [Filter](Filter-Chips.md) with spawn eggs picks which animals it butchers.
 - Uses twice the normal amount of energy (2×).

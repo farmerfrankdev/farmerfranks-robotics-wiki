@@ -5,9 +5,9 @@
 This page takes you from nothing to your first working robot. Every player also gets a [Robotics Manual](Robotics-Manual.md) the first time they join, with the same information in-game.
 
 ## 1. Make Coppersteel
-Almost everything in the mod is made from **Coppersteel Ingots**. Craft an [Alloy Furnace](Coppersteel.md), put iron in one input and copper in the other, and add fuel.
+Almost everything in the mod is made from **Coppersteel Ingots**. Craft a [Robotics Foundry](Coppersteel.md), put iron in one input and copper in the other, and add fuel.
 
-![Alloy Furnace recipe](images/recipes/alloy_furnace.png)
+![Robotics Foundry recipe](images/recipes/alloy_furnace.png)
 
 ## 2. Make energy
 Robots and machines run on FE (Forge Energy). Craft a **Stone Generator** and a **Battery**. Put them next to each other, and burn coal in the generator. See [Energy](Energy.md).

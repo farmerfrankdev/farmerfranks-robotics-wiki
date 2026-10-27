@@ -19,5 +19,5 @@ With the [Robot Linker](Robot-Linker.md), click:
 
 ## Tips
 - A [Capacity Upgrade](Upgrades.md) lets it carry two stacks, one in each hand.
-- A [Filter Chip](Filter-Chips.md) decides which items it carries.
+- A [Filter](Filter-Chips.md) decides which items it carries.
 - Uses the normal amount of energy (1×).

@@ -28,6 +28,6 @@ A machine from another mod counts as a tank if it holds fluids, even if it also 
 
 ## Tips
 - A [Capacity Upgrade](Upgrades.md) doubles its cargo to 8 buckets.
-- A [Filter Chip](Filter-Chips.md) with buckets picks which fluids it carries, for example a lava bucket for lava.
+- A [Filter](Filter-Chips.md) with buckets picks which fluids it carries, for example a lava bucket for lava.
 - Servers can change the cargo in the [config](Configuration.md).
 - Uses the normal amount of energy (1×).

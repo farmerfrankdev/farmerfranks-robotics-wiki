@@ -19,6 +19,6 @@ With the [Robot Linker](Robot-Linker.md), click:
 
 ## Tips
 - It carries up to 4 stacks at a time, or 8 with a [Capacity Upgrade](Upgrades.md).
-- A [Filter Chip](Filter-Chips.md) with a crop (such as wheat) or its seeds picks which crops it harvests.
+- A [Filter](Filter-Chips.md) with a crop (such as wheat) or its seeds picks which crops it harvests.
 - Pair it with a [Planter](Planter.md) for a farm that runs itself.
 - Uses the normal amount of energy (1×).

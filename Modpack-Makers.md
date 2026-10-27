@@ -35,12 +35,12 @@ See [Configuration](Configuration.md). Ship `config/farmerfranks_robotics-local.
 Robot names: `transporter`, `collector`, `lumberjack`, `killer`, `planter`, `harvester`, `fisher`, `breeder`, `butcher`, `power_porter`, `fluid_porter`, `miner`.
 
 ## Not changeable yet
-The Alloy Furnace recipe (iron + copper into Coppersteel) is built into the mod and cannot be changed with a datapack yet.
+The Robotics Foundry recipe (iron + copper into Coppersteel) is built into the mod and cannot be changed with a datapack yet.
 
 ## Recipe ids
 | Item | Recipe id |
 |---|---|
-| Alloy Furnace | `farmerfranks_robotics:alloy_furnace` |
+| Robotics Foundry (was Alloy Furnace) | `farmerfranks_robotics:alloy_furnace` |
 | Stone / Iron Generator | `farmerfranks_robotics:stone_generator`, `farmerfranks_robotics:iron_generator` |
 | Battery | `farmerfranks_robotics:battery` |
 | Charging Station | `farmerfranks_robotics:charging_station` |
@@ -49,7 +49,7 @@ The Alloy Furnace recipe (iron + copper into Coppersteel) is built into the mod 
 | Neural Chips | `farmerfranks_robotics:<robot>_chip`: `transporter_chip`, `collector_chip`, `lumberjack_chip`, `killer_chip`, `planter_chip`, `harvester_chip`, `fisher_chip`, `breeder_chip`, `butcher_chip`, `courier_chip` (Power Porter), `fluid_porter_chip`, `miner_chip` |
 | Battery Modules | `farmerfranks_robotics:copper_battery_module`, `farmerfranks_robotics:coppersteel_battery_module` |
 | Upgrades | `farmerfranks_robotics:speed_upgrade`, `range_upgrade`, `efficiency_upgrade`, `capacity_upgrade`, `magnet_upgrade`, `combat_upgrade`, `jetpack_upgrade` |
-| Filter Chips | `farmerfranks_robotics:white_filter_chip`, `farmerfranks_robotics:black_filter_chip` |
+| Whitelist and Blacklist Filters (were Filter Chips) | `farmerfranks_robotics:white_filter_chip`, `farmerfranks_robotics:black_filter_chip` |
 | Tools | `farmerfranks_robotics:robot_linker`, `farmerfranks_robotics:inspector`, `farmerfranks_robotics:robotics_manual` |
 | Blocks | `farmerfranks_robotics:robot_door`, `farmerfranks_robotics:fertilized_dirt`, `farmerfranks_robotics:glass_tank` |
 | Coppersteel Sword | `farmerfranks_robotics:coppersteel_sword` |
@@ -57,5 +57,5 @@ The Alloy Furnace recipe (iron + copper into Coppersteel) is built into the mod 
 ## Compatibility
 - **Mod loader:** NeoForge for Minecraft 26.3.
 - **Energy:** standard FE, so pipes and cables from other mods work.
-- **JEI (optional):** shows Alloy Furnace recipes, generator fuels and Robot Workshop builds.
+- **JEI (optional):** shows Robotics Foundry recipes, generator fuels and Robot Workshop builds.
 - **Multiplayer:** works on dedicated servers.

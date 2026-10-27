@@ -21,5 +21,5 @@ With the [Robot Linker](Robot-Linker.md), click:
 - It goes well with a [Lumberjack](Lumberjack.md) or a [Killerbot](Killerbot.md), which leave their drops on the ground.
 - A [Magnet Upgrade](Upgrades.md) lets it pick up items from 3 blocks away, even over a fence or wall.
 - A [Capacity Upgrade](Upgrades.md) lets it carry two stacks.
-- A [Filter Chip](Filter-Chips.md) decides which items it picks up.
+- A [Filter](Filter-Chips.md) decides which items it picks up.
 - Uses the normal amount of energy (1×).

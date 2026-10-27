@@ -24,6 +24,6 @@ With the [Robot Linker](Robot-Linker.md), click:
 3. its charging station.
 
 ## Tips
-- A [Filter Chip](Filter-Chips.md) can hold food (for example a whitelist with carrots: it only feeds carrots, to the animals that eat them), or spawn eggs (which animals to breed).
+- A [Filter](Filter-Chips.md) can hold food (for example a whitelist with carrots: it only feeds carrots, to the animals that eat them), or spawn eggs (which animals to breed).
 - Pair it with a [Butcher](Butcher.md) to keep the numbers down.
 - Uses the normal amount of energy (1×).

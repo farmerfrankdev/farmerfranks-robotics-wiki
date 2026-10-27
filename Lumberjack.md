@@ -21,5 +21,5 @@ With the [Robot Linker](Robot-Linker.md), click:
 - It only cuts trees with natural leaves, so log houses and other buildings made of logs are safe.
 - Let a [Collector](Collector.md) work in the same area to pick up the logs.
 - Saplings on [Fertilized Dirt](Fertilized-Dirt.md) grow four times as fast.
-- A [Filter Chip](Filter-Chips.md) decides which saplings it plants.
+- A [Filter](Filter-Chips.md) decides which saplings it plants.
 - Uses twice the normal amount of energy (2×).

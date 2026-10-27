@@ -1,12 +1,12 @@
-# Filter Chips
+# Filters
 
 [Home](README.md)
 
-![White Filter Chip](images/white_filter_chip.png) ![Black Filter Chip](images/black_filter_chip.png)
+![Whitelist Filter](images/white_filter_chip.png) ![Blacklist Filter](images/black_filter_chip.png)
 
-A Filter Chip decides what a robot works with.
-- A **White Filter Chip** is a whitelist: the robot only works with the picked items.
-- A **Black Filter Chip** is a blacklist: the robot works with everything but them.
+A Filter decides what a robot works with. (Before 0.23.0 they were called White and Black Filter Chips.)
+- A **Whitelist Filter** is a whitelist: the robot only works with the picked items.
+- A **Blacklist Filter** is a blacklist: the robot works with everything but them.
 
 ## Using one
 1. Right-click with the chip to open it.
@@ -29,5 +29,5 @@ A Filter Chip decides what a robot works with.
 | [Miner](Miner.md) | which of the blocks it digs it keeps; the rest are thrown away |
 
 ## Recipes
-![White Filter Chip recipe](images/recipes/white_filter_chip.png)
-![Black Filter Chip recipe](images/recipes/black_filter_chip.png)
+![Whitelist Filter recipe](images/recipes/white_filter_chip.png)
+![Blacklist Filter recipe](images/recipes/black_filter_chip.png)

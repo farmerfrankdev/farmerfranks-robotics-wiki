@@ -21,7 +21,7 @@ Under the robot slot there is a slot for each kind of module:
 | Slot | Module |
 |---|---|
 | Chip | a Neural Chip: what the robot does |
-| Filter | a [Filter Chip](Filter-Chips.md) |
+| Filter | a [Filter](Filter-Chips.md) |
 | Battery | a [Battery Module](Battery-Modules.md) |
 | Upgrade | an [Upgrade](Upgrades.md) |
 

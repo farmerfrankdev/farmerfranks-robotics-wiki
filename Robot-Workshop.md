@@ -30,6 +30,7 @@ A slot the robot cannot use is crossed out: a [Power Porter](Power-Porter.md) ha
 - **To put a module in,** put it in its slot. The module the robot had before comes out in the output slot.
 - **To take a module out,** click it. Modules the robot already has are shown in their slots with a green frame and a tick. A module turns red until it is out; click it again to keep it.
 - Putting a module in or taking one out takes **5 seconds** and **2 000 FE**.
+- **A name of its own,** if you like: type it in the field next to the robot slot. It shows in the Robot Panel, the Inspector and above the robot, so you can tell your robots apart. It costs nothing and takes no time. Empty the field to take the name away.
 - **The chip comes out last.** A robot whose chip is taken out becomes a Robot Frame again, so take the other modules out first.
 
 The robot stays in its slot the whole time. Use the **Sides** button to let hoppers and pipes put frames and modules in.

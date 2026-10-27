@@ -28,7 +28,7 @@ Under the robot slot there is a slot for each kind of module:
 A slot the robot cannot use is crossed out: a [Power Porter](Power-Porter.md) has nothing to filter, so it takes no filter. An upgrade that does nothing for the robot, such as a Magnet Upgrade in a Miner, gets a red frame. Hold the mouse over a slot to see why. With a Robot Frame in the workshop, the other modules wait in their slots until the chip is in.
 
 - **To put a module in,** put it in its slot. The module the robot had before comes out in the output slot.
-- **To take a module out,** click it. Modules the robot already has are shown faded in their slots. A module turns red until it is out; click it again to keep it.
+- **To take a module out,** click it. Modules the robot already has are shown in their slots with a green frame and a tick. A module turns red until it is out; click it again to keep it.
 - Putting a module in or taking one out takes **5 seconds** and **2 000 FE**.
 - **The chip comes out last.** A robot whose chip is taken out becomes a Robot Frame again, so take the other modules out first.
 

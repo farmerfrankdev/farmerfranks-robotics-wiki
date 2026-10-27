@@ -26,6 +26,8 @@ For a chest the side makes no difference, but a furnace or another mod's machine
 ## The robot's chest screen
 **Ctrl + right-click a robot** to see what it carries, and every chest it fetches from and delivers to, with the block and where it is. Each has a button for the side the robot uses: click it to switch between Bottom, Top, Front, Back, Left side, Right side and Any side. Left and right are as you see them standing in front of the block. A block without a front, such as a barrel standing up, counts the side turned towards you as its front. This is handy for machines from other mods that give their output on another side, or for a side you could not click.
 
+The screen also shows the robot's filter, if it has one. Click **Change** to change the items in it, the same way as with a Filter Chip in your hand. Closing the filter takes you back to the chest screen.
+
 With more than one chest to deliver to, you can also switch between filling one at a time and round robin there.
 
 ## More than one chest

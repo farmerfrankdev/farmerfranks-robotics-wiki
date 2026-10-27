@@ -18,10 +18,15 @@ The Robot Linker tells a robot where to work: its chests, its charging station a
 
 What each robot asks for is listed on [Robots](Robots.md).
 
-## The side you click
-The linker remembers which side of a chest or machine you clicked, and the robot uses that side. For a chest it makes no difference, but a furnace or another mod's machine takes different things on different sides:
-- click the **top** of a furnace to deliver ore to it, and its **side** to deliver fuel;
-- when **fetching**, a robot takes from below first, as a hopper under it would. From a furnace it then only takes what it has made, whatever side you click. If nothing can be taken from below, it uses the side you clicked, for machines from other mods that give their output on another side.
+## Sides
+For a chest the side makes no difference, but a furnace or another mod's machine takes different things on different sides.
+- **Delivering:** the robot uses the side you clicked. Click the **top** of a furnace to deliver ore to it, and its **side** to deliver fuel.
+- **Fetching:** the robot uses the **bottom**, as a hopper under it would. From a furnace it then only takes what it has made.
+
+## The robot's chest screen
+**Ctrl + right-click a robot** to see every chest it fetches from and delivers to, with the block and where it is. Each has a button for the side the robot uses: click it to switch between Bottom, Top, North, South, West, East and Any side. This is handy for machines from other mods that give their output on another side, or for a side you could not click.
+
+With more than one chest to deliver to, you can also switch between filling one at a time and round robin there.
 
 ## More than one chest
 A robot can fetch from more than one chest, and deliver to more than one. It works the same for both:

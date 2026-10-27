@@ -21,7 +21,7 @@ What each robot asks for is listed on [Robots](Robots.md).
 ## The side you click
 The linker remembers which side of a chest or machine you clicked, and the robot uses that side. For a chest it makes no difference, but a furnace or another mod's machine takes different things on different sides:
 - click the **top** of a furnace to deliver ore to it, and its **side** to deliver fuel;
-- click its **bottom** as the pickup to take out what it has made.
+- when **fetching**, a robot takes from below first, as a hopper under it would. From a furnace it then only takes what it has made, whatever side you click. If nothing can be taken from below, it uses the side you clicked, for machines from other mods that give their output on another side.
 
 ## More than one chest
 A robot can fetch from more than one chest, and deliver to more than one. It works the same for both:

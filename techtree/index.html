@@ -103,6 +103,20 @@ h1 span { color: var(--accent); }
 .cost .bar i { display: block; height: 100%; }
 .cost span:last-child { font-family: var(--mono); font-size: 12px; text-align: right; font-variant-numeric: tabular-nums; }
 .empty { color: var(--muted); font-size: 13px; margin: 0; }
+.fx { display: grid; gap: 6px; }
+.fx button { all: unset; display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 8px; align-items: start; cursor: pointer; padding: 3px 4px; border-radius: 4px; }
+.fx button:hover { background: var(--accent-soft); }
+.fx button:focus-visible { outline: 2px solid var(--accent); }
+.fx img { width: 22px; height: 22px; image-rendering: pixelated; }
+.fx b { display: block; font-size: 13px; line-height: 1.25; }
+.fx span { display: block; font-size: 12px; color: var(--muted); line-height: 1.3; }
+.matrix th, .matrix td { text-align: center; padding: 6px 8px; }
+.matrix th:first-child, .matrix td:first-child { text-align: left; }
+.matrix thead th { cursor: default; }
+.matrix thead img { width: 22px; height: 22px; image-rendering: pixelated; display: block; margin: 0 auto; }
+.matrix td.on { color: var(--accent); font-size: 15px; }
+.matrix td.off { color: var(--line); }
+.matrix tbody tr:hover td { background: var(--accent-soft); }
 
 .table-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 12px; }
 .table-head h2 { font-family: var(--display); font-size: 22px; margin: 0; }
@@ -149,6 +163,14 @@ td:nth-child(2) { font-family: var(--body); color: var(--muted); }
 
   <section style="display:grid;gap:12px">
     <div class="table-head">
+      <h2 id="matrix-title"></h2>
+      <p class="foot" id="matrix-hint" style="margin:0"></p>
+    </div>
+    <div class="scroll"><table class="matrix" id="matrix"></table></div>
+  </section>
+
+  <section style="display:grid;gap:12px">
+    <div class="table-head">
       <h2 id="table-title"></h2>
       <div class="filters" id="filters"></div>
     </div>
@@ -168,6 +190,8 @@ const TEXT = {
     mats: { iron: 'Iron', copper: 'Copper', gold: 'Gold', redstone: 'Redstone', diamond: 'Diamond', glass: 'Glass', stone: 'Stone', wood: 'Wood', other: 'Other' },
     madeOf: 'Made of', usedIn: 'Used in', recipe: 'Recipe', recipeOf: n => `Recipe for ${n}`, rawTotal: 'Raw materials in total',
     noRecipe: 'No recipe.', notUsed: 'Not used in any other part.', none: 'None.',
+    modules: 'Modules', worksOn: 'Works on', matrixTitle: 'Modules per robot',
+    matrixHint: 'Each robot takes one battery module, one upgrade and one filter. Hover a mark to see what the module does for that robot.',
     tableTitle: 'Raw materials per part', all: 'All', part: 'Part', group: 'Group', rest: 'Other', loadError: 'The data for this page did not load. Reload the page.',
     foot: v => `Made from the recipe files of version ${v}. Raw materials are counted all the way down: Coppersteel is 1 iron and 1 copper, and a robot is a Robot Frame and its chip. Vanilla parts are broken down where it matters: an iron block is 9 iron, a hopper 5 iron, a diamond pickaxe 3 diamonds. Wood is planks. "Other" is things like books, fishing rods and ender pearls.`,
   },
@@ -180,6 +204,8 @@ const TEXT = {
     mats: { iron: 'Jern', copper: 'Kobber', gold: 'Gull', redstone: 'Redstone', diamond: 'Diamant', glass: 'Glass', stone: 'Stein', wood: 'Treverk', other: 'Annet' },
     madeOf: 'Lages av', usedIn: 'Brukes i', recipe: 'Oppskrift', recipeOf: n => `Oppskrift for ${n}`, rawTotal: 'Råvarer totalt',
     noRecipe: 'Ingen oppskrift.', notUsed: 'Brukes ikke i andre deler.', none: 'Ingen.',
+    modules: 'Moduler', worksOn: 'Virker på', matrixTitle: 'Moduler per robot',
+    matrixHint: 'Hver robot tar én batterimodul, én oppgradering og ett filter. Hold musa over et merke for å se hva modulen gjør for den roboten.',
     tableTitle: 'Råvarer per del', all: 'Alle', part: 'Del', group: 'Gruppe', rest: 'Annet', loadError: 'Fant ikke dataene for siden. Last den inn på nytt.',
     foot: v => `Laget fra oppskriftsfilene i versjon ${v}. Råvarene er regnet helt ned: Coppersteel er 1 jern og 1 kobber, og en robot er Robot Frame og brikken sin. Vanilla-deler er regnet om der det betyr noe: en jernblokk er 9 jern, en hopper 5 jern, en diamanthakke 3 diamanter. Treverk er planker. «Annet» er ting som bok, fiskestang og ender pearl.`,
   },
@@ -219,6 +245,9 @@ function start(DATA) {
     document.getElementById('legend').innerHTML = MATS.slice(0, 5).map(([k]) => `<span><i style="background:var(--${k})"></i>${t().mats[k]}</span>`).join('')
       + `<span><i style="background:var(--link-in)"></i>${t().madeOf}</span><span><i style="background:var(--link-out)"></i>${t().usedIn}</span>`;
     document.getElementById('table-title').textContent = t().tableTitle;
+    document.getElementById('matrix-title').textContent = t().matrixTitle;
+    document.getElementById('matrix-hint').textContent = t().matrixHint;
+    renderMatrix();
     document.getElementById('foot').textContent = t().foot(DATA.version);
     renderTree();
     renderFilters();
@@ -264,14 +293,24 @@ function start(DATA) {
     return `<button type="button" class="chip" data-key="${it.key}"><img src="${it.icon}" alt="">${nm(it)}${count}</button>`;
   }
 
+  // What a part comes from and goes to in the tree: its ingredients and the parts it is used in, and for robots and
+  // modules also the modules a robot takes and the robots a module works on.
+  const robotOrder = items.filter(i => i.tier === 'robots').map(i => i.key);
+  const sortRobots = list => [...list].sort((a, b) => robotOrder.indexOf(a.key) - robotOrder.indexOf(b.key));
+  const fromKeys = it => [...it.inputs.filter(i => byId[i.id]).map(i => byId[i.id].key), ...(it.modules || []).map(m => m.key)];
+  const toKeys = it => [...it.usedIn, ...(it.robots || []).map(r => r.key)];
+  const effect = e => (lang === 'no' && e.effectNo) || e.effect;
+  const fxList = list => `<div class="fx">${list.map(e => `<button type="button" data-key="${e.key}"><img src="${byKey[e.key].icon}" alt=""><div><b>${nm(byKey[e.key])}</b><span>${effect(e)}</span></div></button>`).join('')}</div>`;
+
   function select(key) {
     selected = key;
     const it = byKey[key];
     tree.classList.add('has-sel');
+    const from = fromKeys(it), to = toKeys(it);
     for (const c of tree.querySelectorAll('.card[data-key]')) {
       c.classList.toggle('sel', c.dataset.key === key);
-      c.classList.toggle('in', it.inputs.some(i => byId[i.id] && byId[i.id].key === c.dataset.key));
-      c.classList.toggle('out', it.usedIn.includes(c.dataset.key));
+      c.classList.toggle('in', from.includes(c.dataset.key));
+      c.classList.toggle('out', to.includes(c.dataset.key));
     }
     const total = Math.max(1, ...items.map(i => Math.max(0, ...MATS.map(([k]) => i.cost[k] || 0))));
     const costRows = MATS.filter(([k]) => it.cost[k]).map(([k]) =>
@@ -284,8 +323,10 @@ function start(DATA) {
       ${how(it) ? `<div class="how">${how(it)}</div>` : ''}
       <div><h4>${t().madeOf}</h4>${it.inputs.length ? `<div class="chips">${it.inputs.map(chipFor).join('')}</div>` : `<p class="empty">${t().noRecipe}</p>`}</div>
       <div><h4>${t().usedIn}</h4>${it.usedIn.length ? `<div class="chips">${it.usedIn.map(k => chipFor({ id: byKey[k].id, count: 1 })).join('')}</div>` : `<p class="empty">${t().notUsed}</p>`}</div>
+      ${it.modules ? `<div><h4>${t().modules}</h4>${fxList(it.modules)}</div>` : ''}
+      ${it.robots ? `<div><h4>${t().worksOn}</h4>${fxList(sortRobots(it.robots))}</div>` : ''}
       <div><h4>${t().rawTotal}</h4>${costRows ? `<div class="costs">${costRows}</div>` : `<p class="empty">${t().none}</p>`}</div>`;
-    for (const b of document.querySelectorAll('#panel .chip[data-key]')) b.addEventListener('click', () => {
+    for (const b of document.querySelectorAll('#panel .chip[data-key], #panel .fx button')) b.addEventListener('click', () => {
       select(b.dataset.key);
       document.getElementById('card-' + b.dataset.key)?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
     });
@@ -316,8 +357,24 @@ function start(DATA) {
       path.setAttribute('stroke-opacity', '0.75');
       svg.append(path);
     };
-    for (const input of it.inputs) if (byId[input.id]) link(byId[input.id].key, 'var(--link-in)');
-    for (const k of it.usedIn) link(k, 'var(--link-out)');
+    for (const k of fromKeys(it)) link(k, 'var(--link-in)');
+    for (const k of toKeys(it)) link(k, 'var(--link-out)');
+  }
+
+  // Robots down the side, modules across the top, and a mark where a module does something for a robot.
+  function renderMatrix() {
+    const modules = items.filter(i => i.robots);
+    const robots = items.filter(i => i.tier === 'robots');
+    const table = document.getElementById('matrix');
+    table.innerHTML = `<thead><tr><th scope="col">${t().lanes.robots[0]}</th>${modules.map(m => `<th scope="col" title="${nm(m)}"><img src="${m.icon}" alt="${nm(m)}"></th>`).join('')}</tr></thead>
+      <tbody>${robots.map(r => `<tr><td><button type="button" data-key="${r.key}"><img src="${r.icon}" alt="">${nm(r)}</button></td>${modules.map(m => {
+        const e = (r.modules || []).find(x => x.key === m.key);
+        return e ? `<td class="on" title="${nm(m)}: ${effect(e)}">●</td>` : `<td class="off" title="${nm(m)}: –">·</td>`;
+      }).join('')}</tr>`).join('')}</tbody>`;
+    for (const b of table.querySelectorAll('td button')) b.addEventListener('click', () => {
+      select(b.dataset.key);
+      document.getElementById('card-' + b.dataset.key).scrollIntoView({ block: 'center', behavior: 'smooth' });
+    });
   }
   window.addEventListener('resize', drawLinks);
 

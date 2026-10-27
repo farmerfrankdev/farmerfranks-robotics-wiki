@@ -44,5 +44,6 @@ The server sends these values to every player, so only the server's file counts.
 | `robots.porter_cargo` | 25000 | 1 000 – 10 000 000 | FE a Power Porter carries at a time (twice with a Capacity Upgrade) |
 | `robots.fluid_porter_cargo` | 4000 | 100 – 1 000 000 | mB a Fluid Porter carries at a time; 1000 is a bucket (twice with a Capacity Upgrade) |
 | `robots.miner_max_area_size` | 16 | 2 – 64 | Biggest area a Miner digs out, in blocks along each side (twice with a Range Upgrade) |
+| `robots.nearby_charger_range` | 16 | 0 – 64 | A robot that needs charging uses a station this close (in blocks) if it is closer than its own. 0 means always its own |
 
 The numbers in the [Robotics Manual](Robotics-Manual.md) and the item tooltips are the defaults, so they do not change with the config.

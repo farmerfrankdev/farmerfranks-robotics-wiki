@@ -30,6 +30,7 @@ Robots that deliver (Transporter, Collector, Harvester, Fisher, Butcher and Mine
 - **Shift + click a chest in a group:** takes that group away again.
 - Up to 8 groups, and 64 inventories in all. The delivery chest you clicked normally comes first. Double chests count once.
 - Every inventory in a group is delivered to from the side you clicked on the last chest of it.
+- **Transporter:** once it has a delivery group, a chest clicked without Shift is always a new pickup chest. A delivery chest is not needed then.
 
 How the robot shares out, switched with **Shift + right-click in the air** while the linker is setting up the robot:
 - **Fill one at a time** (the default): it fills one inventory, and moves on to the next when it is full.

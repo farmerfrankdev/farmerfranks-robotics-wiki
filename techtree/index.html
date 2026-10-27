@@ -193,7 +193,8 @@ try { lang = localStorage.getItem('techtree-lang') || ''; } catch (e) { lang = '
 if (lang !== 'en' && lang !== 'no') lang = /^(nb|nn|no)\b/i.test(navigator.language || '') ? 'no' : 'en';
 const t = () => TEXT[lang];
 
-fetch('data.json').then(r => r.json()).then(start).catch(() => {
+// Always ask whether there is newer data, so a new version of the mod shows up right away.
+fetch('data.json', { cache: 'no-cache' }).then(r => r.json()).then(start).catch(() => {
   document.getElementById('panel').innerHTML = `<p class="empty">${t().loadError}</p>`;
 });
 

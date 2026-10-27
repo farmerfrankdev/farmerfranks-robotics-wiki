@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="no">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Robotics Tech Tree</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: the tree as stacked lanes (raw stuff at the top, robots and add-ons below), a sticky detail panel beside it, and a cost table under both. */
+:root {
+  --bg: #eef1f4; --panel: #ffffff; --ink: #1d2733; --muted: #5d6b7a; --line: #cfd6de;
+  --accent: #b5652f; --accent-soft: #f5e3d6; --link-in: #b5652f; --link-out: #2f7fa8;
+  --iron: #7d8894; --copper: #c8743e; --gold: #d4a017; --redstone: #c9302c; --diamond: #2aa7b0; --other: #9aa5b1;
+  --idea: #8a6fc2;
+  --display: "Chakra Petch", "Segoe UI", sans-serif;
+  --body: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #141a21; --panel: #1c242e; --ink: #e4e9ee; --muted: #93a1af; --line: #2e3a47;
+  --accent: #e08a4c; --accent-soft: #3a2a1f; --link-in: #e08a4c; --link-out: #5fb3dc;
+  --iron: #a6b0ba; --copper: #e08a4c; --gold: #f2c230; --redstone: #ee5d58; --diamond: #4fd6de; --other: #75828f; --idea: #b39ae6;
+  color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #141a21; --panel: #1c242e; --ink: #e4e9ee; --muted: #93a1af; --line: #2e3a47;
+  --accent: #e08a4c; --accent-soft: #3a2a1f; --link-in: #e08a4c; --link-out: #5fb3dc;
+  --iron: #a6b0ba; --copper: #e08a4c; --gold: #f2c230; --redstone: #ee5d58; --diamond: #4fd6de; --other: #75828f; --idea: #b39ae6;
+  color-scheme: dark; }
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 15px; line-height: 1.5;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 24px 48px; }
+.wrap { max-width: 1400px; margin: 0 auto; display: grid; gap: 28px; }
+header { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 16px; }
+h1 { font-family: var(--display); font-size: clamp(26px, 4vw, 38px); margin: 0; letter-spacing: 0.01em; text-wrap: balance; }
+h1 span { color: var(--accent); }
+.sub { color: var(--muted); margin: 4px 0 0; max-width: 62ch; }
+.legend { display: flex; flex-wrap: wrap; gap: 8px 14px; font-family: var(--mono); font-size: 12px; color: var(--muted); }
+.legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; }
+
+.main { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 24px; align-items: start; }
+@media (max-width: 1000px) { .main { grid-template-columns: minmax(0, 1fr); } }
+
+.tree { position: relative; display: grid; gap: 14px; min-width: 0; }
+.links { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; }
+.lane { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 12px; align-items: start; padding-block: 10px; border-top: 1px solid var(--line); }
+.lane:first-of-type { border-top: 0; }
+@media (max-width: 640px) { .lane { grid-template-columns: minmax(0, 1fr); } }
+.lane h2 { font-family: var(--display); font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; margin: 6px 0 0; color: var(--muted); }
+.lane h2 small { display: block; font-family: var(--body); text-transform: none; letter-spacing: 0; font-size: 12px; font-weight: 400; }
+.cards { display: flex; flex-wrap: wrap; gap: 8px; min-width: 0; }
+
+.card { position: relative; z-index: 1; display: grid; grid-template-columns: 32px minmax(0, 1fr); align-items: center; gap: 8px; width: 172px;
+  padding: 7px 9px; background: var(--panel); border: 1px solid var(--line); border-radius: 6px; color: inherit; text-align: left;
+  font: inherit; cursor: pointer; transition: border-color .15s, box-shadow .15s, opacity .15s; }
+.card:hover { border-color: var(--accent); }
+.card:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.card img { width: 32px; height: 32px; image-rendering: pixelated; }
+.card .nm { font-size: 13px; font-weight: 700; line-height: 1.2; overflow-wrap: anywhere; }
+.card .pips { display: flex; flex-wrap: wrap; gap: 2px 6px; font-family: var(--mono); font-size: 10.5px; color: var(--muted); margin-top: 2px; }
+.tree.has-sel .card { opacity: .38; }
+.tree.has-sel .card.sel, .tree.has-sel .card.in, .tree.has-sel .card.out { opacity: 1; }
+.card.sel { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent); }
+.card.in { border-color: var(--link-in); }
+.card.out { border-color: var(--link-out); }
+.card.idea { border-style: dashed; border-color: var(--idea); cursor: default; grid-template-columns: minmax(0, 1fr); }
+.card.idea .nm { color: var(--idea); }
+
+.panel { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 16px); background: var(--panel); border: 1px solid var(--line); border-radius: 8px;
+  padding: 18px; display: grid; gap: 14px; min-width: 0; }
+@media (max-width: 1000px) { .panel { position: static; } }
+.ph { display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 12px; align-items: center; }
+.ph img { width: 56px; height: 56px; image-rendering: pixelated; }
+.ph h3 { font-family: var(--display); font-size: 21px; margin: 0; line-height: 1.15; text-wrap: balance; }
+.tier { font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); }
+.desc { margin: 0; }
+.note { margin: 0; font-family: var(--mono); font-size: 12px; color: var(--muted); }
+.panel h4 { margin: 0 0 6px; font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+.recipe { overflow-x: auto; }
+.recipe img { width: 208px; image-rendering: pixelated; border-radius: 4px; display: block; }
+.how { font-family: var(--mono); font-size: 12px; padding: 8px 10px; background: var(--accent-soft); border-radius: 4px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { display: inline-flex; align-items: center; gap: 6px; padding: 3px 8px 3px 4px; border-radius: 4px; border: 1px solid var(--line);
+  background: transparent; color: inherit; font: inherit; font-size: 13px; cursor: pointer; }
+.chip.plain { cursor: default; padding-left: 8px; }
+.chip img { width: 18px; height: 18px; image-rendering: pixelated; }
+.chip b { font-family: var(--mono); font-weight: 600; font-size: 12px; color: var(--muted); }
+.chip:not(.plain):hover { border-color: var(--accent); }
+.costs { display: grid; gap: 5px; }
+.cost { display: grid; grid-template-columns: 70px minmax(0, 1fr) 46px; gap: 8px; align-items: center; font-size: 13px; }
+.cost .bar { height: 8px; border-radius: 2px; background: var(--line); overflow: hidden; }
+.cost .bar i { display: block; height: 100%; }
+.cost span:last-child { font-family: var(--mono); font-size: 12px; text-align: right; font-variant-numeric: tabular-nums; }
+.empty { color: var(--muted); font-size: 13px; margin: 0; }
+
+.table-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 12px; }
+.table-head h2 { font-family: var(--display); font-size: 22px; margin: 0; }
+.filters { display: flex; flex-wrap: wrap; gap: 6px; }
+.filters button { font: inherit; font-size: 13px; padding: 4px 10px; border-radius: 4px; border: 1px solid var(--line); background: var(--panel); color: inherit; cursor: pointer; }
+.filters button[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); }
+.scroll { overflow-x: auto; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; }
+table { border-collapse: collapse; width: 100%; min-width: 760px; font-size: 13px; }
+th, td { padding: 7px 10px; text-align: right; border-bottom: 1px solid var(--line); font-variant-numeric: tabular-nums; }
+th:first-child, td:first-child, th:nth-child(2), td:nth-child(2) { text-align: left; }
+th { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); cursor: pointer; user-select: none; white-space: nowrap; }
+th[aria-sort="descending"]::after { content: " ▾"; } th[aria-sort="ascending"]::after { content: " ▴"; }
+td { font-family: var(--mono); }
+td:first-child { font-family: var(--body); font-weight: 700; }
+td:first-child button { all: unset; cursor: pointer; display: inline-flex; gap: 8px; align-items: center; }
+td:first-child button:focus-visible { outline: 2px solid var(--accent); }
+td:first-child img { width: 20px; height: 20px; image-rendering: pixelated; }
+td .zero { color: var(--line); }
+td:nth-child(2) { font-family: var(--body); color: var(--muted); }
+.foot { color: var(--muted); font-size: 12px; margin: 0; max-width: 80ch; }
+@media (prefers-reduced-motion: reduce) { .card { transition: none; } }
+html { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+body { margin: 0; }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <div>
+      <h1>FarmerFrank's Robotics <span>tech tree</span></h1>
+      <p class="sub">Alle deler i moden, fra Coppersteel til ferdige roboter. Klikk en del for å se oppskriften, hva den er laget av, hva den brukes i og hva den koster i råvarer.</p>
+    </div>
+    <div class="legend" id="legend"></div>
+  </header>
+
+  <div class="main">
+    <div class="tree" id="tree"><svg class="links" id="links" aria-hidden="true"></svg></div>
+    <aside class="panel" id="panel" aria-live="polite"></aside>
+  </div>
+
+  <section style="display:grid;gap:12px">
+    <div class="table-head">
+      <h2>Råvarer per del</h2>
+      <div class="filters" id="filters"></div>
+    </div>
+    <div class="scroll"><table id="table"></table></div>
+    <p class="foot" id="foot"></p>
+  </section>
+</div>
+
+<script>
+fetch('data.json').then(r => r.json()).then(start).catch(() => {
+  document.getElementById('panel').innerHTML = '<p class="empty">Fant ikke dataene for siden. Last den inn på nytt.</p>';
+});
+function start(DATA) {
+const items = DATA.items;
+const byId = Object.fromEntries(items.map(i => [i.id, i]));
+const byKey = Object.fromEntries(items.map(i => [i.key, i]));
+
+const LANES = [
+  ['smelting', 'Smelting', 'Jern + kobber'],
+  ['power', 'Strøm', 'FE inn og ut'],
+  ['workshop', 'Verksted og verktøy', ''],
+  ['chips', 'Nevrobrikker', 'Bestemmer jobben'],
+  ['robots', 'Roboter', 'Ramme + brikke i Workshop'],
+  ['modules', 'Moduler', 'Settes inn i Workshop'],
+  ['blocks', 'Blokker', ''],
+  ['ideas', 'Ideer', 'Ikke laget ennå'],
+];
+const IDEAS = [
+  ['Advancements', 'Et tre som viser rekkefølgen og låser opp oppskriftsboka'],
+  ['Alloy-oppskrift som datapack', 'Så modpacks kan endre Coppersteel'],
+  ['Fabric-versjon', 'MultiLoader-oppsett med felles kode'],
+  ['Banner med 12 roboter', 'Miner mangler på CurseForge-banneret'],
+];
+const MATS = [
+  ['iron', 'Jern', 'Fe'], ['copper', 'Kobber', 'Cu'], ['gold', 'Gull', 'Au'], ['redstone', 'Redstone', 'Rs'],
+  ['diamond', 'Diamant', 'Di'], ['glass', 'Glass', 'Gl'], ['stone', 'Stein', 'St'], ['wood', 'Treverk', 'Wd'], ['other', 'Annet', '+'],
+];
+const fmt = n => (Math.round(n * 100) / 100).toString().replace('.', ',');
+
+document.getElementById('legend').innerHTML = MATS.slice(0, 5).map(([k, n]) => `<span><i style="background:var(--${k})"></i>${n}</span>`).join('')
+  + `<span><i style="background:var(--link-in)"></i>Lages av</span><span><i style="background:var(--link-out)"></i>Brukes i</span>`;
+
+const tree = document.getElementById('tree');
+const svg = document.getElementById('links');
+for (const [tier, name, hint] of LANES) {
+  const lane = document.createElement('section');
+  lane.className = 'lane';
+  lane.innerHTML = `<h2>${name}${hint ? `<small>${hint}</small>` : ''}</h2><div class="cards"></div>`;
+  const cards = lane.querySelector('.cards');
+  if (tier === 'ideas') {
+    for (const [title, text] of IDEAS) {
+      const c = document.createElement('div');
+      c.className = 'card idea';
+      c.innerHTML = `<div><div class="nm">${title}</div><div class="pips">${text}</div></div>`;
+      cards.append(c);
+    }
+  }
+  for (const it of items.filter(i => i.tier === tier)) {
+    const c = document.createElement('button');
+    c.type = 'button';
+    c.className = 'card';
+    c.id = 'card-' + it.key;
+    c.dataset.key = it.key;
+    const pips = MATS.slice(0, 5).filter(([k]) => it.cost[k]).map(([k, , a]) => `<span style="color:var(--${k})">${fmt(it.cost[k])} ${a}</span>`).join('');
+    c.innerHTML = `<img src="${it.icon}" alt=""><div style="min-width:0"><div class="nm">${it.name}</div><div class="pips">${pips}</div></div>`;
+    c.addEventListener('click', () => select(it.key));
+    cards.append(c);
+  }
+  tree.append(lane);
+}
+
+let selected = null;
+function chipFor(input) {
+  const it = byId[input.id];
+  const count = input.count > 1 ? `<b>×${fmt(input.count)}</b>` : '';
+  if (!it) return `<span class="chip plain">${input.name}${count ? ' ' + count : ''}</span>`;
+  return `<button type="button" class="chip" data-key="${it.key}"><img src="${it.icon}" alt="">${it.name}${count}</button>`;
+}
+function select(key) {
+  selected = key;
+  const it = byKey[key];
+  tree.classList.add('has-sel');
+  for (const c of tree.querySelectorAll('.card[data-key]')) {
+    c.classList.toggle('sel', c.dataset.key === key);
+    c.classList.toggle('in', it.inputs.some(i => byId[i.id] && byId[i.id].key === c.dataset.key));
+    c.classList.toggle('out', it.usedIn.includes(c.dataset.key));
+  }
+  const tierName = (LANES.find(l => l[0] === it.tier) || [, ''])[1];
+  const total = Math.max(1, ...items.map(i => Math.max(0, ...MATS.map(([k]) => i.cost[k] || 0))));
+  const costRows = MATS.filter(([k]) => it.cost[k]).map(([k, n]) =>
+    `<div class="cost"><span>${n}</span><span class="bar"><i style="width:${Math.min(100, it.cost[k] / total * 100)}%;background:var(--${k})"></i></span><span>${fmt(it.cost[k])}</span></div>`).join('');
+  document.getElementById('panel').innerHTML = `
+    <div class="ph"><img src="${it.icon}" alt=""><div><div class="tier">${tierName}</div><h3>${it.name}</h3></div></div>
+    ${it.desc ? `<p class="desc">${it.desc}</p>` : ''}
+    ${it.note ? `<p class="note">${it.note}</p>` : ''}
+    ${it.recipe ? `<div><h4>Oppskrift</h4><div class="recipe"><img src="${it.recipe}" alt="Oppskrift for ${it.name}"></div></div>` : ''}
+    ${it.how ? `<div class="how">${it.how}</div>` : ''}
+    <div><h4>Lages av</h4>${it.inputs.length ? `<div class="chips">${it.inputs.map(chipFor).join('')}</div>` : '<p class="empty">Ingen oppskrift.</p>'}</div>
+    <div><h4>Brukes i</h4>${it.usedIn.length ? `<div class="chips">${it.usedIn.map(k => chipFor({ id: byKey[k].id, count: 1 })).join('')}</div>` : '<p class="empty">Ingen andre deler.</p>'}</div>
+    <div><h4>Råvarer totalt</h4>${costRows ? `<div class="costs">${costRows}</div>` : '<p class="empty">Ingen.</p>'}</div>`;
+  for (const b of document.querySelectorAll('#panel .chip[data-key]')) b.addEventListener('click', () => {
+    select(b.dataset.key);
+    document.getElementById('card-' + b.dataset.key)?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  });
+  drawLinks();
+}
+
+function drawLinks() {
+  svg.innerHTML = '';
+  if (!selected) return;
+  const it = byKey[selected];
+  const base = tree.getBoundingClientRect();
+  svg.setAttribute('viewBox', `0 0 ${base.width} ${base.height}`);
+  const center = el => { const r = el.getBoundingClientRect(); return { x: r.left - base.left + r.width / 2, y: r.top - base.top + r.height / 2, r }; };
+  const to = center(document.getElementById('card-' + selected));
+  const link = (fromKey, color) => {
+    const el = document.getElementById('card-' + fromKey);
+    if (!el) return;
+    const a = center(el);
+    const down = a.y < to.y;
+    const y1 = down ? a.r.bottom - base.top : a.r.top - base.top;
+    const y2 = down ? to.r.top - base.top : to.r.bottom - base.top;
+    const bend = Math.max(30, Math.abs(y2 - y1) / 2);
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.setAttribute('d', `M${a.x},${y1} C${a.x},${y1 + (down ? bend : -bend)} ${to.x},${y2 + (down ? -bend : bend)} ${to.x},${y2}`);
+    path.setAttribute('fill', 'none');
+    path.setAttribute('stroke', color);
+    path.setAttribute('stroke-width', '2');
+    path.setAttribute('stroke-opacity', '0.75');
+    svg.append(path);
+  };
+  for (const input of it.inputs) if (byId[input.id]) link(byId[input.id].key, 'var(--link-in)');
+  for (const k of it.usedIn) link(k, 'var(--link-out)');
+}
+window.addEventListener('resize', drawLinks);
+
+// The cost table, sortable by any column.
+const TIER_NAMES = Object.fromEntries(LANES.map(l => [l[0], l[1]]));
+let filter = 'all', sortKey = 'iron', sortDir = -1;
+const cols = [['name', 'Del'], ['tier', 'Gruppe'], ...MATS.slice(0, 5).map(([k, n]) => [k, n]), ['rest', 'Annet']];
+const rest = i => ['glass', 'stone', 'wood', 'other'].reduce((s, k) => s + (i.cost[k] || 0), 0);
+const value = (i, k) => k === 'name' ? i.name : k === 'tier' ? LANES.findIndex(l => l[0] === i.tier) : k === 'rest' ? rest(i) : (i.cost[k] || 0);
+const filterBox = document.getElementById('filters');
+for (const [t, n] of [['all', 'Alle'], ...LANES.filter(l => l[0] !== 'ideas')]) {
+  const b = document.createElement('button');
+  b.type = 'button'; b.textContent = n; b.dataset.t = t; b.setAttribute('aria-pressed', t === filter);
+  b.addEventListener('click', () => { filter = t; for (const x of filterBox.children) x.setAttribute('aria-pressed', x.dataset.t === t); renderTable(); });
+  filterBox.append(b);
+}
+function renderTable() {
+  const rows = items.filter(i => filter === 'all' || i.tier === filter).sort((a, b) => {
+    const va = value(a, sortKey), vb = value(b, sortKey);
+    return (typeof va === 'string' ? va.localeCompare(vb) : va - vb) * sortDir;
+  });
+  const t = document.getElementById('table');
+  t.innerHTML = `<thead><tr>${cols.map(([k, n]) => `<th scope="col" data-k="${k}" aria-sort="${k === sortKey ? (sortDir < 0 ? 'descending' : 'ascending') : 'none'}">${n}</th>`).join('')}</tr></thead>
+    <tbody>${rows.map(i => `<tr><td><button type="button" data-key="${i.key}"><img src="${i.icon}" alt="">${i.name}</button></td><td>${TIER_NAMES[i.tier]}</td>${
+      [...MATS.slice(0, 5).map(([k]) => i.cost[k] || 0), rest(i)].map(v => v ? `<td>${fmt(v)}</td>` : '<td><span class="zero">0</span></td>').join('')}</tr>`).join('')}</tbody>`;
+  for (const th of t.querySelectorAll('th')) th.addEventListener('click', () => {
+    if (sortKey === th.dataset.k) sortDir = -sortDir; else { sortKey = th.dataset.k; sortDir = th.dataset.k === 'name' ? 1 : -1; }
+    renderTable();
+  });
+  for (const b of t.querySelectorAll('td button')) b.addEventListener('click', () => {
+    select(b.dataset.key);
+    document.getElementById('card-' + b.dataset.key).scrollIntoView({ block: 'center', behavior: 'smooth' });
+  });
+}
+renderTable();
+document.getElementById('foot').textContent = `Laget fra oppskriftsfilene i versjon ${DATA.version}. Råvarene er regnet helt ned: Coppersteel er 1 jern og 1 kobber, en robot er Robot Frame og brikken sin. Vanilla-deler er regnet om der det betyr noe: en jernblokk er 9 jern, en hopper 5 jern, en diamanthakke 3 diamanter. Treverk er planker. «Annet» er ting som bok, fiskestang og ender pearl.`;
+
+select('robot_frame');
+}
+</script>
+</body>
+</html>

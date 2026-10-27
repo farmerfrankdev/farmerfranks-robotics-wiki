@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="no">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -30,15 +30,24 @@
   color-scheme: dark; }
 
 * { box-sizing: border-box; }
-body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 15px; line-height: 1.5;
+html { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 15px; line-height: 1.5;
   padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 24px 48px; }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
 .wrap { max-width: 1400px; margin: 0 auto; display: grid; gap: 28px; }
 header { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 16px; }
 h1 { font-family: var(--display); font-size: clamp(26px, 4vw, 38px); margin: 0; letter-spacing: 0.01em; text-wrap: balance; }
 h1 span { color: var(--accent); }
 .sub { color: var(--muted); margin: 4px 0 0; max-width: 62ch; }
+.side { display: grid; gap: 10px; justify-items: end; }
+@media (max-width: 640px) { .side { justify-items: start; } }
 .legend { display: flex; flex-wrap: wrap; gap: 8px 14px; font-family: var(--mono); font-size: 12px; color: var(--muted); }
 .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; }
+.lang { display: inline-flex; border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
+.lang button { font: inherit; font-family: var(--mono); font-size: 12px; padding: 3px 10px; border: 0; background: var(--panel); color: var(--muted); cursor: pointer; }
+.lang button[aria-pressed="true"] { background: var(--accent-soft); color: var(--ink); font-weight: 600; }
+.lang button:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
 
 .main { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 24px; align-items: start; }
 @media (max-width: 1000px) { .main { grid-template-columns: minmax(0, 1fr); } }
@@ -115,21 +124,22 @@ td .zero { color: var(--line); }
 td:nth-child(2) { font-family: var(--body); color: var(--muted); }
 .foot { color: var(--muted); font-size: 12px; margin: 0; max-width: 80ch; }
 @media (prefers-reduced-motion: reduce) { .card { transition: none; } }
-html { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
-body { margin: 0; }
-img { max-width: 100%; }
-[hidden] { display: none !important; }
 </style>
 </head>
 <body>
-
 <div class="wrap">
   <header>
     <div>
       <h1>FarmerFrank's Robotics <span>tech tree</span></h1>
-      <p class="sub">Alle deler i moden, fra Coppersteel til ferdige roboter. Klikk en del for å se oppskriften, hva den er laget av, hva den brukes i og hva den koster i råvarer.</p>
+      <p class="sub" id="sub"></p>
     </div>
-    <div class="legend" id="legend"></div>
+    <div class="side">
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en" id="lang-en">EN</button>
+        <button type="button" data-lang="no" id="lang-no">NO</button>
+      </div>
+      <div class="legend" id="legend"></div>
+    </div>
   </header>
 
   <div class="main">
@@ -139,7 +149,7 @@ img { max-width: 100%; }
 
   <section style="display:grid;gap:12px">
     <div class="table-head">
-      <h2>Råvarer per del</h2>
+      <h2 id="table-title"></h2>
       <div class="filters" id="filters"></div>
     </div>
     <div class="scroll"><table id="table"></table></div>
@@ -148,168 +158,207 @@ img { max-width: 100%; }
 </div>
 
 <script>
+const TEXT = {
+  en: {
+    sub: 'Every part of the mod, from Coppersteel to finished robots. Click a part to see its recipe, what it is made of, what it is used in and what it costs in raw materials.',
+    lanes: { smelting: ['Smelting', 'Iron + copper'], power: ['Power', 'FE in and out'], workshop: ['Workshop and tools', ''], chips: ['Neural Chips', 'Decide the job'],
+      robots: ['Robots', 'Frame + chip at the Workshop'], modules: ['Modules', 'Put in at the Workshop'], blocks: ['Blocks', ''], ideas: ['Ideas', 'Not made yet'] },
+    ideas: [['Advancements', 'A tree that shows the order and unlocks the recipe book'], ['Alloy recipe as a datapack', 'So modpacks can change Coppersteel'],
+      ['Fabric version', 'A MultiLoader setup with shared code'], ['Banner with 12 robots', 'The Miner is missing from the CurseForge banner']],
+    mats: { iron: 'Iron', copper: 'Copper', gold: 'Gold', redstone: 'Redstone', diamond: 'Diamond', glass: 'Glass', stone: 'Stone', wood: 'Wood', other: 'Other' },
+    madeOf: 'Made of', usedIn: 'Used in', recipe: 'Recipe', recipeOf: n => `Recipe for ${n}`, rawTotal: 'Raw materials in total',
+    noRecipe: 'No recipe.', notUsed: 'Not used in any other part.', none: 'None.',
+    tableTitle: 'Raw materials per part', all: 'All', part: 'Part', group: 'Group', rest: 'Other', loadError: 'The data for this page did not load. Reload the page.',
+    foot: v => `Made from the recipe files of version ${v}. Raw materials are counted all the way down: Coppersteel is 1 iron and 1 copper, and a robot is a Robot Frame and its chip. Vanilla parts are broken down where it matters: an iron block is 9 iron, a hopper 5 iron, a diamond pickaxe 3 diamonds. Wood is planks. "Other" is things like books, fishing rods and ender pearls.`,
+  },
+  no: {
+    sub: 'Alle deler i moden, fra Coppersteel til ferdige roboter. Klikk en del for å se oppskriften, hva den er laget av, hva den brukes i og hva den koster i råvarer.',
+    lanes: { smelting: ['Smelting', 'Jern + kobber'], power: ['Strøm', 'FE inn og ut'], workshop: ['Verksted og verktøy', ''], chips: ['Nevrobrikker', 'Bestemmer jobben'],
+      robots: ['Roboter', 'Ramme + brikke i Workshop'], modules: ['Moduler', 'Settes inn i Workshop'], blocks: ['Blokker', ''], ideas: ['Ideer', 'Ikke laget ennå'] },
+    ideas: [['Advancements', 'Et tre som viser rekkefølgen og låser opp oppskriftsboka'], ['Alloy-oppskrift som datapack', 'Så modpacks kan endre Coppersteel'],
+      ['Fabric-versjon', 'MultiLoader-oppsett med felles kode'], ['Banner med 12 roboter', 'Miner mangler på CurseForge-banneret']],
+    mats: { iron: 'Jern', copper: 'Kobber', gold: 'Gull', redstone: 'Redstone', diamond: 'Diamant', glass: 'Glass', stone: 'Stein', wood: 'Treverk', other: 'Annet' },
+    madeOf: 'Lages av', usedIn: 'Brukes i', recipe: 'Oppskrift', recipeOf: n => `Oppskrift for ${n}`, rawTotal: 'Råvarer totalt',
+    noRecipe: 'Ingen oppskrift.', notUsed: 'Brukes ikke i andre deler.', none: 'Ingen.',
+    tableTitle: 'Råvarer per del', all: 'Alle', part: 'Del', group: 'Gruppe', rest: 'Annet', loadError: 'Fant ikke dataene for siden. Last den inn på nytt.',
+    foot: v => `Laget fra oppskriftsfilene i versjon ${v}. Råvarene er regnet helt ned: Coppersteel er 1 jern og 1 kobber, og en robot er Robot Frame og brikken sin. Vanilla-deler er regnet om der det betyr noe: en jernblokk er 9 jern, en hopper 5 jern, en diamanthakke 3 diamanter. Treverk er planker. «Annet» er ting som bok, fiskestang og ender pearl.`,
+  },
+};
+const TIERS = ['smelting', 'power', 'workshop', 'chips', 'robots', 'modules', 'blocks', 'ideas'];
+const MATS = [['iron', 'Fe'], ['copper', 'Cu'], ['gold', 'Au'], ['redstone', 'Rs'], ['diamond', 'Di'], ['glass', 'Gl'], ['stone', 'St'], ['wood', 'Wd'], ['other', '+']];
+
+// English by default; Norwegian for Norwegian browsers, or the language picked last time.
+let lang = 'en';
+try { lang = localStorage.getItem('techtree-lang') || ''; } catch (e) { lang = ''; }
+if (lang !== 'en' && lang !== 'no') lang = /^(nb|nn|no)\b/i.test(navigator.language || '') ? 'no' : 'en';
+const t = () => TEXT[lang];
+
 fetch('data.json').then(r => r.json()).then(start).catch(() => {
-  document.getElementById('panel').innerHTML = '<p class="empty">Fant ikke dataene for siden. Last den inn på nytt.</p>';
+  document.getElementById('panel').innerHTML = `<p class="empty">${t().loadError}</p>`;
 });
+
 function start(DATA) {
-const items = DATA.items;
-const byId = Object.fromEntries(items.map(i => [i.id, i]));
-const byKey = Object.fromEntries(items.map(i => [i.key, i]));
+  const items = DATA.items;
+  const byId = Object.fromEntries(items.map(i => [i.id, i]));
+  const byKey = Object.fromEntries(items.map(i => [i.key, i]));
+  const tree = document.getElementById('tree');
+  const svg = document.getElementById('links');
+  const fmt = n => { const s = (Math.round(n * 100) / 100).toString(); return lang === 'no' ? s.replace('.', ',') : s; };
+  const nm = i => (lang === 'no' && i.nameNo) || i.name;
+  const desc = i => (lang === 'no' && i.descNo) || i.desc;
+  const note = i => (lang === 'no' && i.noteNo) || i.note;
+  const how = i => (lang === 'no' && i.howNo) || i.how;
+  let selected = 'robot_frame';
+  let filter = 'all', sortKey = 'iron', sortDir = -1;
 
-const LANES = [
-  ['smelting', 'Smelting', 'Jern + kobber'],
-  ['power', 'Strøm', 'FE inn og ut'],
-  ['workshop', 'Verksted og verktøy', ''],
-  ['chips', 'Nevrobrikker', 'Bestemmer jobben'],
-  ['robots', 'Roboter', 'Ramme + brikke i Workshop'],
-  ['modules', 'Moduler', 'Settes inn i Workshop'],
-  ['blocks', 'Blokker', ''],
-  ['ideas', 'Ideer', 'Ikke laget ennå'],
-];
-const IDEAS = [
-  ['Advancements', 'Et tre som viser rekkefølgen og låser opp oppskriftsboka'],
-  ['Alloy-oppskrift som datapack', 'Så modpacks kan endre Coppersteel'],
-  ['Fabric-versjon', 'MultiLoader-oppsett med felles kode'],
-  ['Banner med 12 roboter', 'Miner mangler på CurseForge-banneret'],
-];
-const MATS = [
-  ['iron', 'Jern', 'Fe'], ['copper', 'Kobber', 'Cu'], ['gold', 'Gull', 'Au'], ['redstone', 'Redstone', 'Rs'],
-  ['diamond', 'Diamant', 'Di'], ['glass', 'Glass', 'Gl'], ['stone', 'Stein', 'St'], ['wood', 'Treverk', 'Wd'], ['other', 'Annet', '+'],
-];
-const fmt = n => (Math.round(n * 100) / 100).toString().replace('.', ',');
+  function renderAll() {
+    document.documentElement.lang = lang;
+    for (const b of document.querySelectorAll('.lang button')) b.setAttribute('aria-pressed', b.dataset.lang === lang);
+    document.getElementById('sub').textContent = t().sub;
+    document.getElementById('legend').innerHTML = MATS.slice(0, 5).map(([k]) => `<span><i style="background:var(--${k})"></i>${t().mats[k]}</span>`).join('')
+      + `<span><i style="background:var(--link-in)"></i>${t().madeOf}</span><span><i style="background:var(--link-out)"></i>${t().usedIn}</span>`;
+    document.getElementById('table-title').textContent = t().tableTitle;
+    document.getElementById('foot').textContent = t().foot(DATA.version);
+    renderTree();
+    renderFilters();
+    renderTable();
+    select(selected);
+  }
 
-document.getElementById('legend').innerHTML = MATS.slice(0, 5).map(([k, n]) => `<span><i style="background:var(--${k})"></i>${n}</span>`).join('')
-  + `<span><i style="background:var(--link-in)"></i>Lages av</span><span><i style="background:var(--link-out)"></i>Brukes i</span>`;
-
-const tree = document.getElementById('tree');
-const svg = document.getElementById('links');
-for (const [tier, name, hint] of LANES) {
-  const lane = document.createElement('section');
-  lane.className = 'lane';
-  lane.innerHTML = `<h2>${name}${hint ? `<small>${hint}</small>` : ''}</h2><div class="cards"></div>`;
-  const cards = lane.querySelector('.cards');
-  if (tier === 'ideas') {
-    for (const [title, text] of IDEAS) {
-      const c = document.createElement('div');
-      c.className = 'card idea';
-      c.innerHTML = `<div><div class="nm">${title}</div><div class="pips">${text}</div></div>`;
-      cards.append(c);
+  function renderTree() {
+    for (const lane of tree.querySelectorAll('.lane')) lane.remove();
+    for (const tier of TIERS) {
+      const [name, hint] = t().lanes[tier];
+      const lane = document.createElement('section');
+      lane.className = 'lane';
+      lane.innerHTML = `<h2>${name}${hint ? `<small>${hint}</small>` : ''}</h2><div class="cards"></div>`;
+      const cards = lane.querySelector('.cards');
+      if (tier === 'ideas') {
+        for (const [title, text] of t().ideas) {
+          const c = document.createElement('div');
+          c.className = 'card idea';
+          c.innerHTML = `<div><div class="nm">${title}</div><div class="pips">${text}</div></div>`;
+          cards.append(c);
+        }
+      }
+      for (const it of items.filter(i => i.tier === tier)) {
+        const c = document.createElement('button');
+        c.type = 'button';
+        c.className = 'card';
+        c.id = 'card-' + it.key;
+        c.dataset.key = it.key;
+        const pips = MATS.slice(0, 5).filter(([k]) => it.cost[k]).map(([k, a]) => `<span style="color:var(--${k})">${fmt(it.cost[k])} ${a}</span>`).join('');
+        c.innerHTML = `<img src="${it.icon}" alt=""><div style="min-width:0"><div class="nm">${nm(it)}</div><div class="pips">${pips}</div></div>`;
+        c.addEventListener('click', () => select(it.key));
+        cards.append(c);
+      }
+      tree.append(lane);
     }
   }
-  for (const it of items.filter(i => i.tier === tier)) {
-    const c = document.createElement('button');
-    c.type = 'button';
-    c.className = 'card';
-    c.id = 'card-' + it.key;
-    c.dataset.key = it.key;
-    const pips = MATS.slice(0, 5).filter(([k]) => it.cost[k]).map(([k, , a]) => `<span style="color:var(--${k})">${fmt(it.cost[k])} ${a}</span>`).join('');
-    c.innerHTML = `<img src="${it.icon}" alt=""><div style="min-width:0"><div class="nm">${it.name}</div><div class="pips">${pips}</div></div>`;
-    c.addEventListener('click', () => select(it.key));
-    cards.append(c);
+
+  function chipFor(input) {
+    const it = byId[input.id];
+    const count = input.count > 1 ? `<b>×${fmt(input.count)}</b>` : '';
+    if (!it) return `<span class="chip plain">${input.name}${count ? ' ' + count : ''}</span>`;
+    return `<button type="button" class="chip" data-key="${it.key}"><img src="${it.icon}" alt="">${nm(it)}${count}</button>`;
   }
-  tree.append(lane);
-}
 
-let selected = null;
-function chipFor(input) {
-  const it = byId[input.id];
-  const count = input.count > 1 ? `<b>×${fmt(input.count)}</b>` : '';
-  if (!it) return `<span class="chip plain">${input.name}${count ? ' ' + count : ''}</span>`;
-  return `<button type="button" class="chip" data-key="${it.key}"><img src="${it.icon}" alt="">${it.name}${count}</button>`;
-}
-function select(key) {
-  selected = key;
-  const it = byKey[key];
-  tree.classList.add('has-sel');
-  for (const c of tree.querySelectorAll('.card[data-key]')) {
-    c.classList.toggle('sel', c.dataset.key === key);
-    c.classList.toggle('in', it.inputs.some(i => byId[i.id] && byId[i.id].key === c.dataset.key));
-    c.classList.toggle('out', it.usedIn.includes(c.dataset.key));
+  function select(key) {
+    selected = key;
+    const it = byKey[key];
+    tree.classList.add('has-sel');
+    for (const c of tree.querySelectorAll('.card[data-key]')) {
+      c.classList.toggle('sel', c.dataset.key === key);
+      c.classList.toggle('in', it.inputs.some(i => byId[i.id] && byId[i.id].key === c.dataset.key));
+      c.classList.toggle('out', it.usedIn.includes(c.dataset.key));
+    }
+    const total = Math.max(1, ...items.map(i => Math.max(0, ...MATS.map(([k]) => i.cost[k] || 0))));
+    const costRows = MATS.filter(([k]) => it.cost[k]).map(([k]) =>
+      `<div class="cost"><span>${t().mats[k]}</span><span class="bar"><i style="width:${Math.min(100, it.cost[k] / total * 100)}%;background:var(--${k})"></i></span><span>${fmt(it.cost[k])}</span></div>`).join('');
+    document.getElementById('panel').innerHTML = `
+      <div class="ph"><img src="${it.icon}" alt=""><div><div class="tier">${t().lanes[it.tier][0]}</div><h3>${nm(it)}</h3></div></div>
+      ${desc(it) ? `<p class="desc">${desc(it)}</p>` : ''}
+      ${note(it) ? `<p class="note">${note(it)}</p>` : ''}
+      ${it.recipe ? `<div><h4>${t().recipe}</h4><div class="recipe"><img src="${it.recipe}" alt="${t().recipeOf(nm(it))}"></div></div>` : ''}
+      ${how(it) ? `<div class="how">${how(it)}</div>` : ''}
+      <div><h4>${t().madeOf}</h4>${it.inputs.length ? `<div class="chips">${it.inputs.map(chipFor).join('')}</div>` : `<p class="empty">${t().noRecipe}</p>`}</div>
+      <div><h4>${t().usedIn}</h4>${it.usedIn.length ? `<div class="chips">${it.usedIn.map(k => chipFor({ id: byKey[k].id, count: 1 })).join('')}</div>` : `<p class="empty">${t().notUsed}</p>`}</div>
+      <div><h4>${t().rawTotal}</h4>${costRows ? `<div class="costs">${costRows}</div>` : `<p class="empty">${t().none}</p>`}</div>`;
+    for (const b of document.querySelectorAll('#panel .chip[data-key]')) b.addEventListener('click', () => {
+      select(b.dataset.key);
+      document.getElementById('card-' + b.dataset.key)?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    });
+    drawLinks();
   }
-  const tierName = (LANES.find(l => l[0] === it.tier) || [, ''])[1];
-  const total = Math.max(1, ...items.map(i => Math.max(0, ...MATS.map(([k]) => i.cost[k] || 0))));
-  const costRows = MATS.filter(([k]) => it.cost[k]).map(([k, n]) =>
-    `<div class="cost"><span>${n}</span><span class="bar"><i style="width:${Math.min(100, it.cost[k] / total * 100)}%;background:var(--${k})"></i></span><span>${fmt(it.cost[k])}</span></div>`).join('');
-  document.getElementById('panel').innerHTML = `
-    <div class="ph"><img src="${it.icon}" alt=""><div><div class="tier">${tierName}</div><h3>${it.name}</h3></div></div>
-    ${it.desc ? `<p class="desc">${it.desc}</p>` : ''}
-    ${it.note ? `<p class="note">${it.note}</p>` : ''}
-    ${it.recipe ? `<div><h4>Oppskrift</h4><div class="recipe"><img src="${it.recipe}" alt="Oppskrift for ${it.name}"></div></div>` : ''}
-    ${it.how ? `<div class="how">${it.how}</div>` : ''}
-    <div><h4>Lages av</h4>${it.inputs.length ? `<div class="chips">${it.inputs.map(chipFor).join('')}</div>` : '<p class="empty">Ingen oppskrift.</p>'}</div>
-    <div><h4>Brukes i</h4>${it.usedIn.length ? `<div class="chips">${it.usedIn.map(k => chipFor({ id: byKey[k].id, count: 1 })).join('')}</div>` : '<p class="empty">Ingen andre deler.</p>'}</div>
-    <div><h4>Råvarer totalt</h4>${costRows ? `<div class="costs">${costRows}</div>` : '<p class="empty">Ingen.</p>'}</div>`;
-  for (const b of document.querySelectorAll('#panel .chip[data-key]')) b.addEventListener('click', () => {
-    select(b.dataset.key);
-    document.getElementById('card-' + b.dataset.key)?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
-  });
-  drawLinks();
-}
 
-function drawLinks() {
-  svg.innerHTML = '';
-  if (!selected) return;
-  const it = byKey[selected];
-  const base = tree.getBoundingClientRect();
-  svg.setAttribute('viewBox', `0 0 ${base.width} ${base.height}`);
-  const center = el => { const r = el.getBoundingClientRect(); return { x: r.left - base.left + r.width / 2, y: r.top - base.top + r.height / 2, r }; };
-  const to = center(document.getElementById('card-' + selected));
-  const link = (fromKey, color) => {
-    const el = document.getElementById('card-' + fromKey);
-    if (!el) return;
-    const a = center(el);
-    const down = a.y < to.y;
-    const y1 = down ? a.r.bottom - base.top : a.r.top - base.top;
-    const y2 = down ? to.r.top - base.top : to.r.bottom - base.top;
-    const bend = Math.max(30, Math.abs(y2 - y1) / 2);
-    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-    path.setAttribute('d', `M${a.x},${y1} C${a.x},${y1 + (down ? bend : -bend)} ${to.x},${y2 + (down ? -bend : bend)} ${to.x},${y2}`);
-    path.setAttribute('fill', 'none');
-    path.setAttribute('stroke', color);
-    path.setAttribute('stroke-width', '2');
-    path.setAttribute('stroke-opacity', '0.75');
-    svg.append(path);
-  };
-  for (const input of it.inputs) if (byId[input.id]) link(byId[input.id].key, 'var(--link-in)');
-  for (const k of it.usedIn) link(k, 'var(--link-out)');
-}
-window.addEventListener('resize', drawLinks);
+  function drawLinks() {
+    svg.innerHTML = '';
+    if (!selected) return;
+    const it = byKey[selected];
+    const base = tree.getBoundingClientRect();
+    svg.setAttribute('viewBox', `0 0 ${base.width} ${base.height}`);
+    const center = el => { const r = el.getBoundingClientRect(); return { x: r.left - base.left + r.width / 2, y: r.top - base.top + r.height / 2, r }; };
+    const to = center(document.getElementById('card-' + selected));
+    const link = (fromKey, color) => {
+      const el = document.getElementById('card-' + fromKey);
+      if (!el) return;
+      const a = center(el);
+      const down = a.y < to.y;
+      const y1 = down ? a.r.bottom - base.top : a.r.top - base.top;
+      const y2 = down ? to.r.top - base.top : to.r.bottom - base.top;
+      const bend = Math.max(30, Math.abs(y2 - y1) / 2);
+      const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      path.setAttribute('d', `M${a.x},${y1} C${a.x},${y1 + (down ? bend : -bend)} ${to.x},${y2 + (down ? -bend : bend)} ${to.x},${y2}`);
+      path.setAttribute('fill', 'none');
+      path.setAttribute('stroke', color);
+      path.setAttribute('stroke-width', '2');
+      path.setAttribute('stroke-opacity', '0.75');
+      svg.append(path);
+    };
+    for (const input of it.inputs) if (byId[input.id]) link(byId[input.id].key, 'var(--link-in)');
+    for (const k of it.usedIn) link(k, 'var(--link-out)');
+  }
+  window.addEventListener('resize', drawLinks);
 
-// The cost table, sortable by any column.
-const TIER_NAMES = Object.fromEntries(LANES.map(l => [l[0], l[1]]));
-let filter = 'all', sortKey = 'iron', sortDir = -1;
-const cols = [['name', 'Del'], ['tier', 'Gruppe'], ...MATS.slice(0, 5).map(([k, n]) => [k, n]), ['rest', 'Annet']];
-const rest = i => ['glass', 'stone', 'wood', 'other'].reduce((s, k) => s + (i.cost[k] || 0), 0);
-const value = (i, k) => k === 'name' ? i.name : k === 'tier' ? LANES.findIndex(l => l[0] === i.tier) : k === 'rest' ? rest(i) : (i.cost[k] || 0);
-const filterBox = document.getElementById('filters');
-for (const [t, n] of [['all', 'Alle'], ...LANES.filter(l => l[0] !== 'ideas')]) {
-  const b = document.createElement('button');
-  b.type = 'button'; b.textContent = n; b.dataset.t = t; b.setAttribute('aria-pressed', t === filter);
-  b.addEventListener('click', () => { filter = t; for (const x of filterBox.children) x.setAttribute('aria-pressed', x.dataset.t === t); renderTable(); });
-  filterBox.append(b);
-}
-function renderTable() {
-  const rows = items.filter(i => filter === 'all' || i.tier === filter).sort((a, b) => {
-    const va = value(a, sortKey), vb = value(b, sortKey);
-    return (typeof va === 'string' ? va.localeCompare(vb) : va - vb) * sortDir;
-  });
-  const t = document.getElementById('table');
-  t.innerHTML = `<thead><tr>${cols.map(([k, n]) => `<th scope="col" data-k="${k}" aria-sort="${k === sortKey ? (sortDir < 0 ? 'descending' : 'ascending') : 'none'}">${n}</th>`).join('')}</tr></thead>
-    <tbody>${rows.map(i => `<tr><td><button type="button" data-key="${i.key}"><img src="${i.icon}" alt="">${i.name}</button></td><td>${TIER_NAMES[i.tier]}</td>${
-      [...MATS.slice(0, 5).map(([k]) => i.cost[k] || 0), rest(i)].map(v => v ? `<td>${fmt(v)}</td>` : '<td><span class="zero">0</span></td>').join('')}</tr>`).join('')}</tbody>`;
-  for (const th of t.querySelectorAll('th')) th.addEventListener('click', () => {
-    if (sortKey === th.dataset.k) sortDir = -sortDir; else { sortKey = th.dataset.k; sortDir = th.dataset.k === 'name' ? 1 : -1; }
-    renderTable();
-  });
-  for (const b of t.querySelectorAll('td button')) b.addEventListener('click', () => {
-    select(b.dataset.key);
-    document.getElementById('card-' + b.dataset.key).scrollIntoView({ block: 'center', behavior: 'smooth' });
-  });
-}
-renderTable();
-document.getElementById('foot').textContent = `Laget fra oppskriftsfilene i versjon ${DATA.version}. Råvarene er regnet helt ned: Coppersteel er 1 jern og 1 kobber, en robot er Robot Frame og brikken sin. Vanilla-deler er regnet om der det betyr noe: en jernblokk er 9 jern, en hopper 5 jern, en diamanthakke 3 diamanter. Treverk er planker. «Annet» er ting som bok, fiskestang og ender pearl.`;
+  // The cost table, sortable by any column and filtered by group.
+  const rest = i => ['glass', 'stone', 'wood', 'other'].reduce((s, k) => s + (i.cost[k] || 0), 0);
+  const value = (i, k) => k === 'name' ? nm(i) : k === 'tier' ? TIERS.indexOf(i.tier) : k === 'rest' ? rest(i) : (i.cost[k] || 0);
+  function renderFilters() {
+    const box = document.getElementById('filters');
+    box.innerHTML = '';
+    for (const tier of ['all', ...TIERS.filter(x => x !== 'ideas')]) {
+      const b = document.createElement('button');
+      b.type = 'button'; b.textContent = tier === 'all' ? t().all : t().lanes[tier][0]; b.dataset.t = tier; b.setAttribute('aria-pressed', tier === filter);
+      b.addEventListener('click', () => { filter = tier; renderFilters(); renderTable(); });
+      box.append(b);
+    }
+  }
+  function renderTable() {
+    const cols = [['name', t().part], ['tier', t().group], ...MATS.slice(0, 5).map(([k]) => [k, t().mats[k]]), ['rest', t().rest]];
+    const rows = items.filter(i => filter === 'all' || i.tier === filter).sort((a, b) => {
+      const va = value(a, sortKey), vb = value(b, sortKey);
+      return (typeof va === 'string' ? va.localeCompare(vb) : va - vb) * sortDir;
+    });
+    const table = document.getElementById('table');
+    table.innerHTML = `<thead><tr>${cols.map(([k, n]) => `<th scope="col" data-k="${k}" aria-sort="${k === sortKey ? (sortDir < 0 ? 'descending' : 'ascending') : 'none'}">${n}</th>`).join('')}</tr></thead>
+      <tbody>${rows.map(i => `<tr><td><button type="button" data-key="${i.key}"><img src="${i.icon}" alt="">${nm(i)}</button></td><td>${t().lanes[i.tier][0]}</td>${
+        [...MATS.slice(0, 5).map(([k]) => i.cost[k] || 0), rest(i)].map(v => v ? `<td>${fmt(v)}</td>` : '<td><span class="zero">0</span></td>').join('')}</tr>`).join('')}</tbody>`;
+    for (const th of table.querySelectorAll('th')) th.addEventListener('click', () => {
+      if (sortKey === th.dataset.k) sortDir = -sortDir; else { sortKey = th.dataset.k; sortDir = th.dataset.k === 'name' ? 1 : -1; }
+      renderTable();
+    });
+    for (const b of table.querySelectorAll('td button')) b.addEventListener('click', () => {
+      select(b.dataset.key);
+      document.getElementById('card-' + b.dataset.key).scrollIntoView({ block: 'center', behavior: 'smooth' });
+    });
+  }
 
-select('robot_frame');
+  for (const b of document.querySelectorAll('.lang button')) b.addEventListener('click', () => {
+    lang = b.dataset.lang;
+    try { localStorage.setItem('techtree-lang', lang); } catch (e) { /* the choice just is not remembered */ }
+    renderAll();
+  });
+  renderAll();
 }
 </script>
 </body>

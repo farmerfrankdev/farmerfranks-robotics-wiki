@@ -6,7 +6,7 @@ Every robot is a [Robot Frame](Robot-Workshop.md) with a **Neural Chip** in it, 
 
 | Robot | What it does | Linker asks for | Energy use |
 |---|---|---|---|
-| ![](images/robot.png) [Transporter](Transporter.md) | Carries items from one chest to another | pickup chest, delivery chest, charger | 1× |
+| ![](images/robot.png) [Transporter](Transporter.md) | Carries items from one inventory to another | pickup chest, delivery chest, charger | 1× |
 | ![](images/robot_collector.png) [Collector](Collector.md) | Picks up items on the ground in its area | area, delivery chest, charger | 1× |
 | ![](images/robot_lumberjack.png) [Lumberjack](Lumberjack.md) | Fells trees and replants saplings | area, sapling chest, charger | 2× |
 | ![](images/robot_killer.png) [Killerbot](Killerbot.md) | Hunts hostile mobs | area, charger | 4× |

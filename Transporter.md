@@ -4,7 +4,7 @@
 
 ![Transporter](images/robot.png)
 
-The Transporter carries items from one chest to another. It takes a stack of one kind of item at a time from its pickup chest and walks it over to its delivery chest. It's the plain white robot with a pink antenna bulb.
+The Transporter carries items from one inventory to another: chests, barrels, furnaces and machines from other mods all work. See [Robot Linker](Robot-Linker.md) for delivering to more than one place, and for which side of a machine to click. It takes a stack of one kind of item at a time from its pickup chest and walks it over to its delivery chest. It's the plain white robot with a pink antenna bulb.
 
 ## Recipe
 Build it at the [Robot Workshop](Robot-Workshop.md) from a Robot Frame and a **Transporter Neural Chip**.

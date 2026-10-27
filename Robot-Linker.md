@@ -28,6 +28,8 @@ For a chest the side makes no difference, but a furnace or another mod's machine
 
 The screen also shows the robot's filter, if it has one. Click **Change** to change the items in it, the same way as with a Filter Chip in your hand. Closing the filter takes you back to the chest screen.
 
+A robot waits three seconds after you put it down or hand it a setup, so there is time to Ctrl + right-click it before it walks off.
+
 With more than one chest to deliver to, you can also switch between filling one at a time and round robin there.
 
 ## More than one chest

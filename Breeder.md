@@ -8,7 +8,7 @@ The Breeder feeds the grown-up animals in its area so they breed, with whatever 
 
 ## How it decides who to feed
 - It only feeds an animal that has a partner of its kind to breed with, and feeds the second of a pair first.
-- It stops at **16 animals of a kind** in its area, so the pen does not overfill. Servers can change this in the [config](Configuration.md).
+- It stops at **16 animals of a kind** in its area, so the pen does not overfill. Change it for each Breeder in its [Robot Panel](Robot-Linker.md#the-robot-panel) (Ctrl + right-click it) with the − and + buttons, from 1 to 128. Servers can change the number it starts with in the [config](Configuration.md).
 - It reaches 3 blocks, so it can feed animals over the fence of a pen.
 - Food that no animal wants right now goes back in the chest.
 

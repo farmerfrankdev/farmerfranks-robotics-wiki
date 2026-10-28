@@ -7,7 +7,7 @@
 The Butcher counts the grown-up animals of each kind in its area, and butchers the ones beyond the number it keeps. The drops go to its delivery chest. It wears a white apron and carries a cleaver.
 
 ## Which animals are safe
-- It keeps **8 of each kind** to start with. Change it in its [Robot Panel](Robot-Linker.md#the-robot-panel) (Ctrl + right-click it) with the − and + buttons, from 1 to 64 (Shift + click for 5 at a time), or Shift + right-click it with the [Inspector](Inspector.md) to choose 2, 4, 6, 8, 12 or 16.
+- It keeps **8 of each kind** to start with. Change it in its [Robot Panel](Robot-Linker.md#the-robot-panel) (Ctrl + right-click it) with the − and + buttons, from 1 to 128 (Shift + click for 5 at a time), or Shift + right-click it with the [Inspector](Inspector.md) to choose 2, 4, 6, 8, 12 or 16.
 - Young animals, animals with a **name tag** and animals in love are never touched.
 
 ## Recipe

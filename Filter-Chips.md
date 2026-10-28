@@ -25,6 +25,7 @@ A Filter decides what a robot works with. (Before 0.23.0 they were called White 
 | [Killerbot](Killerbot.md) | which mobs it hunts, by spawn egg |
 | [Breeder](Breeder.md) | which food it uses, or which animals it breeds, by spawn egg |
 | [Butcher](Butcher.md) | which animals it butchers, by spawn egg |
+| [Wool-E](Wool-E.md) | which sheep it shears, by wool color |
 | [Fluid Porter](Fluid-Porter.md) | which fluids it carries, by bucket (a lava bucket for lava) |
 | [Miner](Miner.md) | which of the blocks it digs it keeps; the rest are thrown away |
 

@@ -32,7 +32,7 @@ See [Configuration](Configuration.md). Ship `config/farmerfranks_robotics-local.
 }
 ```
 
-Robot names: `transporter`, `collector`, `lumberjack`, `killer`, `planter`, `harvester`, `fisher`, `breeder`, `butcher`, `power_porter`, `fluid_porter`, `miner`.
+Robot names: `transporter`, `collector`, `lumberjack`, `killer`, `planter`, `harvester`, `fisher`, `breeder`, `butcher`, `power_porter`, `fluid_porter`, `miner`, `shearer` (Wool-E).
 
 ## Not changeable yet
 The Robotics Foundry recipe (iron + copper into Coppersteel) is built into the mod and cannot be changed with a datapack yet.
@@ -46,7 +46,7 @@ The Robotics Foundry recipe (iron + copper into Coppersteel) is built into the m
 | Charging Station | `farmerfranks_robotics:charging_station` |
 | Robot Workshop | `farmerfranks_robotics:robot_workshop` |
 | Robot Frame | `farmerfranks_robotics:robot_frame` |
-| Neural Chips | `farmerfranks_robotics:<robot>_chip`: `transporter_chip`, `collector_chip`, `lumberjack_chip`, `killer_chip`, `planter_chip`, `harvester_chip`, `fisher_chip`, `breeder_chip`, `butcher_chip`, `courier_chip` (Power Porter), `fluid_porter_chip`, `miner_chip` |
+| Neural Chips | `farmerfranks_robotics:<robot>_chip`: `transporter_chip`, `collector_chip`, `lumberjack_chip`, `killer_chip`, `planter_chip`, `harvester_chip`, `fisher_chip`, `breeder_chip`, `butcher_chip`, `courier_chip` (Power Porter), `fluid_porter_chip`, `miner_chip`, `shearer_chip` |
 | Battery Modules | `farmerfranks_robotics:copper_battery_module`, `farmerfranks_robotics:coppersteel_battery_module` |
 | Upgrades | `farmerfranks_robotics:speed_upgrade`, `range_upgrade`, `efficiency_upgrade`, `capacity_upgrade`, `magnet_upgrade`, `combat_upgrade`, `jetpack_upgrade` |
 | Whitelist and Blacklist Filters (were Filter Chips) | `farmerfranks_robotics:white_filter_chip`, `farmerfranks_robotics:black_filter_chip` |

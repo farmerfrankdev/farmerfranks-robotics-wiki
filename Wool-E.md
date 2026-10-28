@@ -19,7 +19,7 @@ Build it at the [Robot Workshop](Robot-Workshop.md) from a Robot Frame and a **W
 ## Setup
 With the [Robot Linker](Robot-Linker.md), click:
 1. two corners on the ground for its area;
-2. the chest to deliver to (Shift + click more than one, see [more than one chest](Robot-Linker.md#more-than-one-chest));
+2. the chest to deliver to (Shift + click more than one, see [more than one chest](Robot-Linker.md#more-than-one-chest-or-machine));
 3. its charging station.
 
 ## Tips

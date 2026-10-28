@@ -4,14 +4,16 @@
 
 ![Robot Linker](images/robot_linker.png)
 
-The Robot Linker tells a robot where to work: its chests, its charging station and its area.
+The Robot Linker tells a robot where to work: the chests or machines it fetches from and delivers to, its charging station and its area.
+
+Any block that holds items works, not just chests: barrels, furnaces, shulker boxes and machines from other mods too. On this page "chest" means any of them.
 
 ![Robot Linker recipe](images/recipes/robot_linker.png)
 
 ## Setting up a robot
 1. **Right-click the robot** with the linker. This starts a new setup for that kind of robot.
 2. **Click what it asks for.** The next step is shown above the hotbar:
-   - chests, by clicking them: first the ones it fetches from, then the ones it delivers to;
+   - chests or machines, by clicking them: first the ones it fetches from, then the ones it delivers to;
    - the charging station;
    - an **area**, by clicking the ground at one corner and then at the opposite corner. While you choose the second corner, the area is outlined and its size is shown.
 3. **Right-click the robot again** to hand it the setup.
@@ -32,7 +34,7 @@ A robot waits three seconds after you put it down or hand it a setup, so there i
 
 With more than one chest to deliver to, you can also switch between filling one at a time and round robin there.
 
-## More than one chest
+## More than one chest or machine
 A robot can fetch from more than one chest, and deliver to more than one. It works the same for both:
 - **Click a chest:** that one chest, and the step is done.
 - **More than one:** Shift + click the first chests, and click the last one without Shift. That finishes the step.

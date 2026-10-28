@@ -20,6 +20,7 @@ FarmerFrank's Robotics has two config files in the `config` folder. Both are cre
 	fluid_porter = true
 	miner = true
 	shearer = true
+	arc = true
 ```
 When a robot is set to `false`:
 - its Neural Chip has no recipe;

@@ -16,7 +16,7 @@ This wiki is for FarmerFrank's Robotics for **Minecraft 26.3 (NeoForge)**. The m
 |---|---|---|---|---|
 | [![Transporter](images/robot.png)](Transporter.md)<br>[Transporter](Transporter.md) | [![Collector](images/robot_collector.png)](Collector.md)<br>[Collector](Collector.md) | [![Lumberjack](images/robot_lumberjack.png)](Lumberjack.md)<br>[Lumberjack](Lumberjack.md) | [![Killerbot](images/robot_killer.png)](Killerbot.md)<br>[Killerbot](Killerbot.md) | [![Planter](images/robot_planter.png)](Planter.md)<br>[Planter](Planter.md) |
 | [![Harvester](images/robot_harvester.png)](Harvester.md)<br>[Harvester](Harvester.md) | [![Fisher](images/robot_fisher.png)](Fisher.md)<br>[Fisher](Fisher.md) | [![Breeder](images/robot_breeder.png)](Breeder.md)<br>[Breeder](Breeder.md) | [![Butcher](images/robot_butcher.png)](Butcher.md)<br>[Butcher](Butcher.md) | [![Power Porter](images/robot_courier.png)](Power-Porter.md)<br>[Power Porter](Power-Porter.md) |
-| [![Fluid Porter](images/robot_fluid_porter.png)](Fluid-Porter.md)<br>[Fluid Porter](Fluid-Porter.md) | [![Miner](images/robot_miner.png)](Miner.md)<br>[Miner](Miner.md) | [![Wool-E](images/robot_shearer.png)](Wool-E.md)<br>[Wool-E](Wool-E.md) | | |
+| [![Fluid Porter](images/robot_fluid_porter.png)](Fluid-Porter.md)<br>[Fluid Porter](Fluid-Porter.md) | [![Miner](images/robot_miner.png)](Miner.md)<br>[Miner](Miner.md) | [![Wool-E](images/robot_shearer.png)](Wool-E.md)<br>[Wool-E](Wool-E.md) | [![ArcBot](images/robot_arc.png)](ArcBot.md)<br>[ArcBot](ArcBot.md) | |
 
 ## Machines and blocks
 - [Coppersteel and the Robotics Foundry](Coppersteel.md)

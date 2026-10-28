@@ -12,4 +12,4 @@ A robot can have **one upgrade**, put in at the [Robot Workshop](Robot-Workshop.
 | ![](images/capacity_upgrade.png)<br>**Capacity** | Carries more: a Transporter or Collector two stacks, a Harvester, Fisher, Butcher or Wool-E eight, a Power Porter 50 000 FE, a Fluid Porter 8 buckets. | ![](images/recipes/capacity_upgrade.png) |
 | ![](images/magnet_upgrade.png)<br>**Magnet** | A [Collector](Collector.md) picks items up from 3 blocks away, even over a fence or wall. | ![](images/recipes/magnet_upgrade.png) |
 | ![](images/jetpack_upgrade.png)<br>**Jetpack** | A [Miner](Miner.md) flies up and down its shaft, much faster than climbing, and needs no ladders. | ![](images/recipes/jetpack_upgrade.png) |
-| ![](images/combat_upgrade.png)<br>**Combat** | A [Killerbot](Killerbot.md) gets diamond swords that reach 4 blocks instead of 2 and hit twice as hard. | ![](images/recipes/combat_upgrade.png) |
+| ![](images/combat_upgrade.png)<br>**Combat** | A [Killerbot](Killerbot.md) gets diamond swords that reach 4 blocks instead of 2 and hit twice as hard. An [ArcBot](ArcBot.md)'s arcs reach 14 blocks instead of 10 and hit harder. | ![](images/recipes/combat_upgrade.png) |

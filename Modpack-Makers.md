@@ -32,14 +32,14 @@ See [Configuration](Configuration.md). Ship `config/farmerfranks_robotics-local.
 }
 ```
 
-Robot names: `transporter`, `collector`, `lumberjack`, `killer`, `planter`, `harvester`, `fisher`, `breeder`, `butcher`, `power_porter`, `fluid_porter`, `miner`, `shearer` (Wool-E).
+Robot names: `transporter`, `collector`, `lumberjack`, `killer`, `planter`, `harvester`, `fisher`, `breeder`, `butcher`, `power_porter`, `fluid_porter`, `miner`, `shearer` (Wool-E), `arc` (ArcBot).
 
 ## Mobs the robots leave alone
 Two entity type tags, which a datapack can add to:
 
 | Tag | Used for |
 |---|---|
-| `farmerfranks_robotics:ignored_mobs` | hostile mobs the Killerbot never hunts, and that the filter's mob list leaves out. Has the Wither and the Ender Dragon. |
+| `farmerfranks_robotics:ignored_mobs` | hostile mobs the Killerbot and ArcBot never hunt, and that the filter's mob list leaves out. Has the Wither and the Ender Dragon. |
 | `farmerfranks_robotics:ignored_animals` | animals the Breeder never breeds and the Butcher never butchers, and that the mob list leaves out. Empty. |
 
 For example `data/farmerfranks_robotics/tags/entity_type/ignored_mobs.json` with `{"values": ["somemod:boss"]}`. Every other hostile mob and animal, from any mod, is in the list and can be picked.
@@ -56,7 +56,7 @@ The Robotics Foundry recipe (iron + copper into Coppersteel) is built into the m
 | Charging Station | `farmerfranks_robotics:charging_station` |
 | Robot Workshop | `farmerfranks_robotics:robot_workshop` |
 | Robot Frame | `farmerfranks_robotics:robot_frame` |
-| Neural Chips | `farmerfranks_robotics:<robot>_chip`: `transporter_chip`, `collector_chip`, `lumberjack_chip`, `killer_chip`, `planter_chip`, `harvester_chip`, `fisher_chip`, `breeder_chip`, `butcher_chip`, `courier_chip` (Power Porter), `fluid_porter_chip`, `miner_chip`, `shearer_chip` |
+| Neural Chips | `farmerfranks_robotics:<robot>_chip`: `transporter_chip`, `collector_chip`, `lumberjack_chip`, `killer_chip`, `planter_chip`, `harvester_chip`, `fisher_chip`, `breeder_chip`, `butcher_chip`, `courier_chip` (Power Porter), `fluid_porter_chip`, `miner_chip`, `shearer_chip`, `arc_chip` |
 | Battery Modules | `farmerfranks_robotics:copper_battery_module`, `farmerfranks_robotics:coppersteel_battery_module` |
 | Upgrades | `farmerfranks_robotics:speed_upgrade`, `range_upgrade`, `efficiency_upgrade`, `capacity_upgrade`, `magnet_upgrade`, `combat_upgrade`, `jetpack_upgrade` |
 | Whitelist and Blacklist Filters (were Filter Chips) | `farmerfranks_robotics:white_filter_chip`, `farmerfranks_robotics:black_filter_chip` |

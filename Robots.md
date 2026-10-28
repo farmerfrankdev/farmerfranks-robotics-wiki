@@ -19,6 +19,7 @@ Every robot is a [Robot Frame](Robot-Workshop.md) with a **Neural Chip** in it, 
 | ![](images/robot_fluid_porter.png) [Fluid Porter](Fluid-Porter.md) | Carries fluids between tanks | source tank, target tank, charger | 1× |
 | ![](images/robot_miner.png) [Miner](Miner.md) | Digs out its area layer by layer, all the way down | area, chest (with ladders), charger | 2× |
 | ![](images/robot_shearer.png) [Wool-E](Wool-E.md) | Shears the sheep and delivers the wool | area, delivery chest, charger | 1× |
+| ![](images/robot_arc.png) [ArcBot](ArcBot.md) | Shoots arcs of electricity at hostile mobs from afar | area, charger | 2× |
 
 ## Things every robot does
 - **Right-click** a robot with an empty hand to see its type, battery and what it is doing.
@@ -33,7 +34,7 @@ Every robot is a [Robot Frame](Robot-Workshop.md) with a **Neural Chip** in it, 
 - **Tree farm:** a Lumberjack fells the trees and a Collector picks up the logs. Put the saplings on [Fertilized Dirt](Fertilized-Dirt.md) to make them grow four times as fast.
 - **Crop farm:** a Planter sows and a Harvester harvests. Give the Planter the Harvester's chest as its seed chest, and the farm runs by itself.
 - **Animal farm:** a Breeder breeds and a Butcher keeps the numbers down. Add Wool-E to shear the sheep.
-- **Mob farm:** a Killerbot in a dark room, with a Collector for the drops.
+- **Mob farm:** a Killerbot in a dark room, with a Collector for the drops. Add an ArcBot for spiders, blazes and other mobs a Killerbot cannot reach.
 - **Remote base:** a Power Porter carries energy from your generators to a battery far away.
 - **Quarry:** a Miner digs a shaft down to bedrock and fills its chest with ores. Give it a Blacklist Filter for stone and dirt.
 - **Fluids without pipes:** a Fluid Porter carries water, lava or other mods' fluids between [Glass Tanks](Glass-Tank.md) and machines.

@@ -34,6 +34,16 @@ See [Configuration](Configuration.md). Ship `config/farmerfranks_robotics-local.
 
 Robot names: `transporter`, `collector`, `lumberjack`, `killer`, `planter`, `harvester`, `fisher`, `breeder`, `butcher`, `power_porter`, `fluid_porter`, `miner`, `shearer` (Wool-E).
 
+## Mobs the robots leave alone
+Two entity type tags, which a datapack can add to:
+
+| Tag | Used for |
+|---|---|
+| `farmerfranks_robotics:ignored_mobs` | hostile mobs the Killerbot never hunts, and that the filter's mob list leaves out. Has the Wither and the Ender Dragon. |
+| `farmerfranks_robotics:ignored_animals` | animals the Breeder never breeds and the Butcher never butchers, and that the mob list leaves out. Empty. |
+
+For example `data/farmerfranks_robotics/tags/entity_type/ignored_mobs.json` with `{"values": ["somemod:boss"]}`. Every other hostile mob and animal, from any mod, is in the list and can be picked.
+
 ## Not changeable yet
 The Robotics Foundry recipe (iron + copper into Coppersteel) is built into the mod and cannot be changed with a datapack yet.
 

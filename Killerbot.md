@@ -4,7 +4,7 @@
 
 ![Killerbot](images/robot_killer.png)
 
-The Killerbot hunts hostile mobs in its area. When it reaches them it spins round with a sword in each hand, hitting every mob around it. Drops are left on the ground. It's the dark gunmetal robot with a purple stripe.
+The Killerbot hunts hostile mobs in its area. When it reaches them it spins round with a sword in each hand, hitting every mob around it. Drops are left on the ground. Its kills count as a player's, so mobs drop everything, also what only a player's kill gives, such as a blaze's rods, and their experience. It's the dark gunmetal robot with a purple stripe.
 
 Animals, villagers and players are left alone, and no robot is ever targeted or hurt by mobs.
 

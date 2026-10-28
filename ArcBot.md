@@ -4,16 +4,16 @@
 
 ![ArcBot](images/robot_arc.png)
 
-The ArcBot hunts the hostile mobs in its area from a distance, with arcs of electricity. It's the dark grey robot with yellow stripes, a bright blue bulb on its head and a lightning rod in its hand.
+The ArcBot hunts the hostile mobs in its area from a distance, with arcs of electricity. It's the dark grey robot with yellow stripes, a bright blue bulb on its head and a lightning rod in each hand: its plus and minus poles.
 
 ## How it works
-- It goes after the nearest hostile mob in its area. Once the mob is within **10 blocks** and it can see it, it stops, charges up for half a second with sparks crackling round its bulb, and fires.
+- It goes after the nearest hostile mob in its area. Once the mob is within **10 blocks** and it can see it, it stops, holds its two rods out, charges up for half a second with sparks crackling between them, and fires.
 - The arc **jumps on** to up to two more hostile mobs within 4 blocks of the one it hit, for half the damage.
 - An arc does 6 damage, about every second and a half: a spider takes three, a blaze four.
 - It does not shoot through walls, and it never hits animals, villagers, players or other robots.
 - It hunts in the air above its area too, up to 10 blocks: **spiders** on walls, **blazes**, **ghasts** and **phantoms**. **Creepers** never get close enough to explode.
 - It is not a real lightning bolt: nothing catches fire, and creepers do not get charged. The ArcBot itself does not burn either, so a blaze's fireballs cannot hurt it.
-- The drops stay on the ground, like the [Killerbot](Killerbot.md)'s.
+- The drops stay on the ground, like the [Killerbot](Killerbot.md)'s. Its kills count as a player's, so mobs drop everything, also what only a player's kill gives, such as a blaze's rods, and their experience.
 
 ## Energy
 Every arc costs **300 FE**, so a full battery is about 30 arcs, and walking costs twice as much as for most robots. Give it a [Battery Module](Battery-Modules.md), and keep its [charging station](Charging-Station.md) close.

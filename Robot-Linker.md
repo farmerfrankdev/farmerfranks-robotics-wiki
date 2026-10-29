@@ -30,6 +30,8 @@ For a chest the side makes no difference, but a furnace or another mod's machine
 
 The panel also shows the robot's filter, if it has one. Click **Change** to change the items in it, the same way as with a Filter Chip in your hand. Closing the filter takes you back to the Robot Panel.
 
+**Change the list without the Linker:** click **×** next to a chest to take it off the list, or **+ Add** by a heading to add one more: the panel closes, and you right-click the chest or machine (a Power Porter's battery, a Fluid Porter's tank) in the world. The panel then opens again with it on the list. Shift + right-click the air if you change your mind. A robot needs at least one, so the last chest in a list cannot be taken off: add the new one first. A chest can only be on one of the lists, and it gets the same side as if you had clicked it with the Linker.
+
 A robot waits three seconds after you put it down or hand it a setup, so there is time to Ctrl + right-click it before it walks off.
 
 With more than one chest to deliver to, you can also switch between filling one at a time and round robin there.

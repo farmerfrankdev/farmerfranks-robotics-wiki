@@ -11,7 +11,7 @@ The Robot Workshop builds robots and changes them. It needs energy: give it a [B
 ## Building a robot
 1. Put a **Robot Frame** in the slot at the top.
 2. Put a **Neural Chip** in the chip slot. The chip decides what kind of [robot](Robots.md) you get.
-3. After **10 seconds** and **4 000 FE**, the frame is a robot.
+3. After **10 seconds** and **12 000 FE**, the frame is a robot.
 
 ![Robot Frame recipe](images/recipes/robot_frame.png)
 
@@ -29,7 +29,7 @@ A slot the robot cannot use is crossed out: a [Power Porter](Power-Porter.md) ha
 
 - **To put a module in,** put it in its slot. The module the robot had before comes out in the output slot.
 - **To take a module out,** click it. Modules the robot already has are shown in their slots with a green frame and a tick. A module turns red until it is out; click it again to keep it.
-- Putting a module in or taking one out takes **5 seconds** and **2 000 FE**.
+- Putting a module in or taking one out takes **5 seconds** and **4 000 FE**.
 - **A name of its own,** if you like: type it in the field next to the robot slot. It shows in the Robot Panel, the Inspector and above the robot, so you can tell your robots apart. It costs nothing and takes no time. Empty the field to take the name away.
 - **The chip comes out last.** A robot whose chip is taken out becomes a Robot Frame again, so take the other modules out first.
 

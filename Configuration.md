@@ -39,6 +39,8 @@ The server sends these values to every player, so only the server's file counts.
 | `energy.stone_generator_fe_per_tick` | 25 | 1 – 10 000 | Stone Generator output |
 | `energy.iron_generator_fe_per_tick` | 50 | 1 – 10 000 | Iron Generator output |
 | `energy.robot_energy_use` | 1.0 | 0.0 – 10.0 | How much energy robots use: 0.5 is half, 2.0 is twice |
+| `energy.workshop_robot_energy` | 12000 | 0 – 1000000 | FE a Robot Workshop uses to build a robot (10 seconds) |
+| `energy.workshop_module_energy` | 4000 | 0 – 1000000 | FE a Robot Workshop uses to put a module in or take one out (5 seconds) |
 | `robots.max_area_size` | 32 | 4 – 128 | Biggest work area, in blocks along each side |
 | `robots.range_upgrade_area_size` | 48 | 4 – 256 | Biggest work area with a Range Upgrade |
 | `robots.breeder_max_animals_per_kind` | 16 | 2 – 256 | A Breeder stops feeding a kind of animal at this many |

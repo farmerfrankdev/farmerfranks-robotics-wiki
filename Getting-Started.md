@@ -16,7 +16,7 @@ Robots and machines run on FE (Forge Energy). Craft a **Stone Generator** and a 
 ![Battery recipe](images/recipes/battery.png)
 
 ## 3. Build a Robot Workshop and a Charging Station
-The [Robot Workshop](Robot-Workshop.md) builds robots and needs 4 000 FE per robot. Every robot also needs its own [Charging Station](Charging-Station.md). Put the battery or generator right next to both.
+The [Robot Workshop](Robot-Workshop.md) builds robots and needs 12 000 FE per robot (a little over one coal). Every robot also needs its own [Charging Station](Charging-Station.md). Put the battery or generator right next to both.
 
 ![Robot Workshop recipe](images/recipes/robot_workshop.png)
 ![Charging Station recipe](images/recipes/charging_station.png)

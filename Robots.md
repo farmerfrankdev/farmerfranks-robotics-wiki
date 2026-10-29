@@ -26,6 +26,7 @@ Every robot is a [Robot Frame](Robot-Workshop.md) with a **Neural Chip** in it, 
 - **Shift + right-click** it with an empty hand to pick it up. It keeps its charge, modules and setup, so you can put it down somewhere else.
 - A robot holds **10 000 FE** on its own, more with a [Battery Module](Battery-Modules.md). Even standing still uses a little energy, so robots charge now and then.
 - A robot without power stops and slumps over.
+- Walk past a robot and it waves hello, unless its hands are busy.
 - Mobs never target or hurt robots.
 - Robots walk straight through a [Robot Revolving Door](Robot-Revolving-Door.md), so they can work inside pens and mob farms.
 - An area can be up to **32 × 32** blocks, or **48 × 48** with a [Range Upgrade](Upgrades.md). Servers can change both in the [config](Configuration.md).

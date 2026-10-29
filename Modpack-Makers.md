@@ -2,7 +2,7 @@
 
 [Home](README.md)
 
-You are welcome to use FarmerFrank's Robotics in any modpack. A link back to the [CurseForge page](https://www.curseforge.com/members/farmerfrank/projects) is appreciated. The mod is All Rights Reserved, so please do not re-upload it on its own.
+You are welcome to use FarmerFrank's Robotics in any modpack. A link back to the [CurseForge page](https://www.curseforge.com/members/farmerfrankmods/projects) is appreciated. The mod is All Rights Reserved, so please do not re-upload it on its own.
 
 ## Turning robots off and tuning balance
 See [Configuration](Configuration.md). Ship `config/farmerfranks_robotics-local.toml` and `config/farmerfranks_robotics-synced.toml` with your pack.

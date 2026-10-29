@@ -30,6 +30,7 @@ With the [Robot Linker](Robot-Linker.md), click:
 
 ## Tips
 - A [Combat Upgrade](Upgrades.md) makes its arcs reach 14 blocks instead of 10 and do 10 damage instead of 6.
+- Every arc counts, also when several ArcBots hit the same mob at once: a mob is not spared for half a second after a hit, as it is from swords. So more ArcBots kill faster, a boss too.
 - An [Efficiency Upgrade](Upgrades.md) makes every arc cost a quarter less.
 - A [Filter](Filter-Chips.md) picks which mobs it hunts: click **Mobs…** in the filter's screen and pick them from the list.
 - Bosses are left alone: the Wither and the Ender Dragon, and the mobs in the `farmerfranks_robotics:ignored_mobs` tag (see [Modpack Makers](Modpack-Makers.md)). To hunt them, pick them in a Whitelist Filter, or tick **Also bosses** in a Blacklist Filter's mob list (see [Filters](Filter-Chips.md)).

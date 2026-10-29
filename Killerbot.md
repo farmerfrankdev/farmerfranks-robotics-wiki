@@ -22,6 +22,6 @@ It does not use a chest.
 
 ## Tips
 - A [Combat Upgrade](Upgrades.md) gives it diamond swords that reach 4 blocks instead of 2 and hit twice as hard.
-- A [Filter](Filter-Chips.md) picks which mobs it hunts: click **Mobs…** in its screen and pick them from the list. It never hunts the Wither or the Ender Dragon.
+- A [Filter](Filter-Chips.md) picks which mobs it hunts: click **Mobs…** in its screen and pick them from the list. It leaves bosses such as the Wither and the Ender Dragon alone, unless they are picked in a Whitelist Filter, or **Also bosses** is ticked in a Blacklist Filter.
 - Put a [Collector](Collector.md) in the same area for the drops, and a [Robot Revolving Door](Robot-Revolving-Door.md) in the wall, so the mob farm stays dark.
 - Uses four times the normal amount of energy (4×).

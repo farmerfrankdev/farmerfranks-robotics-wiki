@@ -12,6 +12,7 @@ A Filter decides what a robot works with. (Before 0.23.0 they were called White 
 1. Right-click with the chip to open it.
 2. Shift + click items in your inventory, or click a slot with an item, to add up to 5. Click a slot to remove its item.
    - **Mobs** for a Killerbot, ArcBot, Breeder or Butcher: click **Mobs…** at the top of the screen and pick up to 16 from the list. It has a tab for hostile mobs and one for animals, a search box, and mobs from other mods too. No spawn eggs needed (a spawn egg in a slot still counts as its mob).
+   - **Bosses**: the Wither and the Ender Dragon are at the end of the hostile list, marked **Boss**. Robots leave them alone unless you ask: pick one in a Whitelist Filter, or tick **Also bosses** under the list in a Blacklist Filter to hunt everything but what the blacklist lists, bosses too. An empty Blacklist Filter with **Also bosses** ticked hunts every hostile mob.
 3. Put the chip into the robot in the filter slot of the [Robot Workshop](Robot-Workshop.md).
 
 ## What the filter means for each robot

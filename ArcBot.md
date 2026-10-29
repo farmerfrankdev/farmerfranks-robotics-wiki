@@ -32,6 +32,6 @@ With the [Robot Linker](Robot-Linker.md), click:
 - A [Combat Upgrade](Upgrades.md) makes its arcs reach 14 blocks instead of 10 and do 10 damage instead of 6.
 - An [Efficiency Upgrade](Upgrades.md) makes every arc cost a quarter less.
 - A [Filter](Filter-Chips.md) picks which mobs it hunts: click **Mobs…** in the filter's screen and pick them from the list.
-- Mobs in the `farmerfranks_robotics:ignored_mobs` tag are left alone: the Wither and the Ender Dragon to start with (see [Modpack Makers](Modpack-Makers.md)).
+- Bosses are left alone: the Wither and the Ender Dragon, and the mobs in the `farmerfranks_robotics:ignored_mobs` tag (see [Modpack Makers](Modpack-Makers.md)). To hunt them, pick them in a Whitelist Filter, or tick **Also bosses** in a Blacklist Filter's mob list (see [Filters](Filter-Chips.md)).
 - Together with a [Killerbot](Killerbot.md): the Killerbot handles the crowds on the ground, the ArcBot the mobs it cannot reach.
 - With a [Collector](Collector.md) in the same area, the drops end up in a chest.

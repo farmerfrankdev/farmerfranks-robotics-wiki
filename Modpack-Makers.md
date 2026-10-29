@@ -39,7 +39,7 @@ Two entity type tags, which a datapack can add to:
 
 | Tag | Used for |
 |---|---|
-| `farmerfranks_robotics:ignored_mobs` | hostile mobs the Killerbot and ArcBot never hunt, and that the filter's mob list leaves out. Has the Wither and the Ender Dragon. |
+| `farmerfranks_robotics:ignored_mobs` | hostile mobs the Killerbot and ArcBot leave alone, such as bosses. The filter's mob list marks them as bosses: they are only hunted when picked in a whitelist, or with **Also bosses** ticked in a blacklist. Has the Wither and the Ender Dragon. |
 | `farmerfranks_robotics:ignored_animals` | animals the Breeder never breeds and the Butcher never butchers, and that the mob list leaves out. Empty. |
 
 For example `data/farmerfranks_robotics/tags/entity_type/ignored_mobs.json` with `{"values": ["somemod:boss"]}`. Every other hostile mob and animal, from any mod, is in the list and can be picked.

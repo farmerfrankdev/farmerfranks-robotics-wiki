@@ -8,6 +8,7 @@ The [Killerbot](Killerbot.md) and the [ArcBot](ArcBot.md) fight, and mobs fight 
 - A combat robot has a **force shield of 20** on top of **20 health** (twice what other robots have).
 - Every hit takes the shield first. It flashes blue around the robot, and goes down with a crack of glass when it is empty. Only then does the robot's body take damage.
 - **3 seconds after the last hit**, the shield charges back up from the robot's battery: **200 FE per point**, so a full shield costs 4 000 FE. A hard fight drains the battery faster, and the robot has to charge more often.
+- No fire gets through the shield: while it is up, the robot cannot catch fire or burn. A blaze's fireball still hits the shield like any other attack.
 - While it charges at its station, its body mends a point every two seconds.
 - Right-click it or use the [Robot Panel](Inspector.md) to see its shield and health.
 

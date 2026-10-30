@@ -6,7 +6,7 @@
 
 The Killerbot hunts hostile mobs in its area. When it reaches them it spins round with a sword in each hand, hitting every mob around it. Drops are left on the ground. Its kills count as a player's, so mobs drop everything, also what only a player's kill gives, such as a blaze's rods, and their experience. It's the dark gunmetal robot with a purple stripe.
 
-Animals, villagers and players are left alone, and no robot is ever targeted or hurt by mobs.
+Animals, villagers and players are left alone. Mobs fight back, but a [Force Shield](Force-Shield.md) takes their hits first; if it is beaten, it becomes a Scrap Pile you can mend at an anvil.
 
 ## Recipe
 Build it at the [Robot Workshop](Robot-Workshop.md) from a Robot Frame and a **Killer Neural Chip**.

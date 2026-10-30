@@ -24,6 +24,7 @@ This wiki is for FarmerFrank's Robotics for **Minecraft 26.3 (NeoForge)**. The m
 - [Charging Station](Charging-Station.md)
 - [Robot Workshop](Robot-Workshop.md)
 - [Robot Revolving Door](Robot-Revolving-Door.md)
+- [Force Shield and Scrap Pile](Force-Shield.md)
 - [Fertilized Dirt and Farmland](Fertilized-Dirt.md)
 - [Glass Tank](Glass-Tank.md)
 

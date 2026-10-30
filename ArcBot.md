@@ -36,3 +36,4 @@ With the [Robot Linker](Robot-Linker.md), click:
 - Bosses are left alone: the Wither and the Ender Dragon, and the mobs in the `farmerfranks_robotics:ignored_mobs` tag (see [Modpack Makers](Modpack-Makers.md)). To hunt them, pick them in a Whitelist Filter, or tick **Also bosses** in a Blacklist Filter's mob list (see [Filters](Filter-Chips.md)).
 - Together with a [Killerbot](Killerbot.md): the Killerbot handles the crowds on the ground, the ArcBot the mobs it cannot reach.
 - With a [Collector](Collector.md) in the same area, the drops end up in a chest.
+- Mobs fight back, but its [Force Shield](Force-Shield.md) takes the hits first. A beaten ArcBot becomes a Scrap Pile you can mend at an anvil.

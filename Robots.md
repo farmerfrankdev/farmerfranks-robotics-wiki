@@ -27,7 +27,7 @@ Every robot is a [Robot Frame](Robot-Workshop.md) with a **Neural Chip** in it, 
 - A robot holds **10 000 FE** on its own, more with a [Battery Module](Battery-Modules.md). Even standing still uses a little energy, so robots charge now and then.
 - A robot without power stops and slumps over.
 - Walk past a robot and it waves hello, unless its hands are busy.
-- Mobs never target or hurt robots.
+- Mobs leave robots alone, except the Killerbot and the ArcBot: they fight, and mobs fight back. A [Force Shield](Force-Shield.md) takes the hits first, and a beaten one becomes a Scrap Pile you can mend at an anvil.
 - Robots walk straight through a [Robot Revolving Door](Robot-Revolving-Door.md), so they can work inside pens and mob farms.
 - An area can be up to **32 × 32** blocks, or **48 × 48** with a [Range Upgrade](Upgrades.md). Servers can change both in the [config](Configuration.md).
 

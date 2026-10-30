@@ -5,13 +5,13 @@
 The [Killerbot](Killerbot.md) and the [ArcBot](ArcBot.md) fight, and mobs fight back. Hostile mobs nearby go after them, not only after players. All the other robots are machines that mobs leave alone, as before.
 
 ## The force shield
-- A combat robot has a **force shield of 30** on top of **20 health** (twice what other robots have).
+- A combat robot has a **force shield of 30** on top of **20 health** (twice what other robots have). A [Combat Upgrade](Upgrades.md) makes the shield 40.
 - Every hit takes the shield first. It flashes blue around the robot, and goes down with a crack of glass when it is empty. Only then does the robot's body take damage.
 - **2 seconds after the last hit**, the shield charges back up from the robot's battery, full again in 6 seconds: **150 FE per point**, so a full shield costs 4 500 FE. A hard fight drains the battery faster, and the robot has to charge more often.
 - No fire gets through the shield: while it is up, the robot cannot catch fire or burn. A blaze's fireball still hits the shield like any other attack.
 - While it charges at its station, its body mends a point every two seconds.
 - Robots are machines: poison, withering (also the Wither's) and other harmful effects do nothing to any robot.
-- Right-click it or use the [Robot Panel](Inspector.md) to see its shield and health.
+- Right-click it to see its shield and health, or open the Robot Panel (Ctrl + right-click): a blue **Shield** bar shows where other robots show what they carry.
 
 ## Creepers
 Creepers never go after robots, so they will not walk up to them and blow up your base. Your robots still hunt creepers as before, and an ArcBot gets them from afar.

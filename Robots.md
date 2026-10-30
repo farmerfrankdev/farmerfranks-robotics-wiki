@@ -17,7 +17,7 @@ Every robot is a [Robot Frame](Robot-Workshop.md) with a **Neural Chip** in it, 
 | ![](images/robot_butcher.png) [Butcher](Butcher.md) | Keeps a set number of animals, butchers the rest | area, delivery chest, charger | 2× |
 | ![](images/robot_courier.png) [Power Porter](Power-Porter.md) | Carries energy between batteries | source battery, target battery, charger | 1× |
 | ![](images/robot_fluid_porter.png) [Fluid Porter](Fluid-Porter.md) | Carries fluids between tanks | source tank, target tank, charger | 1× |
-| ![](images/robot_miner.png) [Miner](Miner.md) | Digs out its area layer by layer, all the way down | area, chest (with ladders), charger | 2× |
+| ![](images/robot_miner.png) [Miner](Miner.md) | Digs out its area layer by layer, all the way down | area, chest, charger | 2× |
 | ![](images/robot_shearer.png) [Wool-E](Wool-E.md) | Shears the sheep and delivers the wool | area, delivery chest, charger | 1× |
 | ![](images/robot_arc.png) [ArcBot](ArcBot.md) | Shoots arcs of electricity at hostile mobs from afar | area, charger | 2× |
 

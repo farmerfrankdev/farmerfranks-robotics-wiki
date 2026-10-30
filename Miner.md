@@ -19,6 +19,8 @@ The Miner makes its own **Miner's Ladder** as it goes, one per layer, so it need
 
 With a **[Jetpack Upgrade](Upgrades.md)** it flies up and down instead, with flames under its feet, and gets up and down much faster.
 
+With a **[Luck Upgrade](Upgrades.md)** it digs as with a Fortune III pickaxe: more diamonds, coal, redstone, lapis and other ores.
+
 ## Water, lava and caves
 - **Water and lava** next to the shaft are walled off with cobblestone before it digs beside them, so nothing runs in. Water and lava inside its area are cleared away.
 - **Caves** are no problem: it only digs the solid blocks in each layer, and never falls.

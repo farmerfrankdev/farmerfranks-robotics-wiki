@@ -44,13 +44,27 @@ Two entity type tags, which a datapack can add to:
 
 For example `data/farmerfranks_robotics/tags/entity_type/ignored_mobs.json` with `{"values": ["somemod:boss"]}`. Every other hostile mob and animal, from any mod, is in the list and can be picked.
 
-## Not changeable yet
-The Robotics Foundry recipe (iron + copper into Coppersteel) is built into the mod and cannot be changed with a datapack yet.
+## Robotics Foundry recipes
+The Robotics Foundry melts two ingredients into one, and its recipes are JSON files like any other, of type `farmerfranks_robotics:alloy_smelting`. Add your own alloys with a datapack, or override `farmerfranks_robotics:coppersteel_ingot_from_alloy_smelting` to change the Coppersteel one. The order of the two slots does not matter.
+
+```json
+{
+  "type": "farmerfranks_robotics:alloy_smelting",
+  "first": ["minecraft:iron_ingot", "minecraft:raw_iron"],
+  "second": "#c:ingots/copper",
+  "result": { "id": "farmerfranks_robotics:coppersteel_ingot", "count": 1 },
+  "cooking_time": 200,
+  "experience": 0.7
+}
+```
+
+`first` and `second` take an item, a list of items or a `#tag`. `cooking_time` (ticks, default 200) and `experience` (default 0) can be left out. JEI shows the new recipes too.
 
 ## Recipe ids
 | Item | Recipe id |
 |---|---|
 | Robotics Foundry (was Alloy Furnace) | `farmerfranks_robotics:alloy_furnace` |
+| Coppersteel Ingot in the Robotics Foundry | `farmerfranks_robotics:coppersteel_ingot_from_alloy_smelting` |
 | Stone / Iron Generator | `farmerfranks_robotics:stone_generator`, `farmerfranks_robotics:iron_generator` |
 | Battery | `farmerfranks_robotics:battery` |
 | Charging Station | `farmerfranks_robotics:charging_station` |

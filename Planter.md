@@ -20,6 +20,6 @@ With the [Robot Linker](Robot-Linker.md), click:
 ## Tips
 - Pair it with a [Harvester](Harvester.md), and give the Planter the Harvester's delivery chest as its seed chest. Then the farm runs by itself.
 - Tilled [Fertilized Dirt](Fertilized-Dirt.md) becomes Fertilized Farmland, where crops grow four times as fast.
-- With a [Watering Can Upgrade](Upgrades.md) it waters a crop every few seconds while it has nothing to till or sow, with a water bucket out. A small field grows about a third faster; a big one hardly faster at all, so Fertilized Farmland is still the way to make crops really fly.
+- With a [Watering Can Upgrade](Upgrades.md) it waters a crop every few seconds while it has nothing to till or sow, with its watering can out, pouring for a few seconds. A small field grows about a third faster; a big one hardly faster at all, so Fertilized Farmland is still the way to make crops really fly.
 - A [Filter](Filter-Chips.md) decides which seeds it sows.
 - Uses the normal amount of energy (1×).

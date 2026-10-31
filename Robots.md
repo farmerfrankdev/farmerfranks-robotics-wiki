@@ -8,7 +8,7 @@ Every robot is a [Robot Frame](Robot-Workshop.md) with a **Neural Chip** in it, 
 |---|---|---|---|
 | ![](images/robot.png) [Transporter](Transporter.md) | Carries items from one inventory to another | pickup chest, delivery chest, charger | 1× |
 | ![](images/robot_collector.png) [Collector](Collector.md) | Picks up items on the ground in its area | area, delivery chest, charger | 1× |
-| ![](images/robot_lumberjack.png) [Lumberjack](Lumberjack.md) | Fells trees and replants saplings | area, sapling chest, charger | 2× |
+| ![](images/robot_lumberjack.png) [Lumberjack](Lumberjack.md) | Fells trees and replants the same kind | area, charger | 2× |
 | ![](images/robot_killer.png) [Killerbot](Killerbot.md) | Hunts hostile mobs | area, charger | 4× |
 | ![](images/robot_planter.png) [Planter](Planter.md) | Tills ground near water and sows seeds | area, seed chest, charger | 1× |
 | ![](images/robot_harvester.png) [Harvester](Harvester.md) | Harvests ripe crops | area, delivery chest, charger | 1× |

@@ -7,7 +7,7 @@
 The Power Porter is a walking battery. It carries energy from one battery to another in two heavy batteries, one in each hand. It is slow, but you need no cables. It's the steel-blue robot with a yellow lightning stripe.
 
 ## How it works
-1. It walks to the source battery, sets its batteries down and plugs them in, with a stream of sparks between them.
+1. It walks to the source battery, sets its batteries down and plugs them in, with a crackling arc of electricity between them.
 2. Once they are full, with **25 000 FE**, it picks them up and staggers over to the target battery.
 3. There it sets them down again and empties them.
 

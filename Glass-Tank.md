@@ -9,6 +9,7 @@ A copper-framed glass tank that holds **16 buckets** (16 000 mB) of one fluid. Y
 ## Using it
 - **Right-click with a bucket** (or another fluid container) to fill or empty it.
 - **Right-click with an empty hand** to see what is in it, for example "Water: 8 000 / 16 000 mB".
+- **Shift + right-click with an empty hand** a tank of Liquid Experience to take all the experience in it. A [Collector](Collector.md) with an XP Upgrade fills it.
 - **Fluid pipes** from other mods connect on every side.
 - A [Fluid Porter](Fluid-Porter.md) can carry fluid to and from it.
 - It **keeps its fluid** when you break it and pick it up. The item's tooltip shows what is in it.

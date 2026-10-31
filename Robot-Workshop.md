@@ -16,22 +16,22 @@ The Robot Workshop builds robots and changes them. It needs energy: give it a [B
 ![Robot Frame recipe](images/recipes/robot_frame.png)
 
 ## Modules
-Under the robot slot there is a slot for each kind of module:
+The workshop is laid out as a tree: the robot at the top, its Neural Chip under it, and under the chip a row with a slot for each module that robot has room for. Until a chip is in, there is no row yet.
 
 | Slot | Module |
 |---|---|
-| Chip | a Neural Chip: what the robot does |
+| Chip | a Neural Chip: what the robot does. It sits right under the robot |
 | Filter | a [Filter](Filter-Chips.md) |
 | Battery | a [Battery Module](Battery-Modules.md) |
 | Upgrade | an [Upgrade](Upgrades.md) |
 
-A slot the robot cannot use is crossed out: a [Power Porter](Power-Porter.md) has nothing to filter, so it takes no filter. An upgrade that does nothing for the robot, such as a Magnet Upgrade in a Miner, gets a red frame. Hold the mouse over a slot to see why. With a Robot Frame in the workshop, the other modules wait in their slots until the chip is in.
+The row only has the slots the robot can use: a [Power Porter](Power-Porter.md) has nothing to filter, so it has no filter slot. Next to the chip, **Upgrades it can use** shows the upgrades that do something for that robot. Hold the mouse over one to see what it does, so you know which to make. An upgrade that does nothing for the robot, such as a Magnet Upgrade in a Miner, gets a red frame. With a Robot Frame in the workshop, the row shows up as soon as you put a chip in, and the other modules wait in their slots until the chip is in.
 
 - **To put a module in,** put it in its slot. The module the robot had before comes out in the output slot.
 - **To take a module out,** click it. Modules the robot already has are shown in their slots with a green frame and a tick. A module turns red until it is out; click it again to keep it.
 - Putting a module in or taking one out takes **5 seconds** and **4 000 FE**.
 - **A name of its own,** if you like: type it in the field next to the robot slot. It shows in the Robot Panel, the Inspector and above the robot, so you can tell your robots apart. It costs nothing and takes no time. Empty the field to take the name away.
-- **The chip comes out last.** A robot whose chip is taken out becomes a Robot Frame again, so take the other modules out first.
+- **The chip comes out last.** It holds the modules under it, so it cannot be taken out until they are out. A robot whose chip is taken out becomes a Robot Frame again.
 
 The robot stays in its slot the whole time. Use the **Sides** button to let hoppers and pipes put frames and modules in.
 

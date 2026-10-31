@@ -19,10 +19,10 @@ With the [Robot Linker](Robot-Linker.md), click:
 That's all: it needs no chest.
 
 ## Starting a tree farm
-Plant some saplings in its area yourself, or just **throw a few on the ground** there. It picks them up and plants them in rows, three blocks apart, with room to walk between the trees. Any kinds can grow in the same area.
+Plant the saplings in its area **the way you want the trees**. It only ever plants where a tree stood, so the farm keeps your layout and never spreads. Any kinds can grow in the same area.
 
 ## Its saplings
-Every tree gives it **at least the saplings to replace itself**, however few its leaves happen to drop: one, or four for a 2x2 tree. It keeps up to **16 of each kind** and leaves the rest on the ground, so it never needs a chest.
+Every tree gives it **at least the saplings to replace itself**, however few its leaves happen to drop: one, or four for a 2x2 tree. It keeps up to **16 of each kind**, also saplings it finds on the ground in its area, and leaves the rest on the ground, so it never needs a chest.
 
 ## Tips
 - It only cuts trees with natural leaves, so log houses and other buildings made of logs are safe.

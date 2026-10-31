@@ -22,9 +22,7 @@ That's all: it needs no chest.
 Plant some saplings in its area yourself, or just **throw a few on the ground** there. It picks them up and plants them in rows, three blocks apart, with room to walk between the trees. Any kinds can grow in the same area.
 
 ## Its saplings
-It keeps up to **16 saplings of each kind**, for when a tree drops too few to replace itself. What it has no room for stays on the ground. If a kind runs out, the spot waits until it gets one: from another tree, from the ground, or from a chest. It never plants the wrong kind.
-
-A chest is only needed if the trees keep running out. Add one with **+ Add** next to "Fetches from" in its [Robot Panel](Robot-Linker.md#the-robot-panel) (Ctrl + right-click the robot), and it takes saplings from there when it has none of a kind it needs.
+Every tree gives it **at least the saplings to replace itself**, however few its leaves happen to drop: one, or four for a 2x2 tree. It keeps up to **16 of each kind** and leaves the rest on the ground, so it never needs a chest.
 
 ## Tips
 - It only cuts trees with natural leaves, so log houses and other buildings made of logs are safe.

@@ -49,7 +49,7 @@ A robot can fetch from more than one chest, and deliver to more than one. It wor
 - **Shift + click one of them again** to take it away.
 - Up to 16 chests to fetch from and 16 to deliver to. Every chest keeps the side you clicked.
 
-This works for the Transporter, Collector, Harvester, Fisher, Butcher, Miner and Wool-E (delivering), and for the Transporter, Lumberjack, Planter and Breeder (fetching). A Lumberjack needs no chest, but can have one for saplings, added here. The [Power Porter](Power-Porter.md) and [Fluid Porter](Fluid-Porter.md) do the same with batteries and tanks, both ways.
+This works for the Transporter, Collector, Harvester, Fisher, Butcher, Miner and Wool-E (delivering), and for the Transporter, Planter and Breeder (fetching). The [Power Porter](Power-Porter.md) and [Fluid Porter](Fluid-Porter.md) do the same with batteries and tanks, both ways.
 
 **Fetching:** the robot takes from the first chest that has something for it, in the order you clicked them.
 

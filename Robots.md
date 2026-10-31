@@ -21,6 +21,8 @@ Every robot is a [Robot Frame](Robot-Workshop.md) with a **Neural Chip** in it, 
 | ![](images/robot_shearer.png) [Wool-E](Wool-E.md) | Shears the sheep and delivers the wool | area, delivery chest, charger | 1× |
 | ![](images/robot_arc.png) [ArcBot](ArcBot.md) | Shoots arcs of electricity at hostile mobs from afar | area, charger | 2× |
 
+"Chest" in this table means any block that holds items: chests, barrels, shulker boxes, furnaces, and machines and storage from other mods all work. See [Robot Linker](Robot-Linker.md).
+
 ## Things every robot does
 - **Right-click** a robot with an empty hand to see its type, battery and what it is doing.
 - **Shift + right-click** it with an empty hand to pick it up. It keeps its charge, modules and setup, so you can put it down somewhere else.

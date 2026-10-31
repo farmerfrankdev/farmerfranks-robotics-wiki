@@ -21,6 +21,8 @@ That's all: it needs no chest.
 ## Starting a tree farm
 Plant the saplings in its area **the way you want the trees**. It only ever plants where a tree stood, so the farm keeps your layout and never spreads. Any kinds can grow in the same area.
 
+With a [Forestry Upgrade](Upgrades.md) it does spread: whenever it has nothing to fell, it plants its spare saplings in rows, three blocks apart, until the whole area is forest. Throw a few saplings there and it plants them too.
+
 ## Its saplings
 Every tree gives it **at least the saplings to replace itself**, however few its leaves happen to drop: one, or four for a 2x2 tree. It keeps up to **16 of each kind**, also saplings it finds on the ground in its area, and leaves the rest on the ground, so it never needs a chest.
 
@@ -28,6 +30,6 @@ Every tree gives it **at least the saplings to replace itself**, however few its
 - It only cuts trees with natural leaves, so log houses and other buildings made of logs are safe.
 - Let a [Collector](Collector.md) work in the same area to pick up the logs.
 - Saplings on [Fertilized Dirt](Fertilized-Dirt.md) grow four times as fast.
-- The [Axe Upgrade](Upgrades.md) makes it fell trees twice as fast.
+- The [Axe Upgrade](Upgrades.md) makes it fell trees twice as fast. A robot has one upgrade, so it is Axe or Forestry.
 - A [Filter](Filter-Chips.md) decides which saplings it plants.
 - Uses twice the normal amount of energy (2×).

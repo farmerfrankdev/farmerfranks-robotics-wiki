@@ -19,7 +19,7 @@ With the [Robot Linker](Robot-Linker.md), click:
 That's all: it needs no chest.
 
 ## Starting a tree farm
-Plant the saplings in its area **the way you want the trees**. It only ever plants where a tree stood, so the farm keeps your layout and never spreads. Any kinds can grow in the same area.
+Plant the saplings in its area **the way you want the trees**. It only plants where a tree stood, so the farm keeps your layout and does not spread. Any kinds can grow in the same area.
 
 With a [Forestry Upgrade](Upgrades.md) it does spread: whenever it has nothing to fell, it plants its spare saplings in rows, three blocks apart, until the whole area is forest. Throw a few saplings there and it plants them too.
 

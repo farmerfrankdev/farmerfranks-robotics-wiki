@@ -22,7 +22,7 @@ The Iron Generator makes the same energy from a coal, but twice as fast. A gener
 ## Battery
 ![Battery](images/battery.png)
 
-The Battery stores **100 000 FE**, and moves up to 200 FE/t in and out. It takes energy in on every side but the front, which gives it out, and the gauge on the front shows how full it is. It keeps its charge when you break it and pick it up. Comparators read how full it is.
+The Battery stores **100 000 FE**, and moves up to 200 FE/t in and out. It takes energy in on every side but the front, which gives it out, and the gauge on the front shows how full it is. It keeps its charge when you break it and pick it up. Comparators read how full it is. With more than one output side, the 200 FE/t is shared out between them. Two batteries joined to each other only even out: energy goes from the fuller one to the emptier one, so other blocks next to them still get theirs.
 
 ![Battery recipe](images/recipes/battery.png)
 

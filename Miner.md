@@ -39,6 +39,8 @@ With the [Robot Linker](Robot-Linker.md), click:
 
 Put the chest and the charging station on the ground next to the area, not inside it.
 
+The area can also start **below the ground**: click the corners lower down, for example inside an old pit. The Miner then digs its ladder down from the ground at the corner to the top of the area, digs out the area from there, and climbs all the way back up to empty its basket. The ground above the area is left alone.
+
 ## Tips
 - Its battery holds **four times as much** as other robots', so it does not have to climb up to charge often.
 - A **Blacklist Filter** with stone, cobblestone, deepslate and dirt keeps the chest from filling up with them. What the filter does not let through is thrown away.

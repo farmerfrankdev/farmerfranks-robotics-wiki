@@ -1,4 +1,4 @@
-# Energy: Generators and the Battery
+# Energy: Generators and Batteries
 
 [Home](README.md)
 
@@ -25,6 +25,13 @@ The Iron Generator makes the same energy from a coal, but twice as fast. A gener
 The Battery stores **100 000 FE**, and moves up to 200 FE/t in and out. It takes energy in on every side but the front, which gives it out, and the gauge on the front shows how full it is. It keeps its charge when you break it and pick it up. Comparators read how full it is. With more than one output side, the 200 FE/t is shared out between them. Two batteries joined to each other only even out: energy goes from the fuller one to the emptier one, so other blocks next to them still get theirs.
 
 ![Battery recipe](images/recipes/battery.png)
+
+## Large Battery
+![Large Battery](images/large_battery.png)
+
+The Large Battery is a Battery with three Coppersteel Battery Modules built in, and it holds what they hold together: 100 000 + 3 × 50 000 = **250 000 FE**. It moves up to **500 FE/t** in and out, and its coppersteel casing tells it apart. Otherwise it works just like the Battery: the same sides, gauge and screen, and it keeps its charge when you pick it up. Energy stored in the Battery you craft it from is not carried over, so use it up first.
+
+![Large Battery recipe](images/recipes/large_battery.png)
 
 ## Sides
 The generators, the Battery, the [Robotics Foundry](Coppersteel.md) and the [Robot Workshop](Robot-Workshop.md) all have a **Sides** button in their screen. For each side (front, back, left, right, top, bottom) choose **Input**, **Output**, **Input + Output** or **Disabled**. Output sides push energy into blocks right next to them.

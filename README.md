@@ -20,7 +20,7 @@ This wiki is for FarmerFrank's Robotics for **Minecraft 26.3 (NeoForge)**. The m
 
 ## Machines and blocks
 - [Coppersteel and the Robotics Foundry](Coppersteel.md)
-- [Energy: Generators and the Battery](Energy.md)
+- [Energy: Generators and Batteries](Energy.md)
 - [Charging Station](Charging-Station.md)
 - [Robot Workshop](Robot-Workshop.md)
 - [Robot Revolving Door](Robot-Revolving-Door.md)

@@ -8,7 +8,7 @@ The Miner digs out its area one layer at a time, from the ground all the way dow
 
 ## How it works
 1. It keeps the corner nearest the start of its area for its ladder. It digs that corner first on every layer, puts a Miner's Ladder in it, and climbs down.
-2. Then it digs out the rest of the layer, row by row, and goes on to the layer below.
+2. Then it digs out the rest of the layer, row by row, and goes on to the layer below. Standing over the part it has dug out, it is held up by a beam of energy down to the floor below.
 3. When its basket is full (8 stacks, 16 with a [Capacity Upgrade](Upgrades.md)) or its battery runs low, it climbs up, empties the basket into the chest, charges, and climbs back down.
 4. When it reaches bedrock, it climbs up for the last time and stays by its chest.
 

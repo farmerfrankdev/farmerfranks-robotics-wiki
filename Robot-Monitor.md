@@ -13,7 +13,7 @@ A screen that shows what your robots are doing, **wherever they are**: a [Miner]
 From then on every Robot Monitor you have placed shows it. Click **Remove** in the same place to take it off again. You choose the robots yourself, so the monitor only shows the ones you care about.
 
 ## What it shows
-- The robot's **name** and what kind of robot it is
+- The robot's **name** and what kind of robot it is, and **who owns it**
 - What it is **doing** right now
 - Its **battery**, and the health of a combat robot
 - What it **carries**, or a porter's cargo

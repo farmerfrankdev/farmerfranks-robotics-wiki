@@ -38,6 +38,7 @@ This wiki is for FarmerFrank's Robotics for **Minecraft 26.3 (NeoForge)**. The m
 - [Robotics Manual](Robotics-Manual.md)
 
 ## For servers and modpacks
+- [Sharing Robots](Sharing-Robots.md)
 - [Configuration](Configuration.md)
 - [Modpack Makers](Modpack-Makers.md)
 - [FAQ](FAQ.md)

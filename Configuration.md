@@ -50,5 +50,6 @@ The server sends these values to every player, so only the server's file counts.
 | `robots.miner_max_area_size` | 16 | 2 – 64 | Biggest area a Miner digs out, in blocks along each side (twice with a Range Upgrade) |
 | `robots.nearby_charger_range` | 16 | 0 – 64 | A robot that needs charging uses a station this close (in blocks) if it is closer than its own. 0 means always its own |
 | `robots.combat_robots_take_damage` | true | true / false | Hostile mobs go after Killerbots and ArcBots and can hurt them (see [Force Shield](Force-Shield.md)). False: mobs leave all robots alone |
+| `robots.robot_protection` | true | true / false | Only a robot's owner, the players they trust, their FTB Teams teammates and operators can pick it up, set it up, open its Robot Panel, rename it or hit it (see [Sharing Robots](Sharing-Robots.md)). False: anyone can use any robot |
 
 The numbers in the [Robotics Manual](Robotics-Manual.md) and the item tooltips are the defaults, so they do not change with the config.

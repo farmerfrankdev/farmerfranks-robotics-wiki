@@ -26,12 +26,14 @@ The Battery stores **100 000 FE**, and moves up to 200 FE/t in and out. It takes
 
 ![Battery recipe](images/recipes/battery.png)
 
-## Large Battery
-![Large Battery](images/large_battery.png)
+## Battery Bank
+![Battery Bank](images/battery_bank.png)
 
-The Large Battery is a Battery with three Coppersteel Battery Modules built in, and it holds what they hold together: 100 000 + 3 × 50 000 = **250 000 FE**. It moves up to **500 FE/t** in and out, and its coppersteel casing tells it apart. Otherwise it works just like the Battery: the same sides, gauge and screen, and it keeps its charge when you pick it up. Energy stored in the Battery you craft it from is not carried over, so use it up first.
+The Battery Bank is a Battery with three Coppersteel Battery Modules built in, and it holds what they hold together: 100 000 + 3 × 50 000 = **250 000 FE**. It moves up to **500 FE/t** in and out, and its coppersteel casing tells it apart. Otherwise it works just like the Battery: the same sides and gauge, and it keeps its charge when you pick it up. Energy stored in the Battery you craft it from is not carried over, so use it up first.
 
-![Large Battery recipe](images/recipes/large_battery.png)
+**More modules:** its screen has five slots for battery modules. Each one adds what it holds: 50 000 FE for a Coppersteel Battery Module, 25 000 FE for a Copper one. With five Coppersteel ones it holds **500 000 FE**. A module only comes out while the energy still fits without it, so none is lost: use some first. The modules stay in the Battery Bank when you break it and pick it up.
+
+![Battery Bank recipe](images/recipes/battery_bank.png)
 
 ## Sides
 The generators, the Battery, the [Robotics Foundry](Coppersteel.md) and the [Robot Workshop](Robot-Workshop.md) all have a **Sides** button in their screen. For each side (front, back, left, right, top, bottom) choose **Input**, **Output**, **Input + Output** or **Disabled**. Output sides push energy into blocks right next to them.

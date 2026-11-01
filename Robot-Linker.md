@@ -34,6 +34,8 @@ The panel shows the robot's **charging station** too. Click **Change** next to i
 
 A [Collector](Collector.md) with an XP Upgrade also has an **XP tank** row: click **Set** or **Change** and right-click a tank, and it takes the experience orbs it picks up there.
 
+Click **Show** next to **Monitor** to put the robot on your [Robot Monitors](Robot-Monitor.md), and **Remove** to take it off again.
+
 For a robot that works in an area, the panel shows the two corners of the area and how big it is. Click **Change** (or **Set**, if it has none) to give it a new area: the panel closes, you right-click the first corner and then the opposite corner, as with the linker, and the panel opens again. The old area is outlined until you click the first corner, and then a frame follows the crosshair, red if the area would be too big. Shift + right-click the air to give up. An area that is too big for the robot is refused, and you can try again.
 
 **Change the list without the Linker:** click **×** next to a chest to take it off the list, or **+ Add** by a heading to add one more: the panel closes, and you right-click the chest or machine (a Power Porter's battery, a Fluid Porter's tank) in the world. The panel then opens again with it on the list. Shift + right-click the air if you change your mind. A robot needs at least one, so the last chest in a list cannot be taken off: add the new one first. A chest can only be on one of the lists, and it gets the same side as if you had clicked it with the Linker.

@@ -5,11 +5,11 @@
 The [Killerbot](Killerbot.md) and the [ArcBot](ArcBot.md) fight, and mobs fight back. Hostile mobs nearby go after them, not only after players. All the other robots are machines that mobs leave alone, as before.
 
 ## The force shield
-- A combat robot has a **force shield of 30** on top of **20 health** (twice what other robots have). A [Combat Upgrade](Upgrades.md) makes the shield 40.
+- A combat robot has a **force shield of 30** on top of **20 health** (twice what other robots have). A [Combat Upgrade](Upgrades.md) makes the shield 40. An [Advanced Killerbot](Killerbot.md#advanced-killerbot) or ArcBot has half again as much: 30 health and a shield of 45.
 - Every hit takes the shield first. It flashes blue around the robot, and goes down with a crack of glass when it is empty. Only then does the robot's body take damage.
 - **2 seconds after the last hit**, the shield charges back up from the robot's battery, full again in 6 seconds: **150 FE per point**, so a full shield costs 4 500 FE. A hard fight drains the battery faster, and the robot has to charge more often. It never uses the last tenth of the battery for the shield, so it always has enough left to get back to its charging station.
 - No fire gets through the shield: while it is up, the robot cannot catch fire or burn. A blaze's fireball still hits the shield like any other attack.
-- While it charges at its station, its body mends a point every two seconds.
+- While it charges at its station, its body mends a point every two seconds, and it stays there until it is whole again. When it is down to **30 % of its health**, it goes back to its station to be mended right away, even with a full battery, so the next fight does not turn it into a Scrap Pile.
 - Robots are machines: poison, withering (also the Wither's) and other harmful effects do nothing to any robot.
 - Right-click it to see its shield and health, or open the Robot Panel (Ctrl + right-click): a blue **Shield** bar shows where other robots show what they carry.
 

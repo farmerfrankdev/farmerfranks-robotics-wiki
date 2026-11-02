@@ -48,7 +48,7 @@ Built on an [Advanced Battle Frame](Coppersteel.md#advanced-robot-frames) instea
 | Shield recharge | 1× | **1.5×** |
 | Damage | 6 (10 with a Combat Upgrade) | **9 (15 with a Combat Upgrade)** |
 | Speed | 1× | **1.15×** |
-| Size | 1× | **1.15×** |
+| Size | 1× | **1.1×**, so it still fits through a [Robot Revolving Door](Robot-Revolving-Door.md) |
 | Upgrades | 1 | **3**, all different |
 
 Its reach is the same. It has a glowing Embersteel trim, so you can tell it apart. Taking its chip out gives the Advanced Battle Frame back.

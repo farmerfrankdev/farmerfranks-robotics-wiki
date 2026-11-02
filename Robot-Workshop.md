@@ -31,7 +31,10 @@ The row only has the slots the robot can use: a [Power Porter](Power-Porter.md) 
 - **To take a module out,** click it. Modules the robot already has are shown in their slots with a green frame and a tick. A module turns red until it is out; click it again to keep it.
 - Putting a module in or taking one out takes **5 seconds** and **4 000 FE**.
 - **A name of its own,** if you like: type it in the field next to the robot slot. It shows in the Robot Panel, the Inspector and above the robot, so you can tell your robots apart. It costs nothing and takes no time. Empty the field to take the name away.
-- **The chip comes out last.** It holds the modules under it, so it cannot be taken out until they are out. A robot whose chip is taken out becomes a Robot Frame again.
+- **The chip comes out last.** It holds the modules under it, so it cannot be taken out until they are out. A robot whose chip is taken out becomes a Robot Frame again, or an Advanced Battle Frame if it was built on one.
+
+## Advanced Killerbots and ArcBots
+Put an **Advanced Battle Frame** in the robot slot instead of a Robot Frame, with a Killerbot or ArcBot chip, and the workshop builds an [Advanced Killerbot](Killerbot.md#advanced-killerbot) or [Advanced ArcBot](ArcBot.md#advanced-arcbot). Other chips do not fit it. The row under the chip then has **three upgrade slots**, which close up so the arrow to the output still fits. A robot has each upgrade only once, so Shift + click puts a second upgrade into a free upgrade slot rather than over the first.
 
 The robot stays in its slot the whole time. Use the **Sides** button to let hoppers and pipes put frames and modules in.
 

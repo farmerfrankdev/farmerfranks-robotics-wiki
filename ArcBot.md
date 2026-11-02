@@ -37,3 +37,18 @@ With the [Robot Linker](Robot-Linker.md), click:
 - Together with a [Killerbot](Killerbot.md): the Killerbot handles the crowds on the ground, the ArcBot the mobs it cannot reach.
 - With a [Collector](Collector.md) in the same area, the drops end up in a chest.
 - Mobs fight back, but its [Force Shield](Force-Shield.md) takes the hits first. A beaten ArcBot becomes a Scrap Pile you can mend at an anvil.
+
+## Advanced ArcBot
+Built on an [Advanced Battle Frame](Coppersteel.md#advanced-robot-frames) instead of a Robot Frame, at the [Robot Workshop](Robot-Workshop.md), it becomes an **Advanced ArcBot**:
+
+| | ArcBot | Advanced ArcBot |
+|---|---|---|
+| Health | 20 | **30** |
+| Shield | 30 (40 with a Combat Upgrade) | **45** (60 with a Combat Upgrade) |
+| Shield recharge | 1× | **1.5×** |
+| Damage | 6 (10 with a Combat Upgrade) | **9 (15 with a Combat Upgrade)** |
+| Speed | 1× | **1.15×** |
+| Size | 1× | **1.15×** |
+| Upgrades | 1 | **3**, all different |
+
+Its reach is the same. It has a glowing Embersteel trim, so you can tell it apart. Taking its chip out gives the Advanced Battle Frame back.

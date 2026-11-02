@@ -25,3 +25,18 @@ It does not use a chest.
 - A [Filter](Filter-Chips.md) picks which mobs it hunts: click **Mobs…** in its screen and pick them from the list. It leaves bosses such as the Wither and the Ender Dragon alone, unless they are picked in a Whitelist Filter, or **Also bosses** is ticked in a Blacklist Filter.
 - Put a [Collector](Collector.md) in the same area for the drops, and a [Robot Revolving Door](Robot-Revolving-Door.md) in the wall, so the mob farm stays dark.
 - Uses four times the normal amount of energy (4×).
+
+## Advanced Killerbot
+Built on an [Advanced Battle Frame](Coppersteel.md#advanced-robot-frames) instead of a Robot Frame, at the [Robot Workshop](Robot-Workshop.md), it becomes an **Advanced Killerbot**:
+
+| | Killerbot | Advanced Killerbot |
+|---|---|---|
+| Health | 20 | **30** |
+| Shield | 30 (40 with a Combat Upgrade) | **45** (60 with a Combat Upgrade) |
+| Shield recharge | 1× | **1.5×** |
+| Damage | 4 (8 with a Combat Upgrade) | **6 (12 with a Combat Upgrade)** |
+| Speed | 1× | **1.15×** |
+| Size | 1× | **1.15×** |
+| Upgrades | 1 | **3**, all different |
+
+Its reach is the same. It has a glowing Embersteel trim, so you can tell it apart. Taking its chip out gives the Advanced Battle Frame back.

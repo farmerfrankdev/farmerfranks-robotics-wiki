@@ -13,6 +13,22 @@ Put **iron** in one input slot and **copper** in the other, and furnace fuel bel
 
 The furnace burns the same fuels as a normal furnace. Use the **Sides** button in its screen to choose what each side does, for example input from a hopper on top and output into a hopper below.
 
+## Embersteel and Sunsteel
+![Embersteel Ingot](images/embersteel_ingot.png) ![Sunsteel Ingot](images/sunsteel_ingot.png)
+
+Two stronger alloys, made in the Robotics Foundry from a **Coppersteel Ingot** and one more thing. Each takes 15 seconds:
+- **Embersteel:** a Coppersteel Ingot and a **blaze rod**. Glowing red and orange.
+- **Sunsteel:** a Coppersteel Ingot and a **gold ingot**. Gold.
+
+They are in the `c:ingots/embersteel` and `c:ingots/sunsteel` tags.
+
+## Advanced Robot Frames
+The frames of the coming Advanced Robots, made from a Robot Frame, four ingots of the new alloy, a diamond, two iron ingots and a block of redstone. They are not in use yet.
+- **Advanced Battle Frame** (Embersteel): for Killerbots and ArcBots.
+- **Advanced Worker Frame** (Sunsteel): for all the other robots.
+
+![Advanced Battle Frame recipe](images/recipes/advanced_battle_frame.png) ![Advanced Worker Frame recipe](images/recipes/advanced_worker_frame.png)
+
 ## Coppersteel Sword
 A sword made from Coppersteel. It sets mobs on fire when it hits them.
 

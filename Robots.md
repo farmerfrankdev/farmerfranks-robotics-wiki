@@ -2,7 +2,7 @@
 
 [Home](README.md)
 
-Every robot is a [Robot Frame](Robot-Workshop.md) with a **Neural Chip** in it, built at the Robot Workshop. The chip decides what kind of robot it is. All robots are set up with the [Robot Linker](Robot-Linker.md), and walk back to their own [Charging Station](Charging-Station.md) when their battery drops to 10 %.
+Every robot is a [Robot Frame](Robot-Workshop.md) with a **Neural Chip** in it, built at the Robot Workshop. The chip decides what kind of robot it is. All robots are set up with the [Robot Linker](Robot-Linker.md), and walk back to their own [Charging Station](Charging-Station.md) when their battery drops to 10 %. See them all in 3D, standard and advanced side by side, in the [robot lineup](https://farmerfrankdev.github.io/farmerfranks-robotics-wiki/lineup/).
 
 | Robot | What it does | Linker asks for | Energy use |
 |---|---|---|---|

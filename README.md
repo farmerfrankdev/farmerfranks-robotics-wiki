@@ -10,6 +10,7 @@ This wiki is for FarmerFrank's Robotics for **Minecraft 26.3 (NeoForge)**. The m
 - [Getting Started](Getting-Started.md): from your first Coppersteel Ingot to your first working robot.
 - [Robots](Robots.md): all the robots at a glance.
 - [Tech tree](https://farmerfrankdev.github.io/farmerfranks-robotics-wiki/techtree/): every part and recipe as a clickable tree, with what each costs.
+- [Robot lineup](https://farmerfrankdev.github.io/farmerfranks-robotics-wiki/lineup/): every robot in 3D, the standard one and the advanced one side by side.
 
 ## Robots
 | | | | | |

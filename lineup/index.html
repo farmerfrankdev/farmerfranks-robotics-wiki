@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Robot Lineup</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<style>
+/* Layout: a workshop bench. One big turntable for the chosen robot pair, then every pair as a card, standard left, advanced right. */
+:root {
+  --bg: #e9ecef; --panel: #f7f8f9; --ink: #1d2530; --muted: #5b6673; --line: #cfd5dc; --stage: #d8dee5;
+  --sun: #a77a12; --ember: #c4511a; --focus: #2a6fb0;
+  --display: "Pixelify Sans", "Courier New", monospace;
+  --body: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #161b22; --panel: #1e252e; --ink: #e6eaef; --muted: #9aa5b1; --line: #2e3742; --stage: #232b35;
+    --sun: #e6bf4e; --ember: #f08a4b; --focus: #6aa8e6; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #161b22; --panel: #1e252e; --ink: #e6eaef; --muted: #9aa5b1; --line: #2e3742; --stage: #232b35;
+  --sun: #e6bf4e; --ember: #f08a4b; --focus: #6aa8e6; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+body {
+  margin: 0; background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 15px; line-height: 1.5;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 28px 48px;
+}
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+main { max-width: 1120px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px; }
+h1, h2 { font-family: var(--display); font-weight: 700; text-wrap: balance; margin: 0; letter-spacing: 0.01em; }
+h1 { font-size: clamp(28px, 5vw, 40px); }
+h2 { font-size: 22px; }
+p { margin: 0; max-width: 65ch; }
+a { color: var(--focus); }
+.lead { color: var(--muted); }
+header { display: flex; flex-wrap: wrap; align-items: start; justify-content: space-between; gap: 12px 24px; }
+header .text { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.links { font-size: 14px; display: flex; gap: 14px; flex-wrap: wrap; }
+.lang { display: inline-flex; border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
+.lang button { font: inherit; font-family: var(--display); font-size: 13px; padding: 3px 10px; border: 0; background: var(--panel); color: var(--muted); cursor: pointer; }
+.lang button[aria-pressed="true"] { background: var(--stage); color: var(--ink); }
+.lang button:focus-visible { outline: 2px solid var(--focus); outline-offset: -2px; }
+
+.viewer { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 20px; align-items: stretch; }
+.stage { position: relative; background: var(--stage); border-radius: 6px; overflow: hidden; aspect-ratio: 4 / 3; max-width: 100%; cursor: grab; touch-action: none; }
+.stage:active { cursor: grabbing; }
+.stage canvas { width: 100%; height: 100%; display: block; }
+.stage .hint { position: absolute; left: 12px; bottom: 10px; font-size: 12px; color: var(--muted); pointer-events: none; }
+.stage .side { position: absolute; top: 10px; font-family: var(--display); font-size: 14px; color: var(--muted); pointer-events: none; }
+.stage .side.l { left: 14px; } .stage .side.r { right: 14px; }
+.info { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.info dl { display: grid; grid-template-columns: auto 1fr; gap: 6px 12px; margin: 0; font-size: 14px; }
+.info dt { color: var(--muted); }
+.info dd { margin: 0; }
+.chip { display: inline-block; font-family: var(--display); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; padding: 2px 8px; border-radius: 3px; border: 1px solid currentColor; }
+.chip.worker { color: var(--sun); } .chip.battle { color: var(--ember); }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 10px 12px 12px; display: flex; flex-direction: column; gap: 6px;
+  cursor: pointer; text-align: left; font: inherit; color: inherit; }
+.card:hover { border-color: var(--muted); }
+.card:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.card[aria-pressed="true"] { border-color: var(--focus); box-shadow: inset 0 0 0 1px var(--focus); }
+.card img { width: 100%; aspect-ratio: 8 / 5; object-fit: contain; background: var(--stage); border-radius: 4px; }
+.card .name { font-family: var(--display); font-size: 17px; }
+.card .row { display: flex; justify-content: space-between; gap: 8px; font-size: 12px; color: var(--muted); }
+.note { font-size: 13px; color: var(--muted); }
+@media (max-width: 760px) { .viewer { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="text">
+      <h1 id="h1">Robot Lineup</h1>
+      <p class="lead" id="lead"></p>
+      <div class="links">
+        <a id="wikiLink" href="https://github.com/farmerfrankdev/farmerfranks-robotics-wiki">Wiki</a>
+        <a id="treeLink" href="../techtree/">Tech tree</a>
+      </div>
+    </div>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="en" id="lang-en">EN</button>
+      <button type="button" data-lang="no" id="lang-no">NO</button>
+    </div>
+  </header>
+
+  <section class="viewer" aria-label="Chosen robot">
+    <div class="stage" id="stage">
+      <canvas id="view"></canvas>
+      <span class="side l" id="leftLabel">Standard</span>
+      <span class="side r" id="rightLabel">Advanced</span>
+      <span class="hint" id="hint">Drag to turn</span>
+    </div>
+    <div class="info">
+      <h2 id="title"></h2>
+      <p id="blurb" class="note"></p>
+      <dl id="facts"></dl>
+    </div>
+  </section>
+
+  <section aria-label="All robots">
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <p class="note" id="foot"></p>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+const TEXT = {
+  en: {
+    lead: "Every robot in FarmerFrank's Robotics, drawn from the mod's own model and textures. The standard robot stands on the left, and the one built on an advanced frame on the right. Drag to turn them, or pick another robot below.",
+    wiki: 'Wiki', tree: 'Tech tree', standard: 'Standard', advanced: 'Advanced', hint: 'Drag to turn',
+    worker: 'Worker', battle: 'Battle', builtOn: 'Built on', alloy: 'Alloy', bonus: 'Bonus',
+    foot: "The robots are shown standing idle, without the tools they hold in game, such as the Miner's pickaxe or the Fisher's rod. Glowing parts are drawn the way the game draws them: eyes, antenna bulbs, the battery light on the back and the trim of an advanced robot.",
+    frames: {
+      worker: { chip: 'Advanced Worker Frame', alloy: 'Sunsteel', look: "A thin Sunsteel band round the top of the head, glowing softly, and a Sunsteel antenna stem with a ball on top instead of the cube, in the colour of the robot's own bulb.", more: 'Room for three different upgrades.' },
+      battle: { chip: 'Advanced Battle Frame', alloy: 'Embersteel', look: "A glowing Embersteel trim along the edges of the head and body, and an Embersteel antenna stem with a ball on top in the colour of the robot's own bulb. A tenth bigger.", more: '1.5 × health, shield and damage, 1.15 × speed, three different upgrades.' },
+    },
+    failed: 'The robots could not be loaded. Try reloading the page.',
+  },
+  no: {
+    lead: 'Alle robotene i FarmerFrank\'s Robotics, tegnet fra moddens egen modell og teksturer. Den vanlige roboten står til venstre, og den som er bygget på en avansert ramme til høyre. Dra for å snu dem, eller velg en annen robot under.',
+    wiki: 'Wiki', tree: 'Teknologitre', standard: 'Vanlig', advanced: 'Avansert', hint: 'Dra for å snu',
+    worker: 'Arbeider', battle: 'Kamp', builtOn: 'Bygget på', alloy: 'Legering', bonus: 'Bonus',
+    foot: 'Robotene står i ro, uten verktøyene de holder i spillet, som hakken til Gruveroboten eller fiskestanga til Fiskeroboten. Det som lyser, er tegnet slik spillet tegner det: øynene, antennepæren, batterilyset på ryggen og kanten på en avansert robot.',
+    frames: {
+      worker: { chip: 'Advanced Worker Frame', alloy: 'Sunsteel', look: 'En tynn stripe av Sunsteel rundt toppen av hodet, som lyser svakt, og en antennestang av Sunsteel med en kule på toppen i stedet for kuben, i fargen til robotens egen pære.', more: 'Plass til tre forskjellige oppgraderinger.' },
+      battle: { chip: 'Advanced Battle Frame', alloy: 'Embersteel', look: 'En lysende kant av Embersteel langs hodet og kroppen, og en antennestang av Embersteel med en kule på toppen i fargen til robotens egen pære. En tidel større.', more: '1,5 × helse, skjold og skade, 1,15 × fart, tre forskjellige oppgraderinger.' },
+    },
+    failed: 'Robotene kunne ikke lastes. Prøv å laste siden på nytt.',
+  },
+};
+// The same language choice as the tech tree: English by default, Norwegian for Norwegian browsers, or the one picked last.
+let lang = '';
+try { lang = localStorage.getItem('techtree-lang') || ''; } catch (e) { lang = ''; }
+if (lang !== 'en' && lang !== 'no') lang = /^(nb|nn|no)\b/i.test(navigator.language || '') ? 'no' : 'en';
+const t = () => TEXT[lang];
+const frameOf = job => (job === 'killer' || job === 'arc') ? 'battle' : 'worker';
+
+function loadTextures(urls) {
+  return Promise.all(Object.entries(urls).map(([name, url]) => new Promise((resolve, reject) => {
+    const img = new Image();
+    img.onload = () => {
+      const tx = new THREE.Texture(img);
+      tx.magFilter = THREE.NearestFilter; tx.minFilter = THREE.NearestFilter; tx.generateMipmaps = false; tx.flipY = false;
+      tx.needsUpdate = true;
+      resolve([name, tx]);
+    };
+    img.onerror = reject;
+    img.src = url;
+  }))).then(Object.fromEntries);
+}
+
+// One Minecraft box with its texture net at (u, v). Model space has y down and the face at -z; here y is up and the face looks at +z.
+function boxGeometry(u, v, x, y, z, w, h, d) {
+  const X0 = x, X1 = x + w, Y0 = -(y + h), Y1 = -y, Z0 = -(z + d), Z1 = -z;
+  const faces = [
+    [[X0, Y1, Z1], [X1, Y1, Z1], [X1, Y0, Z1], [X0, Y0, Z1], [u + d, v + d, u + d + w, v + d + h], [0, 0, 1]],
+    [[X0, Y1, Z0], [X0, Y1, Z1], [X0, Y0, Z1], [X0, Y0, Z0], [u, v + d, u + d, v + d + h], [-1, 0, 0]],
+    [[X1, Y1, Z1], [X1, Y1, Z0], [X1, Y0, Z0], [X1, Y0, Z1], [u + d + w, v + d, u + 2 * d + w, v + d + h], [1, 0, 0]],
+    [[X1, Y1, Z0], [X0, Y1, Z0], [X0, Y0, Z0], [X1, Y0, Z0], [u + 2 * d + w, v + d, u + 2 * d + 2 * w, v + d + h], [0, 0, -1]],
+    [[X0, Y1, Z0], [X1, Y1, Z0], [X1, Y1, Z1], [X0, Y1, Z1], [u + d, v, u + d + w, v + d], [0, 1, 0]],
+    [[X0, Y0, Z1], [X1, Y0, Z1], [X1, Y0, Z0], [X0, Y0, Z0], [u + d + w, v, u + d + 2 * w, v + d], [0, -1, 0]],
+  ];
+  const pos = [], uv = [], nor = [], idx = [];
+  faces.forEach(([tl, tr, br, bl, [u0, v0, u1, v1], n], i) => {
+    pos.push(...tl, ...tr, ...br, ...bl);
+    uv.push(u0 / 64, v0 / 32, u1 / 64, v0 / 32, u1 / 64, v1 / 32, u0 / 64, v1 / 32);
+    for (let k = 0; k < 4; k++) nor.push(...n);
+    const b = i * 4;
+    idx.push(b, b + 3, b + 2, b, b + 2, b + 1);
+  });
+  const g = new THREE.BufferGeometry();
+  g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+  g.setAttribute('uv', new THREE.Float32BufferAttribute(uv, 2));
+  g.setAttribute('normal', new THREE.Float32BufferAttribute(nor, 3));
+  g.setIndex(idx);
+  return g;
+}
+const solid = map => new THREE.MeshLambertMaterial({ map, alphaTest: 0.5 });
+const glow = (map, b) => new THREE.MeshBasicMaterial({ map, color: new THREE.Color(b, b, b), transparent: true,
+  blending: THREE.AdditiveBlending, depthWrite: false, polygonOffset: true, polygonOffsetFactor: -1, polygonOffsetUnits: -4 });
+
+// The robot model, as in the mod's RobotModel: parts are pivots in Minecraft units, with boxes relative to them.
+function buildRobot(tex, job, frame) {
+  const advanced = !!frame;
+  const layers = [solid(tex[job === 'none' ? 'robot' : 'robot_' + job]), glow(tex[job === 'none' ? 'robot_eyes' : 'robot_eyes_' + job], 0.75), glow(tex.robot_battery_green, 1.0)];
+  if (advanced) {
+    layers.push(glow(tex['robot_trim_' + frame], frame === 'worker' ? 0.54 : 0.9));
+    layers.push(solid(tex['robot_antenna_' + frame]));
+  }
+  const cargo = job === 'courier' || job === 'fluid_porter';
+  function part(parent, [px, py, pz], boxes, rot = [0, 0, 0], visible = true) {
+    const g = new THREE.Group();
+    g.position.set(px, -py, -pz);
+    g.rotation.set(rot[0], -rot[1], -rot[2], 'ZYX');
+    g.visible = visible;
+    boxes.forEach(b => { const geo = boxGeometry(...b); layers.forEach(m => g.add(new THREE.Mesh(geo, m))); });
+    parent.add(g);
+    return g;
+  }
+  const root = new THREE.Group();
+  part(root, [-1.5, -3, 0], [[36, 12, -1, 0, -1, 2, 3, 2]]);
+  part(root, [1.5, -3, 0], [[44, 12, -1, 0, -1, 2, 3, 2]]);
+  const body = part(root, [0, -3, 0], [[0, 12, -3, -5, -2, 6, 5, 4]]);
+  const armZ = cargo ? 0.12 : 0.15;
+  const rightArm = part(body, [-4, -4.5, 0], [[20, 12, -1, 0, -1, 2, 4, 2]], [0, 0, armZ]);
+  const leftArm = part(body, [4, -4.5, 0], [[28, 12, -1, 0, -1, 2, 4, 2]], [0, 0, -armZ]);
+  [rightArm, leftArm].forEach(arm => part(arm, [0, 3.5, 0], [[20, 20, -1, 0, -1.5, 2, 3, 3]], [0, 0, 0], cargo));
+  const head = part(body, [0, -5, 0], [[0, 0, -4, -6, -3, 8, 6, 6]]);
+  const antenna = part(head, [0, -6, 0], [[28, 0, -0.5, -2, -0.5, 1, 2, 1]], [0.04, 0, 0.06]);
+  part(antenna, [0, 0, 0], [[32, 0, -1, -4, -1, 2, 2, 2]], [0, 0, 0], !advanced);
+  part(antenna, [0, 0, 0], [[40, 0, -1.5, -4, -1, 3, 2, 2], [40, 5, -1, -4.5, -1, 2, 3, 2], [52, 0, -1, -4, -1.5, 2, 2, 3]], [0, 0, 0], advanced);
+  if (frame === 'battle') root.scale.setScalar(1.1);
+  return root;
+}
+function lights(scene) {
+  scene.add(new THREE.AmbientLight(0xffffff, 0.62));
+  const key = new THREE.DirectionalLight(0xffffff, 0.45); key.position.set(-0.4, 1, 0.8); scene.add(key);
+  const fill = new THREE.DirectionalLight(0xffffff, 0.18); fill.position.set(0.6, 0.3, -0.6); scene.add(fill);
+}
+function shadow() {
+  const c = document.createElement('canvas'); c.width = c.height = 64;
+  const g = c.getContext('2d'); const r = g.createRadialGradient(32, 32, 2, 32, 32, 32);
+  r.addColorStop(0, 'rgba(0,0,0,0.35)'); r.addColorStop(1, 'rgba(0,0,0,0)'); g.fillStyle = r; g.fillRect(0, 0, 64, 64);
+  const m = new THREE.Mesh(new THREE.PlaneGeometry(12, 12), new THREE.MeshBasicMaterial({ map: new THREE.CanvasTexture(c), transparent: true, depthWrite: false }));
+  m.rotation.x = -Math.PI / 2; m.position.y = 0.02;
+  return m;
+}
+function pairScene(tex, job) {
+  const scene = new THREE.Scene(); lights(scene);
+  const pair = new THREE.Group();
+  [[null, -8], [frameOf(job), 8]].forEach(([frame, x]) => {
+    const g = new THREE.Group(); g.add(buildRobot(tex, job, frame)); g.add(shadow()); g.position.x = x; pair.add(g);
+  });
+  scene.add(pair);
+  return { scene, robots: pair.children };
+}
+function camera(aspect) {
+  const cam = new THREE.PerspectiveCamera(28, aspect, 1, 400);
+  cam.position.set(0, 13, 52); cam.lookAt(0, 8, 0);
+  return cam;
+}
+
+fetch('data.json', { cache: 'no-cache' }).then(r => r.json()).then(data => loadTextures(data.textures).then(tex => start(data, tex))).catch(() => {
+  document.getElementById('lead').textContent = t().failed;
+});
+
+function start(data, tex) {
+  const robots = data.robots;
+  const nm = r => (lang === 'no' && r.nameNo) || r.name;
+
+  // Cards: each pair drawn once, turned a little to show a side.
+  const thumb = new THREE.WebGLRenderer({ antialias: true, alpha: true, preserveDrawingBuffer: true });
+  thumb.setPixelRatio(1); thumb.setSize(480, 300); thumb.setClearColor(0x000000, 0);
+  const pictures = robots.map(r => {
+    const { scene, robots: pair } = pairScene(tex, r.job);
+    pair.forEach(g => g.rotation.y = -0.45);
+    thumb.render(scene, camera(480 / 300));
+    return thumb.domElement.toDataURL('image/png');
+  });
+  thumb.dispose();
+
+  const canvas = document.getElementById('view');
+  const view = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+  view.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2)); view.setClearColor(0x000000, 0);
+  const stage = document.getElementById('stage');
+  let chosen = 0, current = null, cam = camera(4 / 3), yaw = -0.5, dragging = false, lastX = 0, idle = 0;
+
+  function render() {
+    const tx = t();
+    document.documentElement.lang = lang;
+    document.getElementById('lead').textContent = tx.lead;
+    document.getElementById('wikiLink').textContent = tx.wiki;
+    document.getElementById('treeLink').textContent = tx.tree;
+    document.getElementById('leftLabel').textContent = tx.standard;
+    document.getElementById('rightLabel').textContent = tx.advanced;
+    document.getElementById('hint').textContent = tx.hint;
+    document.getElementById('foot').textContent = tx.foot;
+    ['en', 'no'].forEach(l => document.getElementById('lang-' + l).setAttribute('aria-pressed', l === lang ? 'true' : 'false'));
+    const grid = document.getElementById('grid');
+    grid.innerHTML = '';
+    robots.forEach((r, i) => {
+      const frame = frameOf(r.job);
+      const card = document.createElement('button');
+      card.className = 'card'; card.type = 'button'; card.id = 'card-' + r.job;
+      card.setAttribute('aria-pressed', i === chosen ? 'true' : 'false');
+      const img = document.createElement('img'); img.src = pictures[i]; img.alt = nm(r);
+      const name = document.createElement('span'); name.className = 'name'; name.textContent = nm(r);
+      const row = document.createElement('span'); row.className = 'row';
+      row.innerHTML = `<span>${tx.standard}</span><span class="chip ${frame}">${tx[frame]}</span>`;
+      card.append(img, name, row);
+      card.addEventListener('click', () => select(i));
+      grid.appendChild(card);
+    });
+    const r = robots[chosen], frame = frameOf(r.job), f = tx.frames[frame];
+    document.getElementById('title').textContent = nm(r);
+    document.getElementById('blurb').textContent = f.look;
+    document.getElementById('facts').innerHTML =
+      `<dt>${tx.builtOn}</dt><dd><span class="chip ${frame}">${f.chip}</span></dd><dt>${tx.alloy}</dt><dd>${f.alloy}</dd><dt>${tx.bonus}</dt><dd>${f.more}</dd>`;
+  }
+  function select(i) {
+    chosen = i;
+    current = pairScene(tex, robots[i].job);
+    render();
+  }
+  document.querySelectorAll('.lang button').forEach(b => b.addEventListener('click', () => {
+    lang = b.dataset.lang;
+    try { localStorage.setItem('techtree-lang', lang); } catch (e) { /* not kept */ }
+    render();
+  }));
+
+  function resize() {
+    const w = stage.clientWidth, h = stage.clientHeight;
+    view.setSize(w, h, false); cam.aspect = w / h; cam.updateProjectionMatrix();
+  }
+  stage.addEventListener('pointerdown', e => { dragging = true; lastX = e.clientX; stage.setPointerCapture(e.pointerId); });
+  stage.addEventListener('pointermove', e => { if (!dragging) return; yaw += (e.clientX - lastX) * 0.01; lastX = e.clientX; idle = 0; });
+  stage.addEventListener('pointerup', () => { dragging = false; });
+  stage.addEventListener('pointercancel', () => { dragging = false; });
+  const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let t0 = performance.now();
+  function frame(now) {
+    const dt = Math.min(0.05, (now - t0) / 1000); t0 = now; idle += dt;
+    if (!dragging && !still && idle > 2) yaw += dt * 0.35;
+    if (current) { current.robots.forEach(g => g.rotation.y = yaw); view.render(current.scene, cam); }
+    requestAnimationFrame(frame);
+  }
+  new ResizeObserver(resize).observe(stage); resize();
+  select(0);
+  requestAnimationFrame(frame);
+}
+</script>
+</body>
+</html>

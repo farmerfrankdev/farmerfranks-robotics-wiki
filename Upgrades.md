@@ -2,11 +2,11 @@
 
 [Home](README.md)
 
-A robot can have **one upgrade**, put in at the [Robot Workshop](Robot-Workshop.md) in the upgrade slot.
+A robot can have **one upgrade**, put in at the [Robot Workshop](Robot-Workshop.md) in the upgrade slot. A robot built on an [Advanced Battle Frame or Advanced Worker Frame](Coppersteel.md#advanced-robot-frames) has room for **three different upgrades**.
 
 | Upgrade | What it does | Recipe |
 |---|---|---|
-| ![](images/speed_upgrade.png)<br>**Speed** | Walks 30 % faster. A [Fisher](Fisher.md) also gets bites sooner. | ![](images/recipes/speed_upgrade.png) |
+| ![](images/speed_upgrade.png)<br>**Speed** | Walks 30 % faster. A [Fisher](Fisher.md) also gets bites sooner, and a [Miner](Miner.md) moves and climbs faster in its shaft. | ![](images/recipes/speed_upgrade.png) |
 | ![](images/range_upgrade.png)<br>**Range** | Work areas up to 48 × 48 instead of 32 × 32. | ![](images/recipes/range_upgrade.png) |
 | ![](images/efficiency_upgrade.png)<br>**Efficiency** | Uses 25 % less energy, also while standing still. | ![](images/recipes/efficiency_upgrade.png) |
 | ![](images/capacity_upgrade.png)<br>**Capacity** | Carries more: a Transporter or Collector two stacks, a Harvester, Fisher, Butcher or Wool-E eight, a Power Porter 50 000 FE, a Fluid Porter 8 buckets. | ![](images/recipes/capacity_upgrade.png) |
@@ -17,4 +17,5 @@ A robot can have **one upgrade**, put in at the [Robot Workshop](Robot-Workshop.
 | ![](images/axe_upgrade.png)<br>**Axe** | A [Lumberjack](Lumberjack.md) fells trees **twice as fast**. A tree takes 3 seconds and half a second for each log, so a big one takes a while without it. | ![](images/recipes/axe_upgrade.png) |
 | ![](images/forestry_upgrade.png)<br>**Forestry** | A [Lumberjack](Lumberjack.md) also plants the saplings it has to spare in rows, three blocks apart, whenever it has nothing to fell, so the forest **spreads over its whole area**. Throw a few saplings in its area and it plants them too. Without it, a Lumberjack only plants where a tree stood. | ![](images/recipes/forestry_upgrade.png) |
 | ![](images/watering_can_upgrade.png)<br>**Watering Can** | A [Planter](Planter.md) waters a crop in its area every few seconds while it has nothing to till or sow, giving it a little extra growth. The effect is spread over the whole field: a small field grows about a third faster, a big one hardly faster at all. | ![](images/recipes/watering_can_upgrade.png) |
+| ![](images/drill_upgrade.png)<br>**Drill** | A [Miner](Miner.md) digs each block in **half the time**. Together with a Jetpack on an Advanced Miner, it gets through a shaft much faster. | ![](images/recipes/drill_upgrade.png) |
 | ![](images/combat_upgrade.png)<br>**Combat** | A [Killerbot](Killerbot.md) gets diamond swords that reach 4 blocks instead of 2 and hit twice as hard. An [ArcBot](ArcBot.md)'s arcs reach 14 blocks instead of 10 and hit harder. Both get a [Force Shield](Force-Shield.md) of 40 instead of 30. | ![](images/recipes/combat_upgrade.png) |

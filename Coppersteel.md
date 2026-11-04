@@ -25,7 +25,7 @@ They are in the `c:ingots/embersteel` and `c:ingots/sunsteel` tags.
 ## Advanced Robot Frames
 The frames of the Advanced Robots, made from a Robot Frame, four ingots of the new alloy, a diamond, two iron ingots and a block of redstone.
 - **Advanced Battle Frame** (Embersteel): builds an [Advanced Killerbot](Killerbot.md#advanced-killerbot) or [Advanced ArcBot](ArcBot.md#advanced-arcbot) at the Robot Workshop.
-- **Advanced Worker Frame** (Sunsteel): for all the other robots. Not in use yet.
+- **Advanced Worker Frame** (Sunsteel): builds an advanced one of any other robot, such as an [Advanced Miner](Miner.md#advanced-miner), with room for three upgrades.
 
 ![Advanced Battle Frame recipe](images/recipes/advanced_battle_frame.png) ![Advanced Worker Frame recipe](images/recipes/advanced_worker_frame.png)
 

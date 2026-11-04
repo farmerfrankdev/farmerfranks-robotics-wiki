@@ -43,6 +43,9 @@ The area can also start **below the ground**: click the corners lower down, for 
 
 If it cannot find a way to the ladder corner (the corner with the lowest X and Z), its status shows **Can't get to its ladder corner**. Open a way, or put it down closer to the corner.
 
+## Advanced Miner
+Built on an [Advanced Worker Frame](Coppersteel.md#advanced-robot-frames) at the [Robot Workshop](Robot-Workshop.md), it becomes an **Advanced Miner** with room for **three different upgrades**. Good ones for it: a **Drill Upgrade** (each block in half the time), a **Jetpack** (flies, no ladders), **Luck** (Fortune III), **Capacity** (a bigger basket) and **Range** (a bigger area). It has a Sunsteel trim and a ball on its antenna.
+
 ## Tips
 - Its battery holds **four times as much** as other robots', so it does not have to climb up to charge often.
 - A **Blacklist Filter** with stone, cobblestone, deepslate and dirt keeps the chest from filling up with them. What the filter does not let through is thrown away.

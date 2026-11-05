@@ -28,6 +28,7 @@ Every robot is a [Robot Frame](Robot-Workshop.md) with a **Neural Chip** in it, 
 - **Shift + right-click** it with an empty hand to pick it up. It keeps its charge, modules and setup, so you can put it down somewhere else.
 - A robot holds **10 000 FE** on its own, more with a [Battery Module](Battery-Modules.md). Even standing still uses a little energy, so robots charge now and then.
 - A robot without power stops and slumps over.
+- When something keeps a robot from its work, its Robot Panel and the [Robot Monitor](Robot-Monitor.md) say so in orange: **Can't get to its chest**, **Can't get to its pickup chest** or **Can't get to its charger** when it has walked for ten seconds without getting nearer, **Delivery chest is full** when everything it delivers to is full, and **Pickup chest is empty** when everything it fetches from is empty. It keeps trying, and goes on by itself once you have opened the way or made room.
 - Walk past a robot and it waves hello, unless its hands are busy.
 - Mobs leave robots alone, except the Killerbot and the ArcBot: they fight, and mobs fight back. A [Force Shield](Force-Shield.md) takes the hits first, and a beaten one becomes a Scrap Pile you can mend at an anvil.
 - Robots walk straight through a [Robot Revolving Door](Robot-Revolving-Door.md), so they can work inside pens and mob farms.

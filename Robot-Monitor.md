@@ -14,7 +14,7 @@ From then on every Robot Monitor you have placed shows it. Click **Remove** in t
 
 ## What it shows
 - The robot's **name** and what kind of robot it is, and **who owns it**
-- What it is **doing** right now
+- What it is **doing** right now, or, in orange, what keeps it from its work (see [Robots](Robots.md#things-every-robot-does))
 - Its **battery**, and the health of a combat robot
 - What it **carries**, or a porter's cargo
 - **Where** it is: the world and the coordinates

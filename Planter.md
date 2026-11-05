@@ -22,4 +22,5 @@ With the [Robot Linker](Robot-Linker.md), click:
 - Tilled [Fertilized Dirt](Fertilized-Dirt.md) becomes Fertilized Farmland, where crops grow four times as fast.
 - With a [Watering Can Upgrade](Upgrades.md) it waters a crop every few seconds while it has nothing to till or sow, with its watering can out, pouring for a few seconds. A small field grows about a third faster; a big one hardly faster at all, so Fertilized Farmland is still the way to make crops really fly.
 - A [Filter](Filter-Chips.md) decides which seeds it sows.
+- **More than one crop in one field:** a Whitelist Filter with two or more kinds of seeds, such as wheat seeds, carrots and potatoes, cuts the area into belts as even as they go, one for each kind in the filter's order, running along the long side of the area. A 9-wide field with three kinds gets three rows of each. Once harvested, each belt is sown with the same kind again, so the field keeps its look. If a kind runs out in the chest, its belt is left empty until more comes, and the Planter says **Pickup chest is empty** while it waits.
 - Uses the normal amount of energy (1×).

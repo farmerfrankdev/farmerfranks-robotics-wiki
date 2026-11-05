@@ -21,7 +21,7 @@ A Filter decides what a robot works with. (Before 0.23.0 they were called White 
 | [Transporter](Transporter.md) | which items it carries |
 | [Collector](Collector.md) | which items it picks up |
 | [Lumberjack](Lumberjack.md) | which saplings it plants |
-| [Planter](Planter.md) | which seeds it sows |
+| [Planter](Planter.md) | which seeds it sows; two or more kinds in a Whitelist Filter each get a belt of the field |
 | [Harvester](Harvester.md) | which crops it harvests, by what they give (wheat) or their seeds |
 | [Fisher](Fisher.md) | which catches it keeps |
 | [Killerbot](Killerbot.md) | which mobs it hunts, picked with **Mobs…** |

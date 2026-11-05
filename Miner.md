@@ -50,5 +50,5 @@ Built on an [Advanced Worker Frame](Coppersteel.md#advanced-robot-frames) at the
 - Its battery holds **four times as much** as other robots', so it does not have to climb up to charge often.
 - A **Blacklist Filter** with stone, cobblestone, deepslate and dirt keeps the chest from filling up with them. What the filter does not let through is thrown away.
 - Uses twice the normal amount of energy (2×), plus a little for every block it digs.
-- You can set the area right up against a wall. It steps out of its shaft wherever there is room near the ladder corner, and if there is nowhere to stand, it puts down a block of cobblestone to step out onto.
+- Round the top of its pit it lays a **Miner's Walkway**, with a railing on the side that faces the pit, so you and the Miner can walk round the hole. You can set the area right up against a wall: it steps out of its shaft onto the walkway by the ladder. Broken, the walkway shatters and leaves nothing, like the ladder. An area that starts below the ground gets no walkway, as the Miner comes and goes on the ground above it.
 - Servers can change the biggest area in the [config](Configuration.md).

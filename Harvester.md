@@ -20,5 +20,6 @@ With the [Robot Linker](Robot-Linker.md), click:
 ## Tips
 - It carries up to 4 stacks at a time, or 8 with a [Capacity Upgrade](Upgrades.md).
 - A [Filter](Filter-Chips.md) with a crop (such as wheat) or its seeds picks which crops it harvests.
+- With a [Machete Upgrade](Upgrades.md) it also cuts **sugar cane, bamboo and cactus** once they have grown a block, from the top down, and leaves the bottom block to grow again.
 - Pair it with a [Planter](Planter.md) for a farm that runs itself.
 - Uses the normal amount of energy (1×).

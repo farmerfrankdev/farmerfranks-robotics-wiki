@@ -4,7 +4,7 @@
 
 **Cute little robots that do the boring jobs for you.** Build them in a Robot Workshop, give them a Neural Chip that tells them what to do, link them to the chests and machines they work with and their charging station, and watch them work.
 
-This wiki is for FarmerFrank's Robotics for **Minecraft 26.3 (NeoForge)**. The mod is in beta, so things may still change.
+This wiki is for FarmerFrank's Robotics for **Minecraft 26.3 (NeoForge)**. The mod is in beta, so things may still change. The wiki is up to date with version **0.26.0-beta**.
 
 ## Start here
 - [Getting Started](Getting-Started.md): from your first Coppersteel Ingot to your first working robot.

@@ -19,6 +19,7 @@ Every robot is a [Robot Frame](Robot-Workshop.md) with a **Neural Chip** in it, 
 | ![](images/robot_fluid_porter.png) [Fluid Porter](Fluid-Porter.md) | Carries fluids between tanks | source tank, target tank, charger | 1× |
 | ![](images/robot_miner.png) [Miner](Miner.md) | Digs out its area layer by layer, all the way down | area, chest, charger | 2× |
 | ![](images/robot_shearer.png) [Wool-E](Wool-E.md) | Shears the sheep and delivers the wool | area, delivery chest, charger | 1× |
+| ![](images/robot_beekeeper.png) [Beekeeper](Beekeeper.md) | Takes the honeycomb from full beehives and bee nests | area, delivery chest, charger | 1× |
 | ![](images/robot_arc.png) [ArcBot](ArcBot.md) | Shoots arcs of electricity at hostile mobs from afar | area, charger | 2× |
 
 "Chest" in this table means any block that holds items: chests, barrels, shulker boxes, furnaces, and machines and storage from other mods all work. See [Robot Linker](Robot-Linker.md).

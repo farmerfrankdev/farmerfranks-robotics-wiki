@@ -7,7 +7,7 @@
 The Beekeeper goes round the beehives and bee nests in its area, and when one is full of honey it takes the honeycomb with its shears and brings it to its delivery chest. It's the honey-yellow robot in a white beekeeper's suit, with an amber bulb.
 
 ## How it works
-- It walks up to the nearest **full** hive (honey level 5), snips for a moment, and the honeycomb goes straight into its basket: 3 from each hive, as with shears. Hives that are not full yet are left alone.
+- It walks up to the nearest **full** hive (honey level 5), puffs smoke over it for a few seconds to calm the bees, cuts the comb out with a few snips, and the honeycomb goes straight into its basket: 3 from each hive, as with shears. Hives that are not full yet are left alone.
 - **The bees stay calm.** It calms them as it works, so they never get angry, with or without a campfire under the hive.
 - It finds hives on the ground and up to **8 blocks above** the ground of its area, such as bee nests in the trees, and reaches up to 6 blocks. It walks to the ground under a hive it cannot get next to.
 - It brings the honeycomb to its chest when its basket is full (4 stacks), now and then, or when there is no full hive left.

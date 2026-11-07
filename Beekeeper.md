@@ -12,6 +12,9 @@ The Beekeeper goes round the beehives and bee nests in its area, and when one is
 - It finds hives on the ground and up to **8 blocks above** the ground of its area, such as bee nests in the trees, and reaches up to 6 blocks. It walks to the ground under a hive it cannot get next to.
 - It brings the honeycomb to its chest when its basket is full (4 stacks), now and then, or when there is no full hive left.
 
+## Honey Upgrade
+With a [Honey Upgrade](Upgrades.md) it taps the honey instead of cutting out the comb: **250 mB** of liquid honey a hive, as much as a bottle holds, and it takes it to a **tank**, such as a [Glass Tank](Glass-Tank.md). Link the tank instead of a chest with the Robot Linker. It carries 4 000 mB, 8 000 mB with a Capacity Upgrade. The honey is in the `c:honey` tag, so tanks, pipes and machines from other mods take it too.
+
 ## Recipe
 Build it at the [Robot Workshop](Robot-Workshop.md) from a Robot Frame and a **Beekeeper Neural Chip**. The chip takes a honeycomb, so shear your first hive yourself.
 

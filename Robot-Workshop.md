@@ -31,10 +31,15 @@ The row only has the slots the robot can use: a [Power Porter](Power-Porter.md) 
 - **To take a module out,** click it. Modules the robot already has are shown in their slots with a green frame and a tick. A module turns red until it is out; click it again to keep it.
 - Putting a module in or taking one out takes **5 seconds** and **4 000 FE**.
 - **A name of its own,** if you like: type it in the field next to the robot slot. It shows in the Robot Panel, the Inspector and above the robot, so you can tell your robots apart. It costs nothing and takes no time. Empty the field to take the name away.
-- **The chip comes out last.** It holds the modules under it, so it cannot be taken out until they are out. A robot whose chip is taken out becomes a Robot Frame again, or an Advanced Battle Frame if it was built on one.
+- **The chip comes out last.** It holds the modules under it, so it cannot be taken out until they are out. A robot whose chip is taken out becomes the frame it was built on again: a Robot Frame, or an advanced frame.
 
 ## Advanced robots
 Put an **Advanced Battle Frame** in the robot slot instead of a Robot Frame, with a Killerbot or ArcBot chip, and the workshop builds an [Advanced Killerbot](Killerbot.md#advanced-killerbot) or [Advanced ArcBot](ArcBot.md#advanced-arcbot). Put an **Advanced Worker Frame** there with any other chip, and it builds an advanced one of that robot, such as an [Advanced Miner](Miner.md#advanced-miner). Each frame only takes its own kind of chip. The row under the chip then has **three upgrade slots**, which close up so the arrow to the output still fits. A robot has each upgrade only once, so Shift + click puts a second upgrade into a free upgrade slot rather than over the first.
+
+### Moving a robot onto an advanced frame
+You don't have to build a robot again to make it advanced. Next to the robot slot is the **frame slot**, showing the frame the robot is built on. Put an **Advanced Worker Frame** there (or an **Advanced Battle Frame**, for a Killerbot or ArcBot), and after **5 seconds** and **4 000 FE** it is an advanced robot with room for three upgrades. It keeps everything: its charge, links, modules, name and settings. The Robot Frame it was built on comes out in the output slot.
+
+It works the other way too: a **Robot Frame** in the frame slot makes an advanced robot a plain one again, and its advanced frame comes out. Take its second and third upgrades out first: until then the Robot Frame waits in its slot with a red frame.
 
 The robot stays in its slot the whole time. Use the **Sides** button to let hoppers and pipes put frames and modules in.
 

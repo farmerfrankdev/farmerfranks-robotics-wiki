@@ -2,7 +2,7 @@
 
 [Home](README.md)
 
-A robot can have **one upgrade**, put in at the [Robot Workshop](Robot-Workshop.md) in the upgrade slot. A robot built on an [Advanced Battle Frame or Advanced Worker Frame](Coppersteel.md#advanced-robot-frames) has room for **three different upgrades**.
+A robot can have **one upgrade**, put in at the [Robot Workshop](Robot-Workshop.md) in the upgrade slot. A robot built on an [Advanced Battle Frame or Advanced Worker Frame](Coppersteel.md#advanced-robot-frames) has room for **three different upgrades**. A robot you already have can be [moved onto an advanced frame](Robot-Workshop.md#moving-a-robot-onto-an-advanced-frame) at the workshop, keeping everything it has.
 
 | Upgrade | What it does | Recipe |
 |---|---|---|

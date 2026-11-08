@@ -15,6 +15,7 @@ A copper-framed glass tank that holds **16 buckets** (16 000 mB) of one fluid. Y
 - A [Fluid Porter](Fluid-Porter.md) can carry fluid to and from it.
 - It **keeps its fluid** when you break it and pick it up. The item's tooltip shows what is in it.
 - **Comparators** read how full it is.
+- **Tanks next to each other work as one big tank.** Fluid runs down into a tank below and levels out with the tanks beside it, so put more tanks side by side, or on top of each other, for more room. Filling one fills them all, and a pipe or a robot can empty them all from one. Tanks only share with tanks that are empty or hold the same fluid, so lava and water never mix.
 
 The [Mixing Vat](Mixing-Vat.md) has a tank of its own, for the milk, honey or lava it mixes.
 

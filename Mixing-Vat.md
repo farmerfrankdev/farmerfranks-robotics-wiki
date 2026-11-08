@@ -13,7 +13,7 @@ A machine with a tank inside that mixes a fluid with items into something new, u
 | 1 000 mB honey | – | Honey Block | 3 s |
 | 250 mB lava | Slime Ball | Magma Cream | 5 s |
 
-Slime from milk and honeycomb means slime balls without slime chunks or swamps, and Magma Cream without Blazes. JEI shows the recipes under **Mixing**.
+Slime from milk and honeycomb means slime balls without slime chunks or swamps, and Magma Cream without Blazes. Hover the arrow in the vat to see every recipe, and JEI shows them under **Mixing**.
 
 ## Using it
 - **Energy** goes in on every side, from a [generator, a battery](Energy.md) or energy pipes from other mods. A mix takes 2 000 FE (1 000 FE for a Honey Block), and it holds 20 000 FE.

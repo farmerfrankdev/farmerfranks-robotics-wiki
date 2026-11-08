@@ -13,6 +13,15 @@ The Breeder feeds the grown-up animals in its area so they breed, with whatever 
 - It carries up to **four kinds of food** at once, a stack of each, in a food pocket. In a pen with cows, pigs and chickens it fetches wheat, carrots and seeds in one trip and feeds them all in one round, topping up the stacks it has when it is at the chest.
 - Food that no animal wants right now goes back in the chest.
 
+## Why is it waiting?
+Its [Robot Panel](Robot-Linker.md#the-robot-panel) and the [Inspector](Inspector.md) say, under what it carries, why it is standing still, and how many it has of each kind against how many it breeds up to:
+- **Can breed again in 3 min**: the animals have just had young, and have to rest before they can breed again.
+- **Cow needs a partner**: there is only one grown-up of that kind.
+- **The young are growing up**: there are only young of that kind so far.
+- **No food for Cow in the chest**: put the right food in its chest.
+- **Enough: 16 of each kind**: every kind is at the limit.
+- After that, for example **Cow 12/16, Pig 16/16, Chicken 4/16**.
+
 ## Recipe
 Build it at the [Robot Workshop](Robot-Workshop.md) from a Robot Frame and a **Breeder Neural Chip**.
 

@@ -27,4 +27,5 @@ With the [Robot Linker](Robot-Linker.md), click:
 3. its charging station.
 
 ## Tips
+- Link it to a [Mixing Vat](Mixing-Vat.md) instead of a tank, and the milk becomes slime with a Beekeeper's honeycomb.
 - With a [Breeder](Breeder.md) in the same pen, there are always more cows; a [Butcher](Butcher.md) keeps the numbers down.

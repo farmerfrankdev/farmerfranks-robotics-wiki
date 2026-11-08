@@ -16,4 +16,6 @@ A copper-framed glass tank that holds **16 buckets** (16 000 mB) of one fluid. Y
 - It **keeps its fluid** when you break it and pick it up. The item's tooltip shows what is in it.
 - **Comparators** read how full it is.
 
+The [Mixing Vat](Mixing-Vat.md) has a tank of its own, for the milk, honey or lava it mixes.
+
 ![Glass Tank recipe](images/recipes/glass_tank.png)

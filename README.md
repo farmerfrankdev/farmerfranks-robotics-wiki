@@ -29,6 +29,7 @@ This wiki is for FarmerFrank's Robotics for **Minecraft 26.3 (NeoForge)**. The m
 - [Force Shield and Scrap Pile](Force-Shield.md)
 - [Fertilized Dirt and Farmland](Fertilized-Dirt.md)
 - [Glass Tank](Glass-Tank.md)
+- [Mixing Vat](Mixing-Vat.md)
 - [Robot Monitor](Robot-Monitor.md)
 
 ## Tools and modules

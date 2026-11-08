@@ -10,7 +10,7 @@ A copper-framed glass tank that holds **16 buckets** (16 000 mB) of one fluid. Y
 - **Right-click with a bucket** (or another fluid container) to fill or empty it.
 - **Right-click a tank of honey with a glass bottle** to fill it with honey (250 mB), and with a honey bottle to pour it in, for example the honey a [Beekeeper](Beekeeper.md) with a Honey Upgrade brings.
 - **Look at it** to see what is in it above the hotbar, for example "Water: 8 000 / 16 000 mB".
-- **Right-click with an empty hand** to open its panel: what is in it, and how each side is set up, as on a battery. Click a side to choose what pipes, robots and the tanks next to it may do there: put fluid in, take it out, both (green), or neither.
+- **Right-click with an empty hand** to open its panel: what is in it, and how each side is set up, as on a battery. Click a side to choose what pipes, robots and the tanks next to it may do there: put fluid in, take it out, both (green), or neither. A tank looks the same all round, so the sides are shown as you see them: the front is the side towards you, and left and right are your left and right.
 - **Shift + right-click with an empty hand** a tank of Liquid Experience to take all the experience in it. A [Collector](Collector.md) with an XP Upgrade fills it.
 - **Fluid pipes** from other mods connect on the sides that are open in its panel; to start with, every side.
 - A [Fluid Porter](Fluid-Porter.md) can carry fluid to and from it.

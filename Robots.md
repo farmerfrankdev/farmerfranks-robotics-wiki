@@ -20,6 +20,7 @@ Every robot is a [Robot Frame](Robot-Workshop.md) with a **Neural Chip** in it, 
 | ![](images/robot_miner.png) [Miner](Miner.md) | Digs out its area layer by layer, all the way down | area, chest, charger | 2× |
 | ![](images/robot_shearer.png) [Wool-E](Wool-E.md) | Shears the sheep and delivers the wool | area, delivery chest, charger | 1× |
 | ![](images/robot_beekeeper.png) [Beekeeper](Beekeeper.md) | Takes the honeycomb from full beehives and bee nests | area, delivery chest, charger | 1× |
+| ![](images/robot_milker.png) [Milker](Milker.md) | Milks cows and goats and takes the milk to a tank | area, tank, charger | 1× |
 | ![](images/robot_arc.png) [ArcBot](ArcBot.md) | Shoots arcs of electricity at hostile mobs from afar | area, charger | 2× |
 
 "Chest" in this table means any block that holds items: chests, barrels, shulker boxes, furnaces, and machines and storage from other mods all work. See [Robot Linker](Robot-Linker.md).
@@ -38,7 +39,7 @@ Every robot is a [Robot Frame](Robot-Workshop.md) with a **Neural Chip** in it, 
 ## Good combinations
 - **Tree farm:** a Lumberjack fells the trees and a Collector picks up the logs. Put the saplings on [Fertilized Dirt](Fertilized-Dirt.md) to make them grow four times as fast.
 - **Crop farm:** a Planter sows and a Harvester harvests. Give the Planter the Harvester's chest as its seed chest, and the farm runs by itself.
-- **Animal farm:** a Breeder breeds and a Butcher keeps the numbers down. Add Wool-E to shear the sheep.
+- **Animal farm:** a Breeder breeds and a Butcher keeps the numbers down. Add Wool-E to shear the sheep and a Milker to milk the cows.
 - **Mob farm:** a Killerbot in a dark room, with a Collector for the drops. Add an ArcBot for spiders, blazes and other mobs a Killerbot cannot reach.
 - **Remote base:** a Power Porter carries energy from your generators to a battery far away.
 - **Quarry:** a Miner digs a shaft down to bedrock and fills its chest with ores. Give it a Blacklist Filter for stone and dirt.

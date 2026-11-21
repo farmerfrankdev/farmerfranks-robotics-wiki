@@ -32,3 +32,4 @@ Right-click the station to see how much energy it has.
 ## Tips
 - A [Coppersteel Battery Module](Battery-Modules.md) makes a robot charge twice as fast.
 - Several stations can share one battery, as long as each touches it or is piped to it.
+- Several robots can share one station: they take turns. The others wait a little way off, and a robot that is full steps off the front of the pad to make room.

@@ -4,7 +4,7 @@
 
 **Cute little robots that do the boring jobs for you.** Build them in a Robot Workshop, give them a Neural Chip that tells them what to do, link them to the chests and machines they work with and their charging station, and watch them work.
 
-This wiki is for FarmerFrank's Robotics for **Minecraft 26.3 (NeoForge)**, and there is a beta for **Minecraft 26.1.2** too. The mod is in beta, so things may still change. The wiki is up to date with version **0.27.0-beta**.
+This wiki is for FarmerFrank's Robotics for **Minecraft 26.3 (NeoForge)**, and there is a beta for **Minecraft 26.1.2** too. The mod is in beta, so things may still change. The wiki is up to date with version **0.28.0-beta**.
 
 ## Start here
 - [Getting Started](Getting-Started.md): from your first Coppersteel Ingot to your first working robot.
@@ -18,7 +18,7 @@ This wiki is for FarmerFrank's Robotics for **Minecraft 26.3 (NeoForge)**, and t
 | [![Transporter](images/robot.png)](Transporter.md)<br>[Transporter](Transporter.md) | [![Collector](images/robot_collector.png)](Collector.md)<br>[Collector](Collector.md) | [![Lumberjack](images/robot_lumberjack.png)](Lumberjack.md)<br>[Lumberjack](Lumberjack.md) | [![Killerbot](images/robot_killer.png)](Killerbot.md)<br>[Killerbot](Killerbot.md) | [![Planter](images/robot_planter.png)](Planter.md)<br>[Planter](Planter.md) |
 | [![Harvester](images/robot_harvester.png)](Harvester.md)<br>[Harvester](Harvester.md) | [![Fisher](images/robot_fisher.png)](Fisher.md)<br>[Fisher](Fisher.md) | [![Breeder](images/robot_breeder.png)](Breeder.md)<br>[Breeder](Breeder.md) | [![Butcher](images/robot_butcher.png)](Butcher.md)<br>[Butcher](Butcher.md) | [![Power Porter](images/robot_courier.png)](Power-Porter.md)<br>[Power Porter](Power-Porter.md) |
 | [![Fluid Porter](images/robot_fluid_porter.png)](Fluid-Porter.md)<br>[Fluid Porter](Fluid-Porter.md) | [![Miner](images/robot_miner.png)](Miner.md)<br>[Miner](Miner.md) | [![Wool-E](images/robot_shearer.png)](Wool-E.md)<br>[Wool-E](Wool-E.md) | [![ArcBot](images/robot_arc.png)](ArcBot.md)<br>[ArcBot](ArcBot.md) | [![Beekeeper](images/robot_beekeeper.png)](Beekeeper.md)<br>[Beekeeper](Beekeeper.md) |
-| [![Milker](images/robot_milker.png)](Milker.md)<br>[Milker](Milker.md) | | | | |
+| [![Milker](images/robot_milker.png)](Milker.md)<br>[Milker](Milker.md) | [![Storage Manager](images/robot_storage_manager.png)](Storage-Manager.md)<br>[Storage Manager](Storage-Manager.md) | [![Crafter](images/robot_crafter.png)](Crafter.md)<br>[Crafter](Crafter.md) | | |
 
 ## Machines and blocks
 - [Coppersteel and the Robotics Foundry](Coppersteel.md)
@@ -31,6 +31,7 @@ This wiki is for FarmerFrank's Robotics for **Minecraft 26.3 (NeoForge)**, and t
 - [Glass Tank](Glass-Tank.md)
 - [Mixing Vat](Mixing-Vat.md)
 - [Robot Monitor](Robot-Monitor.md)
+- [Order Terminal](Order-Terminal.md): one store of up to 16 chests, with ordering, crafting and keeping things in stock
 
 ## Tools and modules
 - [Robot Linker](Robot-Linker.md)

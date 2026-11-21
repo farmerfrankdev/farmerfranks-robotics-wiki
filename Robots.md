@@ -22,6 +22,8 @@ Every robot is a [Robot Frame](Robot-Workshop.md) with a **Neural Chip** in it, 
 | ![](images/robot_beekeeper.png) [Beekeeper](Beekeeper.md) | Takes the honeycomb from full beehives and bee nests | area, delivery chest, charger | 1× |
 | ![](images/robot_milker.png) [Milker](Milker.md) | Milks cows and goats and takes the milk to a tank | area, tank, charger | 1× |
 | ![](images/robot_arc.png) [ArcBot](ArcBot.md) | Shoots arcs of electricity at hostile mobs from afar | area, charger | 2× |
+| ![](images/robot_storage_manager.png) [Storage Manager](Storage-Manager.md) | Fetches what is ordered at an Order Terminal and puts away what is put in | Order Terminal, charger | 1× |
+| ![](images/robot_crafter.png) [Crafter](Crafter.md) | Crafts what is ordered at an Order Terminal, from twelve recipes | Order Terminal, crafting table, charger | 1× |
 
 "Chest" in this table means any block that holds items: chests, barrels, shulker boxes, furnaces, and machines and storage from other mods all work. See [Robot Linker](Robot-Linker.md).
 
@@ -43,4 +45,5 @@ Every robot is a [Robot Frame](Robot-Workshop.md) with a **Neural Chip** in it, 
 - **Mob farm:** a Killerbot in a dark room, with a Collector for the drops. Add an ArcBot for spiders, blazes and other mobs a Killerbot cannot reach.
 - **Remote base:** a Power Porter carries energy from your generators to a battery far away.
 - **Quarry:** a Miner digs a shaft down to bedrock and fills its chest with ores. Give it a Blacklist Filter for stone and dirt.
+- **Storage system:** an [Order Terminal](Order-Terminal.md) with a few Storage Managers turns a room of chests into one store you order from. Add Crafters, and it makes what you order, and keeps things in stock by itself.
 - **Fluids without pipes:** a Fluid Porter carries water, lava or other mods' fluids between [Glass Tanks](Glass-Tank.md) and machines.

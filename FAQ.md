@@ -9,6 +9,9 @@ Right-click it with an empty hand, or with the [Inspector](Inspector.md). It tel
 - **It has nothing to do.** For example, the pickup chest is empty, no crops are ripe, or there is no water in a Fisher's area.
 - **This kind of robot is turned off** in the server's [config](Configuration.md).
 
+### Where do I find the recipes?
+In the recipe book of a crafting table: every recipe of the mod is there from the moment you join a world. The [Robotics Manual](Robotics-Manual.md) shows them too, and [Getting Started](Getting-Started.md) and the [tech tree](https://farmerfrankdev.github.io/farmerfranks-robotics-wiki/techtree/) have pictures of them. Start with the **Robotics Foundry**: 4 iron ingots, 4 copper ingots and a furnace.
+
 ### The linker says the area is too big.
 Areas can be up to 32 × 32 blocks, or 48 × 48 with a [Range Upgrade](Upgrades.md).
 

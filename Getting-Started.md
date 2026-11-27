@@ -2,7 +2,7 @@
 
 [Home](README.md)
 
-This page takes you from nothing to your first working robot. Every player also gets a [Robotics Manual](Robotics-Manual.md) the first time they join, with the same information in-game.
+This page takes you from nothing to your first working robot. Every player also gets a [Robotics Manual](Robotics-Manual.md) the first time they join, with the same information in-game, and every recipe of the mod is in the recipe book of the crafting table.
 
 ## 1. Make Coppersteel
 Almost everything in the mod is made from **Coppersteel Ingots**. Craft a [Robotics Foundry](Coppersteel.md), put iron in one input and copper in the other, and add fuel.

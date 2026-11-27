@@ -11,6 +11,7 @@ This wiki is for FarmerFrank's Robotics for **Minecraft 26.3 (NeoForge)**, and t
 - [Robots](Robots.md): all the robots at a glance.
 - [Tech tree](https://farmerfrankdev.github.io/farmerfranks-robotics-wiki/techtree/): every part and recipe as a clickable tree, with what each costs.
 - [Robot lineup](https://farmerfrankdev.github.io/farmerfranks-robotics-wiki/lineup/): every robot in 3D, the standard one and the advanced one side by side.
+- [Feedback form](https://forms.gle/dGBxBZB1Q76AtdWg6): found a bug, want something changed, or have an idea for a new robot? No account needed.
 
 ## Robots
 | | | | | |
